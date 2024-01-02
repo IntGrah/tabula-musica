@@ -1,0 +1,1 @@
+export const void_link = "javascript:void(0);"

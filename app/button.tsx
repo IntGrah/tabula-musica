@@ -3,13 +3,14 @@ import { void_link } from "./util";
 interface ButtonProps {
   name: string;
   text: string;
+  href?: string;
 }
 
-export default function Button({ name, text }: ButtonProps) {
+export default function Button({ name, text, href = void_link }: ButtonProps) {
   return (
     <a
-      href={void_link}
-      className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      href={href}
+      className="group rounded-xl border border-transparent px-5 py-4 transition-colors hover:border-cy-600 hover:bg-gray-600/30"
     >
       <h2 className={`mb-3 text-2xl font-semibold`}>
         {name}

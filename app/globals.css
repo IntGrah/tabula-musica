@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@responsive {
+@layer utilities {
   .as-bg {
     position: absolute;
     opacity: 20%;

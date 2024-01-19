@@ -53,8 +53,8 @@ export default function Event({
         <div className="tracking-wide">
           <p>{children}</p>
           <ol className="py-4">
-            {programme.map(({ composer, pieces }) => (
-              <li key={null}>
+            {programme.map(({ composer, pieces }, i) => (
+              <li key={i}>
                 {composer} &ndash; {pieces}
               </li>
             ))}

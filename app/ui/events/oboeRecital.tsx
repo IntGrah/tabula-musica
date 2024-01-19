@@ -5,10 +5,8 @@ export default function Event2() {
   return (
     <Event
       cutoff="max-lg:as-bg"
-      imageProps={{
-        src: PoulencPortrait,
-        alt: "Pencil drawing of Francis Poulenc",
-      }}
+      src={PoulencPortrait}
+      alt="Pencil drawing of Francis Poulenc"
       date={new Date(2024, 1, 24, 13, 30)}
       href="/events"
       title="Oboe Recital"

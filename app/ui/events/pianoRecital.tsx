@@ -5,7 +5,8 @@ export default function PianoRecital() {
   return (
     <Event
       cutoff="max-2xl:as-bg"
-      imageProps={{ src: LisztSonata, alt: "Manuscript of Liszt Sonata" }}
+      src={LisztSonata}
+      alt="Manuscript of Liszt Sonata"
       date={new Date(2024, 0, 29, 13, 30)}
       href="/events"
       title="Ravel, Chopin, Liszt"

@@ -10,9 +10,8 @@ const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   minute: "2-digit",
 };
 
-interface EventProps {
+interface EventProps extends ImageProps {
   cutoff: string;
-  imageProps: ImageProps;
   date: Date;
   href: string;
   title: string;
@@ -23,7 +22,8 @@ interface EventProps {
 
 export default function Event({
   cutoff,
-  imageProps,
+  src,
+  alt,
   date,
   href,
   title,
@@ -36,7 +36,8 @@ export default function Event({
       <div className="overflow-hidden">
         <Image
           className={`${cutoff} size-full object-cover transition-all duration-500 group-hover:scale-105`}
-          {...imageProps}
+          src={src}
+          alt={alt}
         />
       </div>
       <div className="relative min-w-72 h-full p-4 z-10">
@@ -53,12 +54,14 @@ export default function Event({
           <p>{children}</p>
           <ol className="py-4">
             {programme.map(({ composer, pieces }) => (
-              <li>
+              <li key={null}>
                 {composer} &ndash; {pieces}
               </li>
             ))}
           </ol>
-          <p className="absolute bottom-4 text-gray-300/90 text-sm">{location}</p>
+          <p className="absolute bottom-4 text-gray-300/90 text-sm">
+            {location}
+          </p>
         </div>
       </div>
     </Link>

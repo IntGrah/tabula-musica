@@ -5,7 +5,8 @@ export default function ClareRecital() {
   return (
     <Event
       cutoff=""
-      imageProps={{ src: ClareChapel, alt: "Clare College Chapel" }}
+      src={ClareChapel}
+      alt="Clare College Chapel"
       date={new Date(2024, 0, 22, 13, 15)}
       href="/events"
       title="Clare Lunchtime Recital"

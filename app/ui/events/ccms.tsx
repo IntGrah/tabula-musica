@@ -5,7 +5,8 @@ export default function CCMSConcert() {
   return (
     <Event
       cutoff="max-xl:as-bg"
-      imageProps={{ src: CCMS, alt: "Clare College Cartoon with French Horn" }}
+      src={CCMS}
+      alt="Clare College Cartoon with French Horn"
       date={new Date(2024, 1, 1, 20)}
       href="/events"
       title="CCMS Lent Concert"

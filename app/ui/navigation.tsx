@@ -5,9 +5,9 @@ export default function Navigation() {
     <nav className="flex h-14 px-4 text-gray-200 text-sm tracking-wider">
       <div className="flex-1"></div>
       <div className="flex-1 flex items-center justify-center">
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/about">About</NavLink>
-        <NavLink href="/events">Events</NavLink>
+        <NavLink href="#home">Home</NavLink>
+        <NavLink href="#events">Events</NavLink>
+        <NavLink href="#articles">Articles</NavLink>
         <NavLink href="/">Other</NavLink>
       </div>
       <div className="flex-1 flex items-center justify-end">

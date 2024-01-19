@@ -1,14 +1,14 @@
-import Liszt from "/public/liszt.jpg";
 import Event from "./event";
+import LisztSonata from "/public/liszt-sonata.jpg";
 
 export default function PianoRecital() {
   return (
     <Event
-      cutoff="sm"
-      imageProps={{ src: Liszt, alt: "Manuscript of Liszt Sonata" }}
-      date={new Date(2024, 0, 29)}
+      cutoff="max-2xl:as-bg"
+      imageProps={{ src: LisztSonata, alt: "Manuscript of Liszt Sonata" }}
+      date={new Date(2024, 0, 29, 13, 30)}
       href="/events"
-      title="Ravel | Chopin | Liszt"
+      title="Ravel, Chopin, Liszt"
       programme={[
         { composer: "Ravel", pieces: "Gaspard de la Nuit" },
         { composer: "Chopin", pieces: "Ballade No. 4" },
@@ -16,8 +16,7 @@ export default function PianoRecital() {
       ]}
       location="Old Combination Room, Trinity College, Cambridge"
     >
-      Trinity fresher Jeremy Chen presents three monumental works by post-1800
-      masters.
+      Pianist Jeremy Chen presents three masterpieces of post-1800 composers.
     </Event>
   );
 }

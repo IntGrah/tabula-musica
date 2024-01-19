@@ -1,26 +1,20 @@
-import Liszt from "/public/liszt.jpg";
+import CCMS from "/public/ccms.jpg";
 import Event from "./event";
 
 export default function CCMSConcert() {
   return (
     <Event
-      cutoff="xl"
-      imageProps={{ src: Liszt, alt: "Manuscript of Liszt Sonata" }}
-      date={new Date(2024, 1, 1)}
+      cutoff="max-xl:as-bg"
+      imageProps={{ src: CCMS, alt: "Clare College Cartoon with French Horn" }}
+      date={new Date(2024, 1, 1, 20)}
       href="/events"
-      title="CCMS Lent term concert"
+      title="CCMS Lent Concert"
       programme={[
         { composer: "Prokofiev", pieces: "Symphony No. 1" },
         { composer: "Mozart", pieces: "Horn Concerto No. 4" },
-        {
-          composer: "Vaughan Williams",
-          pieces: (
-            <>
-              <i>The Wasps: Overture</i>, Five Mystical Songs
-            </>
-          ),
-        },
-        { composer: "Hubert Parry", pieces: <i>Blest Pair of Sirens</i> },
+        { composer: "V. Williams", pieces: <i>The Wasps: Overture</i> },
+        { composer: "V. Williams", pieces: "Five Mystical Songs" },
+        { composer: "H. Parry", pieces: <i>Blest Pair of Sirens</i> },
       ]}
       location="West Road Concert Hall, Cambridge"
     >

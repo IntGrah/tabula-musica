@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@responsive {
+  .as-bg {
+    position: absolute;
+    opacity: 20%;
+  }
+}

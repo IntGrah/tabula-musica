@@ -1,19 +1,30 @@
-import Button from "./ui/button";
-import Github from "./ui/github";
+import PianoRecital from "./ui/events/pianoRecital";
+import CCMSConcert from "./ui/events/ccms";
+import OboeRecital from "./ui/events/oboeRecital";
 
 export default function Home() {
   return (
     <div>
-      <div className="flex mb-8 justify-between">
-        <Github />
+      <div className="h-1/2 pt-32 p-16 text-6xl font-mono font-bold uppercase tracking-widest text-gray-600">
+        My Page
       </div>
-
-      <div className="flex lg:grid-cols-4 text-center lg:text-left lg:w-full">
-        <Button href="">Lorem</Button>
-        <Button href="">Ipsum</Button>
-        <Button href="">Dolor</Button>
-        <Button href="">Amet</Button>
+      <p className="p-8 text-center text-6xl font-mono font-bold uppercase tracking-widest text-gray-500/50">
+        Events
+      </p>
+      <div className="flex max-lg:flex-col bg-gray-800 text-white">
+        <div className="h-96 lg:w-2/5">
+          <PianoRecital />
+        </div>
+        <div className="flex max-sm:flex-col lg:w-3/5 h-[36rem] sm:h-96">
+          <div>
+            <CCMSConcert />
+          </div>
+          <div>
+            <OboeRecital />
+          </div>
+        </div>
       </div>
+      <div className="h-96"></div>
     </div>
   );
 }

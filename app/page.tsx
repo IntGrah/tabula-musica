@@ -35,16 +35,16 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-wrap bg-gray-800 text-white shadow-2xl">
-        <div className="w-full md:w-3/5">
+        <div className="w-full md:w-3/5 transition-all duration-300">
           <ClareRecital />
         </div>
-        <div className="w-full md:w-2/5">
+        <div className="w-full md:w-2/5 transition-all duration-300">
           <PianoRecital />
         </div>
-        <div className="w-full sm:w-2/3 lg:w-1/2 xl:w-3/5 2xl:w-1/2">
+        <div className="w-full sm:w-2/3 lg:w-1/2 xl:w-3/5 2xl:w-1/2 transition-all duration-300">
           <CCMSConcert />
         </div>
-        <div className="w-full sm:w-1/3 lg:w-1/2 xl:w-2/5 2xl:w-1/2">
+        <div className="w-full sm:w-1/3 lg:w-1/2 xl:w-2/5 2xl:w-1/2 transition-all duration-300">
           <OboeRecital />
         </div>
       </div>
@@ -66,7 +66,7 @@ export default function Home() {
         <Link className="flex w-full h-96 md:my-8 xl:my-12 group" href="/">
           <div className="md:ml-8 lg:ml-16 max-w-96 overflow-hidden shadow-2xl">
             <Image
-              className="h-full object-cover md:rounded-l-xl transition-transform duration-500 group-hover:scale-105"
+              className="h-full object-cover md:rounded-l-xl transition-transform duration-500 ease-out group-hover:scale-105"
               src={LisztPortrait}
               alt="Portrait of Franz Liszt"
             />
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
           <div className="md:mr-8 lg:mr-16 max-w-96 overflow-hidden shadow-2xl">
             <Image
-              className="h-full object-cover md:rounded-r-xl transition-transform duration-500 group-hover:scale-105"
+              className="h-full object-cover md:rounded-r-xl transition-transform duration-500 ease-out group-hover:scale-105"
               src={ChopinPortrait}
               alt="Portrait of Frédéric Chopin"
             />

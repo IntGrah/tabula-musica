@@ -4,6 +4,7 @@ import Event from "./event";
 export default function CCMSConcert() {
   return (
     <Event
+      className="sm:w-2/3 lg:w-1/2 xl:w-3/5 2xl:w-1/2"
       cutoff="max-xl:as-bg"
       src={CCMS}
       alt="Clare College Cartoon with French Horn"

@@ -4,6 +4,7 @@ import LisztSonata from "/public/liszt-sonata.jpg";
 export default function PianoRecital() {
   return (
     <Event
+      className="md:w-2/5"
       cutoff="max-2xl:as-bg"
       src={LisztSonata}
       alt="Manuscript of Liszt Sonata"

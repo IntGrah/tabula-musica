@@ -4,6 +4,7 @@ import Event from "./event";
 export default function ClareRecital() {
   return (
     <Event
+      className="md:w-3/5"
       cutoff=""
       src={ClareChapel}
       alt="Clare College Chapel"

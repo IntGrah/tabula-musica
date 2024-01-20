@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <nav className="flex h-14 px-4 text-gray-200 text-sm tracking-wider">
+    <nav className="flex justify-between h-14 px-2 sm:px-4 text-gray-200 text-sm tracking-wider">
       <div className="flex-1"></div>
       <div className="flex-1 flex items-center justify-center">
         <NavLink href="#home">Home</NavLink>
@@ -30,7 +30,7 @@ interface LinkProps {
 export function NavLink({ children, href }: LinkProps) {
   return (
     <Link
-      className="flex-1 px-5 py-4 transition-colors hover:text-white text-center"
+      className="flex-1 px-2 sm:px-4 py-4 transition-colors hover:text-white text-center"
       href={href}
     >
       {children}

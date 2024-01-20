@@ -15,12 +15,12 @@ interface EventProps extends ImageProps {
   date: Date;
   href: string;
   title: string;
-  children: React.ReactNode;
   programme: Array<{ composer: string; pieces: React.ReactNode }>;
   location: string;
 }
 
 export default function Event({
+  className,
   cutoff,
   src,
   alt,
@@ -32,7 +32,10 @@ export default function Event({
   location,
 }: EventProps) {
   return (
-    <Link className="flex relative h-96 group overflow-hidden" href={href}>
+    <Link
+      className={`flex relative w-full ${className} h-96 group overflow-hidden transition-all duration-500`}
+      href={href}
+    >
       <div className="overflow-hidden">
         <Image
           className={`${cutoff} size-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
@@ -40,7 +43,7 @@ export default function Event({
           alt={alt}
         />
       </div>
-      <div className="relative min-w-72 h-full p-4 z-10">
+      <div className="relative min-w-80 h-full p-4 z-10">
         <time
           className="text-gray-300/90 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}

@@ -45,9 +45,7 @@ export default function Event({
     >
       <div className="overflow-hidden">
         <Image
-          className={`${cutoff} ${
-            extra ? "as-bg" : ""
-          } size-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
+          className={`${cutoff} size-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
           src={src}
           alt={alt}
         />
@@ -59,13 +57,27 @@ export default function Event({
         >
           {date.toLocaleDateString(undefined, dateTimeFormatOptions)}
         </time>
-        <h1 className="w-full py-2 text-2xl font-bold uppercase tracking-wider decoration-2 group-hover:underline">
+        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider decoration-2 group-hover:underline">
           {title}
         </h1>
-        <div className="flex flex-col gap-4 w-full tracking-wide">
-          <p>{children}</p>
-          {programme}
-          {extra && performers}
+        <div className="tracking-wide">
+          <p className="py-4">{children}</p>
+          <div className="relative">
+            <div
+              className={`absolute transition-all duration-300 ${
+                extra ? "-top-8 opacity-0" : "top-0"
+              }`}
+            >
+              {programme}
+            </div>
+            <div
+              className={`absolute transition-all duration-300 ${
+                extra ? "top-0" : "top-8 opacity-0"
+              }`}
+            >
+              {performers}
+            </div>
+          </div>
           <p className="absolute bottom-4 text-gray-300 text-sm">{location}</p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
@@ -18,6 +19,7 @@ interface EventProps {
   src: StaticImageData;
   alt: string;
   date: Date;
+  href?: string;
   title: React.ReactNode;
   children: React.ReactNode;
   programme: React.ReactNode;
@@ -31,6 +33,7 @@ export default function Event({
   src,
   alt,
   date,
+  href,
   title,
   children,
   programme,
@@ -57,8 +60,14 @@ export default function Event({
         >
           {date.toLocaleDateString(undefined, dateTimeFormatOptions)}
         </time>
-        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider decoration-2 group-hover:underline">
-          {title}
+        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
+          {href ? (
+            <Link className="decoration-2 group-hover:underline" href={href}>
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
         </h1>
         <div className="tracking-wide">
           <p className="py-4">{children}</p>

@@ -8,6 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <html>
+      <head>
+        <title>IntGrah &ndash; Page</title>
+      </head>
       <body>
         <div className="bg-gradient-radial from-violet-200/60 to-black/30 min-h-screen">
           <Header />

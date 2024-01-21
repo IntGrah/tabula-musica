@@ -22,7 +22,9 @@ export default function ClareRecital() {
       }
       performers={
         <ol>
-          <li>Voice - Evie Perfect</li>
+          <li>Baritone - Eoin Jenkins</li>
+          <li>Piano - Evie Perfect</li>
+          <li>Baritone - Julian Manresa</li>
           <li>Piano - Isaac Chan</li>
         </ol>
       }

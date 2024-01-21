@@ -9,6 +9,7 @@ export default function CCMSConcert() {
       src={CCMS}
       alt="Clare College Cartoon"
       date={new Date(2024, 1, 1, 20, 0)}
+      href="https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert/"
       title="CCMS Lent Term Concert"
       programme={
         <ol>

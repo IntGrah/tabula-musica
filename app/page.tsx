@@ -6,6 +6,7 @@ import SectionHeader from "./ui/sectionHeader";
 import About from "./ui/about";
 import Events from "./ui/events";
 import Footer from "./ui/footer";
+import Quote from "./ui/quote";
 
 export default function Page() {
   return (
@@ -22,11 +23,7 @@ export default function Page() {
         >
           Home
         </h1>
-        <q className="absolute top-48 right-8 md:right-24 text-center md:text-lg font-mono text-gray-800">
-          After this, what is
-          <br />
-          left for us to write?
-        </q>
+        <Quote />
         <SectionHeader id="events">Events</SectionHeader>
       </div>
       <Events />
@@ -35,7 +32,7 @@ export default function Page() {
         <SectionHeader id="articles">Articles</SectionHeader>
       </div>
       <Articles />
-      <div className="relative h-96"></div>
+      <div className="h-96"></div>
       <About />
       <div className="relative h-96">
         <SectionHeader id="contact">Contact</SectionHeader>

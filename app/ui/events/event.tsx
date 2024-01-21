@@ -1,5 +1,7 @@
-import Image, { ImageProps } from "next/image";
-import Link from "next/link";
+"use client";
+
+import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 
 const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   day: "numeric",
@@ -10,13 +12,17 @@ const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   minute: "2-digit",
 };
 
-interface EventProps extends ImageProps {
+interface EventProps {
+  className: string;
   cutoff: string;
+  src: StaticImageData;
+  alt: string;
   date: Date;
-  href: string;
-  title: string;
-  programme: Array<{ composer: string; pieces: React.ReactNode }>;
-  location: string;
+  title: React.ReactNode;
+  children: React.ReactNode;
+  programme: React.ReactNode;
+  performers: React.ReactNode;
+  location: React.ReactNode;
 }
 
 export default function Event({
@@ -25,27 +31,30 @@ export default function Event({
   src,
   alt,
   date,
-  href,
   title,
   children,
   programme,
+  performers,
   location,
 }: EventProps) {
+  const [extra, setExtra] = useState(false);
   return (
-    <Link
-      className={`flex relative w-full ${className} h-96 group overflow-hidden transition-all duration-500`}
-      href={href}
+    <div
+      className={`flex relative w-full ${className} h-96 group overflow-hidden cursor-pointer transition-all duration-500`}
+      onClick={() => setExtra(!extra)}
     >
       <div className="overflow-hidden">
         <Image
-          className={`${cutoff} size-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
+          className={`${cutoff} ${
+            extra ? "as-bg" : ""
+          } size-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
           src={src}
           alt={alt}
         />
       </div>
       <div className="relative min-w-80 h-full p-4 z-10">
         <time
-          className="text-gray-300/90 font-mono uppercase tracking-wider"
+          className="text-gray-300 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}
         >
           {date.toLocaleDateString(undefined, dateTimeFormatOptions)}
@@ -53,20 +62,13 @@ export default function Event({
         <h1 className="w-full py-2 text-2xl font-bold uppercase tracking-wider decoration-2 group-hover:underline">
           {title}
         </h1>
-        <div className="w-full tracking-wide">
-          <p className="w-full">{children}</p>
-          <ol className="py-4">
-            {programme.map(({ composer, pieces }, i) => (
-              <li key={i}>
-                {composer} &ndash; {pieces}
-              </li>
-            ))}
-          </ol>
-          <p className="absolute bottom-4 text-gray-300/90 text-sm">
-            {location}
-          </p>
+        <div className="flex flex-col gap-4 w-full tracking-wide">
+          <p>{children}</p>
+          {programme}
+          {extra && performers}
+          <p className="absolute bottom-4 text-gray-300 text-sm">{location}</p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

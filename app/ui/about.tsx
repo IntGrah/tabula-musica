@@ -1,9 +1,12 @@
-export default function Music() {
+export default function About() {
   return (
-    <div className="py-8 md:py-16 bg-black text-white">
-      <h1 className="py-4 text-center text-6xl md:text-8xl bold uppercase tracking-wider decoration-2 hover:underline">
-        Music
+    <div id="about" className="py-8 md:py-16 bg-black text-white">
+      <h1 className="py-4 text-center text-6xl md:text-8xl font-mono bold uppercase tracking-wider">
+        About
       </h1>
+      <h2 className="py-4 text-center text-4xl font-mono bold uppercase tracking-wider">
+        This site is work in progress.
+      </h2>
       <div className="px-4 sm:px-8 md:px-16 lg:px-48 xl:px-96 text-center text-xl font-mono">
         <p className="py-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem

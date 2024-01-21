@@ -9,12 +9,23 @@ export default function ClareRecital() {
       src={ClareChapel}
       alt="Clare College Chapel"
       date={new Date(2024, 0, 22, 13, 15)}
-      href="/events"
       title="Clare Lunchtime Recital"
-      programme={[
-        { composer: "V. Williams", pieces: <i>Songs of Travel</i> },
-        { composer: "Beethoven", pieces: <i>An die ferne Geliebte</i> },
-      ]}
+      programme={
+        <ol>
+          <li>
+            V. Williams - <i>Songs of Travel</i>
+          </li>
+          <li>
+            Beethoven - <i>An die ferne Geliebte</i>
+          </li>
+        </ol>
+      }
+      performers={
+        <ol>
+          <li>Voice - Evie Perfect</li>
+          <li>Piano - Isaac Chan</li>
+        </ol>
+      }
       location="Clare College Chapel, Cambridge"
     >
       The first lunchtime recital of Lent term at Clare Chapel.

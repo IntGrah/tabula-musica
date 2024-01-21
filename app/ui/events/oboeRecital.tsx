@@ -9,13 +9,20 @@ export default function OboeRecital() {
       src={PoulencPortrait}
       alt="Pencil drawing of Francis Poulenc"
       date={new Date(2024, 1, 24, 13, 30)}
-      href="/events"
       title="Oboe Recital"
-      programme={[
-        { composer: "Albinoni", pieces: "Concerto Op. 9 No. 2" },
-        { composer: "Saint-Saëns", pieces: "Oboe Sonata" },
-        { composer: "Poulenc", pieces: "Oboe Sonata" },
-      ]}
+      programme={
+        <ol>
+          <li>Albinoni - Concerto Op. 9 No. 2</li>
+          <li>Saint-Saëns - Oboe Sonata</li>
+          <li>Poulenc - Oboe Sonata</li>
+        </ol>
+      }
+      performers={
+        <ol>
+          <li>Oboe - Edward Clynes</li>
+          <li>Piano, Harpsichord - Jeremy Chen</li>
+        </ol>
+      }
       location="Trinity College Chapel, Cambridge"
     >
       Edward Clynes plays Albinoni&apos;s most famous Oboe concerto, and two

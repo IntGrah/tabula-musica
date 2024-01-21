@@ -7,17 +7,28 @@ export default function CCMSConcert() {
       className="sm:w-2/3 lg:w-1/2 xl:w-3/5 2xl:w-1/2"
       cutoff="max-xl:as-bg"
       src={CCMS}
-      alt="Clare College Cartoon with French Horn"
-      date={new Date(2024, 1, 1, 20)}
-      href="/events"
-      title="CCMS Lent Concert"
-      programme={[
-        { composer: "Prokofiev", pieces: "Symphony No. 1" },
-        { composer: "Mozart", pieces: "Horn Concerto No. 4" },
-        { composer: "V. Williams", pieces: <i>The Wasps: Overture</i> },
-        { composer: "V. Williams", pieces: "Five Mystical Songs" },
-        { composer: "H. Parry", pieces: <i>Blest Pair of Sirens</i> },
-      ]}
+      alt="Clare College Cartoon"
+      date={new Date(2024, 1, 1, 20, 0)}
+      title="CCMS Lent Term Concert"
+      programme={
+        <ol>
+          <li>Prokofiev - Symphony No. 1</li>
+          <li>Mozart - Horn Concerto No. 4</li>
+          <li>
+            V. Williams - <i>The Wasps: Overture</i>
+          </li>
+          <li>V. Williams - Five Mystical Songs</li>
+          <li>
+            H. Parry - <i>Blest Pair of Sirens</i>
+          </li>
+        </ol>
+      }
+      performers={
+        <p>
+          CCMS Chorus alongside vocal soloists Emma Caroe, Julian Manresa and
+          Emma Paterson.
+        </p>
+      }
       location="West Road Concert Hall, Cambridge"
     >
       Clare College Music Society returns to West Road Concert Hall with a

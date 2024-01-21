@@ -1,12 +1,13 @@
 import Image from "next/image";
 import DieKunstDerFuge from "/public/die-kunst-der-fuge.jpg";
-import Articles from "./ui/articles";
+import Articles from "./ui/articles/articles";
 import ViewMore from "./ui/viewMore";
 import SectionHeader from "./ui/sectionHeader";
-import Music from "./ui/music";
+import About from "./ui/about";
 import Events from "./ui/events";
+import Footer from "./ui/footer";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
       <div className="relative h-96 md:h-[36rem] overflow-hidden">
@@ -21,6 +22,11 @@ export default function Home() {
         >
           Home
         </h1>
+        <q className="absolute top-48 right-8 md:right-24 text-center md:text-lg font-mono text-gray-800">
+          After this, what is
+          <br />
+          left for us to write?
+        </q>
         <SectionHeader id="events">Events</SectionHeader>
       </div>
       <Events />
@@ -29,14 +35,12 @@ export default function Home() {
         <SectionHeader id="articles">Articles</SectionHeader>
       </div>
       <Articles />
+      <div className="relative h-96"></div>
+      <About />
       <div className="relative h-96">
-        <SectionHeader id="music">Music</SectionHeader>
+        <SectionHeader id="contact">Contact</SectionHeader>
       </div>
-      <Music />
-      <div className="relative h-96">
-        <SectionHeader id="end">End</SectionHeader>
-      </div>
-      <div className="h-96 bg-black"></div>
+      <Footer />
     </div>
   );
 }

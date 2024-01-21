@@ -15,8 +15,6 @@ export default function Chopin() {
         </>
       }
       date={new Date(2024, 0, 22)}
-    >
-      {}
-    </Article>
+    />
   );
 }

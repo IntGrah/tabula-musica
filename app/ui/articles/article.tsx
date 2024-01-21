@@ -14,7 +14,6 @@ interface ArticleProps {
   alt: string;
   title: React.ReactNode;
   subtitle: React.ReactNode;
-  children: React.ReactNode;
   date: Date;
 }
 
@@ -24,7 +23,6 @@ export default function Article({
   alt,
   title,
   subtitle,
-  children,
   date,
 }: ArticleProps) {
   return (
@@ -42,7 +40,6 @@ export default function Article({
         </h1>
         <h2 className="py-4 text-lg sm:text-2xl text-gray-300">{subtitle}</h2>
         <div className="sm:text-lg text-white font-mono tracking-wide overflow-ellipsis">
-          {children}
           <time
             className="absolute bottom-4 text-gray-400 font-mono uppercase tracking-wider"
             dateTime={date.toISOString()}

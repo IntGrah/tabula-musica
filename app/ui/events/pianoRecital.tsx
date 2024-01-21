@@ -8,7 +8,7 @@ export default function PianoRecital() {
       cutoff="max-2xl:as-bg"
       src={LisztSonata}
       alt="Manuscript of Liszt Sonata"
-      date={new Date(2024, 0, 29, 19, 30)}
+      date={new Date(2024, 0, 29, 20, 0)}
       title="Ravel, Chopin, Liszt"
       programme={
         <ol>

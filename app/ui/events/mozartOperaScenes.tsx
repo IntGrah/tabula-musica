@@ -13,9 +13,7 @@ export default function MozartOperaScenes() {
       title="Mozart Opera Scenes Gala"
       programme={
         <ol>
-          <li>
-            W. A. Mozart - <i>Scenes from Operas</i>
-          </li>
+          <li>W. A. Mozart - Opera Scenes</li>
         </ol>
       }
       performers={

@@ -4,7 +4,7 @@ import Articles from "./ui/articles/articles";
 import ViewMore from "./ui/viewMore";
 import SectionHeader from "./ui/sectionHeader";
 import About from "./ui/about";
-import Events from "./ui/events";
+import Events from "./ui/events/events";
 import Footer from "./ui/footer";
 import Quote from "./ui/quote";
 

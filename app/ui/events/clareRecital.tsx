@@ -1,36 +1,31 @@
-import ClareChapel from "/public/clare-chapel.jpg";
+import { ClareChapel as CC } from "../locations";
 import Event from "./event";
+import ClareChapel from "/public/clare-chapel.jpg";
 
 export default function ClareRecital() {
   return (
     <Event
-      className="md:w-3/5"
-      cutoff=""
+      basis="40%"
+      cutoff="max-lg:as-bg"
       src={ClareChapel}
       alt="Clare College Chapel"
-      date={new Date(2024, 0, 22, 13, 15)}
+      date={new Date(2024, 0, 29, 13, 15)}
       title="Clare Lunchtime Recital"
       programme={
         <ol>
-          <li>
-            V. Williams - <i>Songs of Travel</i>
-          </li>
-          <li>
-            Beethoven - <i>An die ferne Geliebte</i>
-          </li>
+          <li>Prokofiev - 5 Melodies</li>
+          <li>Brahms - Violin Sonata No.1</li>
         </ol>
       }
       performers={
         <ol>
-          <li>Baritone - Eoin Jenkins</li>
-          <li>Piano - Evie Perfect</li>
-          <li>Baritone - Julian Manresa</li>
-          <li>Piano - Isaac Chan</li>
+          <li>Violin - John Gallant </li>
+          <li>Piano - Raphael Herberg</li>
         </ol>
       }
-      location="Clare College Chapel, Cambridge"
+      location={CC}
     >
-      The first lunchtime recital of Lent term at Clare Chapel.
+      Weekly lunchtime recitals at Clare Chapel.
     </Event>
   );
 }

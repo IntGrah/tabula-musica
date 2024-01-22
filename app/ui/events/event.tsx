@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 
 const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   day: "numeric",
@@ -14,36 +14,40 @@ const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
 };
 
 interface EventProps {
-  className: string;
+  basis: string;
   cutoff: string;
   src: StaticImageData;
   alt: string;
   date: Date;
-  href?: string;
   title: React.ReactNode;
   children: React.ReactNode;
   programme: React.ReactNode;
   performers: React.ReactNode;
+  tickets?: {
+    href: string;
+    price: React.ReactNode;
+  };
   location: React.ReactNode;
 }
 
 export default function Event({
-  className,
+  basis,
   cutoff,
   src,
   alt,
   date,
-  href,
   title,
   children,
   programme,
   performers,
+  tickets,
   location,
 }: EventProps) {
   const [extra, setExtra] = useState(false);
   return (
     <div
-      className={`flex relative w-full ${className} h-96 group overflow-hidden cursor-pointer transition-all duration-500`}
+      className="flex flex-grow relative min-w-80 h-96 group overflow-hidden cursor-pointer transition-all duration-500"
+      style={{ flexBasis: basis }}
       onClick={() => setExtra(!extra)}
     >
       <div className="overflow-hidden">
@@ -61,8 +65,11 @@ export default function Event({
           {date.toLocaleDateString(undefined, dateTimeFormatOptions)}
         </time>
         <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
-          {href ? (
-            <Link className="decoration-2 group-hover:underline" href={href}>
+          {tickets ? (
+            <Link
+              className="decoration-2 group-hover:underline"
+              href={tickets.href}
+            >
               {title}
             </Link>
           ) : (
@@ -87,7 +94,17 @@ export default function Event({
               {performers}
             </div>
           </div>
-          <p className="absolute bottom-4 text-gray-300 text-sm">{location}</p>
+          <div className="absolute bottom-4 text-gray-300 text-sm">
+            {tickets ? (
+              <p>
+                <a href={tickets.href}>Tickets: </a>
+                {tickets.price}
+              </p>
+            ) : (
+              <p>Free admission</p>
+            )}
+            {location}
+          </div>
         </div>
       </div>
     </div>

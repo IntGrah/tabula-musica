@@ -1,20 +1,20 @@
-import CCMS from "/public/ccms.jpg";
+import { WestRoad } from "../locations";
 import Event from "./event";
+import CCMS from "/public/ccms.jpg";
 
 export default function CCMSConcert() {
   return (
     <Event
-      className="sm:w-2/3 lg:w-1/2 xl:w-3/5 2xl:w-1/2"
+      basis="50%"
       cutoff="max-xl:as-bg"
       src={CCMS}
       alt="Clare College Cartoon"
       date={new Date(2024, 1, 1, 20, 0)}
-      href="https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert/"
       title="CCMS Lent Term Concert"
       programme={
         <ol>
           <li>Prokofiev - Symphony No. 1</li>
-          <li>Mozart - Horn Concerto No. 4</li>
+          <li>W. A. Mozart - Horn Concerto No. 4</li>
           <li>
             V. Williams - <i>The Wasps: Overture</i>
           </li>
@@ -33,10 +33,14 @@ export default function CCMSConcert() {
           <li>Soprano - Emma Paterson</li>
         </ol>
       }
-      location="West Road Concert Hall, Cambridge"
+      tickets={{
+        href: "https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert",
+        price: "£10, £6 (Concessions)",
+      }}
+      location={WestRoad}
     >
-      Clare College Music Society returns to West Road Concert Hall with a
-      programme of Prokofiev, Mozart and great English choral works.
+      Clare College Music Society returns to West Road Concert Hall with
+      Prokofiev, Mozart and great English choral works.
     </Event>
   );
 }

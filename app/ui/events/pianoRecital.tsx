@@ -1,11 +1,12 @@
+import { TrinityOCR } from "../locations";
 import Event from "./event";
 import LisztSonata from "/public/liszt-sonata.jpg";
 
 export default function PianoRecital() {
   return (
     <Event
-      className="md:w-2/5"
-      cutoff="max-2xl:as-bg"
+      basis="50%"
+      cutoff="max-xl:as-bg"
       src={LisztSonata}
       alt="Manuscript of Liszt Sonata"
       date={new Date(2024, 0, 29, 20, 0)}
@@ -18,7 +19,7 @@ export default function PianoRecital() {
         </ol>
       }
       performers={<p>Piano - Jeremy Chen</p>}
-      location="Old Combination Room, Trinity College, Cambridge"
+      location={TrinityOCR}
     >
       Pianist Jeremy Chen presents three masterpieces of post-1800 composers.
     </Event>

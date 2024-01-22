@@ -4,7 +4,7 @@ import Spring from "/public/spring.jpg";
 export default function WilmslowConcert() {
   return (
     <Event
-      className="w-full"
+      basis="50%"
       cutoff="max-lg:as-bg"
       src={Spring}
       alt="Watercolour depiction of Spring"
@@ -25,8 +25,13 @@ export default function WilmslowConcert() {
         <ol>
           <li>Wilmslow Symphony Orchestra</li>
           <li>Piano - Jeremy Chen</li>
+          <li>Conductor - Stephen Threlfall</li>
         </ol>
       }
+      tickets={{
+        href: "https://www.ticketsource.co.uk/whats-on/wilmslow/the-evans-theatre-wilmslow-leisure-centre/wilmslow-symphony-orchestra-summer-concert/e-ororyq",
+        price: "£12, £10 (Concessions) £2 (Under 18)"
+      }}
       location="Wilmslow Leisure Centre"
     >
       The Wilmslow Symphony Orchestra invites soloist Jeremy Chen for its 76th

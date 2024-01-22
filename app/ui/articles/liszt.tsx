@@ -11,9 +11,7 @@ export default function Liszt() {
       subtitle={
         <>
           <p className="uppercase">The composer of contrasts:</p>
-          <p className="md:ml-8">
-            Versatility and innovation in the B&nbsp;minor&nbsp;sonata.
-          </p>
+          <p className="md:ml-8">An overview of the B minor sonata.</p>
         </>
       }
       date={new Date(2023, 11, 28)}

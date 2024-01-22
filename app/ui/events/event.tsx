@@ -66,10 +66,7 @@ export default function Event({
         </time>
         <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
           {tickets ? (
-            <Link
-              className="decoration-2 group-hover:underline"
-              href={tickets.href}
-            >
+            <Link className="decoration-2 hover:underline" href={tickets.href}>
               {title}
             </Link>
           ) : (
@@ -97,8 +94,10 @@ export default function Event({
           <div className="absolute bottom-4 text-gray-300 text-sm">
             {tickets ? (
               <p>
-                <a href={tickets.href}>Tickets: </a>
-                {tickets.price}
+                <a className="hover:underline" href={tickets.href}>
+                  Tickets
+                </a>
+                : {tickets.price}
               </p>
             ) : (
               <p>Free admission</p>

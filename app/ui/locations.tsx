@@ -1,11 +1,17 @@
 export const WestRoad = (
-  <a href="https://maps.app.goo.gl/6WvnfHyj1VCWE9Pb6">
+  <a
+    className="hover:underline"
+    href="https://maps.app.goo.gl/6WvnfHyj1VCWE9Pb6"
+  >
     West Road Concert Hall, Cambridge
   </a>
 );
 
 export const ClareChapel = (
-  <a href="https://maps.app.goo.gl/g8KcXuNnv4WjJDLS8">
+  <a
+    className="hover:underline"
+    href="https://maps.app.goo.gl/g8KcXuNnv4WjJDLS8"
+  >
     Clare College Chapel, Cambridge
   </a>
 );
@@ -20,7 +26,10 @@ export const TrinityChapel = (
 );
 
 export const TrinityOCR = (
-  <a className="hover:underline" href="http://trinitycollegechapel.com">
+  <a
+    className="hover:underline"
+    href="https://maps.app.goo.gl/4ZDtYt3HArt6S2P7A"
+  >
     Trinity College Old Combination Room, Cambridge
   </a>
 );

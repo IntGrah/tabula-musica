@@ -6,7 +6,7 @@ export default function MozartOperaScenes() {
   return (
     <Event
       basis="60%"
-      cutoff="max-lg:as-bg"
+      cutoff="max-sm:as-bg"
       src={Figaro}
       alt="Candles"
       date={new Date(2024, 2, 9, 20, 0)}

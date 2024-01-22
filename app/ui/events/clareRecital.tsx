@@ -14,7 +14,7 @@ export default function ClareRecital() {
       programme={
         <ol>
           <li>Prokofiev - 5 Melodies</li>
-          <li>Brahms - Violin Sonata No.1</li>
+          <li>Brahms - Violin Sonata No. 1</li>
         </ol>
       }
       performers={

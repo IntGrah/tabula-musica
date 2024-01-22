@@ -13,7 +13,7 @@ export default function OboeRecital() {
       title="Oboe Recital"
       programme={
         <ol>
-          <li>Albinoni - Concerto Op. 9 No. 2</li>
+          <li>Albinoni - Oboe Concerto Op. 9 No. 2</li>
           <li>Saint-Saëns - Oboe Sonata</li>
           <li>Poulenc - Oboe Sonata</li>
         </ol>

@@ -57,7 +57,7 @@ export default function Event({
           alt={alt}
         />
       </div>
-      <div className="relative min-w-80 h-full p-4 z-10">
+      <div className="relative min-w-72 h-full p-4 z-10">
         <time
           className="text-gray-300 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}
@@ -95,9 +95,8 @@ export default function Event({
             {tickets ? (
               <p>
                 <a className="hover:underline" href={tickets.href}>
-                  Tickets
+                  Tickets: {tickets.price}
                 </a>
-                : {tickets.price}
               </p>
             ) : (
               <p>Free admission</p>

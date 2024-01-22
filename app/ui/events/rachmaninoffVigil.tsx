@@ -29,8 +29,8 @@ export default function RachmaninoffVigil() {
       }}
       location={TrinityChapel}
     >
-      A performance of Sergei Rachmaninoff's stunning All-Night Vigil in support
-      of Cambridge Women's Aid.
+      A performance of Sergei Rachmaninoff&apos;s stunning All-Night Vigil in
+      support of Cambridge Women&apos;s Aid.
     </Event>
   );
 }

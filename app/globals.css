@@ -4,7 +4,7 @@
 
 @layer utilities {
   .as-bg {
-    position: absolute;
-    opacity: 20%;
+    @apply absolute;
+    @apply opacity-20;
   }
 }

@@ -1,4 +1,4 @@
-import { ClareChapel as CC } from "../locations";
+import { ClareChapel as CC } from "./locations";
 import Event from "./event";
 import ClareChapel from "/public/clare-chapel.jpg";
 

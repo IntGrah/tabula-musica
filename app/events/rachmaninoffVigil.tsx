@@ -1,4 +1,4 @@
-import { TrinityChapel } from "../locations";
+import { TrinityChapel } from "./locations";
 import Event from "./event";
 import Candles from "/public/candles.jpg";
 
@@ -6,7 +6,7 @@ export default function RachmaninoffVigil() {
   return (
     <Event
       basis="60%"
-      cutoff=""
+      cutoff="max-xs:as-bg"
       src={Candles}
       alt="Candles"
       date={new Date(2024, 0, 27, 20, 30)}

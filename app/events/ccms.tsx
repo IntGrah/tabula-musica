@@ -1,4 +1,4 @@
-import { WestRoad } from "../locations";
+import { WestRoad } from "./locations";
 import Event from "./event";
 import CCMS from "/public/ccms.jpg";
 

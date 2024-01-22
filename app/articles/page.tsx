@@ -1,4 +1,4 @@
-import Chopin from "./chopin";
+// import Chopin from "./chopin";
 import Liszt from "./liszt";
 
 export default function Articles() {

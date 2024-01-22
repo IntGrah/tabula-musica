@@ -1,4 +1,4 @@
-import { TrinityChapel } from "../locations";
+import { TrinityChapel } from "./locations";
 import Event from "./event";
 import PoulencPortrait from "/public/poulenc-portrait.jpg";
 

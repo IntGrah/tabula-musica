@@ -1,4 +1,4 @@
-import { ClareChapel } from "../locations";
+import { ClareChapel } from "./locations";
 import Event from "./event";
 import Figaro from "/public/figaro.jpg";
 

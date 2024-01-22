@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div>
-      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 2xl:px-96 pt-28 pb-8 font-bold tracking-wider bg-gradient-to-bl from-gray-600 to-gray-500">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 2xl:px-96 py-8 font-bold tracking-wider bg-gradient-to-bl from-gray-600 to-gray-500">
         <h1 className="py-2 text-4xl text-white uppercase decoration-2 hover:underline">
           Why play Liszt?
         </h1>

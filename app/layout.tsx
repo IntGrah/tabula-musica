@@ -1,5 +1,5 @@
-import "./globals.css";
-import Header from "./ui/header";
+import "@/app/globals.css";
+import Header from "@/app/ui/header";
 
 export default function RootLayout({
   children,
@@ -12,8 +12,8 @@ export default function RootLayout({
         <title>IntGrah &ndash; Page</title>
       </head>
       <body>
-        <div className="bg-gradient-radial from-violet-200/60 to-black/30 min-h-screen">
-          <Header />
+        <Header />
+        <div className="pt-24 bg-gradient-radial from-violet-200/60 to-black/30 min-h-screen">
           {children}
         </div>
       </body>

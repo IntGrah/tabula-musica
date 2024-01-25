@@ -16,8 +16,10 @@ const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
 interface EventProps {
   basis: string;
   cutoff: string;
-  src: StaticImageData;
-  alt: string;
+  image: {
+    src: StaticImageData;
+    alt: string;
+  };
   date: Date;
   title: React.ReactNode;
   children: React.ReactNode;
@@ -33,8 +35,7 @@ interface EventProps {
 export default function Event({
   basis,
   cutoff,
-  src,
-  alt,
+  image,
   date,
   title,
   children,
@@ -46,25 +47,26 @@ export default function Event({
   const [extra, setExtra] = useState(false);
   return (
     <div
-      className="flex flex-grow relative min-w-80 h-96 group overflow-hidden cursor-pointer transition-all duration-500"
+      className="flex grow relative min-w-80 h-96 group overflow-hidden cursor-pointer transition-all duration-500"
       style={{ flexBasis: basis }}
-      onClick={() => setExtra(!extra)}
     >
       <div className="overflow-hidden">
         <Image
-          className={`${cutoff} size-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
-          src={src}
-          alt={alt}
+          className={`${cutoff} h-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
+          {...image}
         />
       </div>
-      <div className="relative min-w-72 h-full p-4 z-10">
+      <div
+        className="relative min-w-72 p-4 z-10"
+        onClick={() => setExtra(!extra)}
+      >
         <time
           className="text-gray-300 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}
         >
           {date.toLocaleDateString(undefined, dateTimeFormatOptions)}
         </time>
-        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
+        <h1 className="py-1 text-2xl font-bold uppercase tracking-wider">
           {tickets ? (
             <Link className="decoration-2 hover:underline" href={tickets.href}>
               {title}
@@ -73,36 +75,34 @@ export default function Event({
             title
           )}
         </h1>
-        <div className="tracking-wide">
-          <p className="py-4">{children}</p>
-          <div className="relative">
-            <div
-              className={`absolute transition-all duration-300 ${
-                extra ? "-top-8 opacity-0" : "top-0"
-              }`}
-            >
-              {programme}
-            </div>
-            <div
-              className={`absolute transition-all duration-300 ${
-                extra ? "top-0" : "top-8 opacity-0"
-              }`}
-            >
-              {performers}
-            </div>
+        <p className="py-1 tracking-wide">{children}</p>
+        <div className="relative font-semibold">
+          <div
+            className={`absolute transition-all duration-300 ${
+              extra ? "-left-8 opacity-0" : "left-0"
+            }`}
+          >
+            {programme}
           </div>
-          <div className="absolute bottom-4 text-gray-300 text-sm">
-            {tickets ? (
-              <p>
-                <a className="hover:underline" href={tickets.href}>
-                  Tickets: {tickets.price}
-                </a>
-              </p>
-            ) : (
-              <p>Free admission</p>
-            )}
-            {location}
+          <div
+            className={`absolute transition-all duration-300 ${
+              extra ? "left-0" : "left-8 opacity-0"
+            }`}
+          >
+            {performers}
           </div>
+        </div>
+        <div className="absolute bottom-4 text-gray-300 text-sm">
+          {tickets ? (
+            <p>
+              <a className="hover:underline" href={tickets.href}>
+                Tickets: {tickets.price}
+              </a>
+            </p>
+          ) : (
+            <p>Free admission</p>
+          )}
+          {location}
         </div>
       </div>
     </div>

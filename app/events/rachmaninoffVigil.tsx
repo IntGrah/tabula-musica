@@ -7,8 +7,7 @@ export default function RachmaninoffVigil() {
     <Event
       basis="60%"
       cutoff="max-xs:as-bg"
-      src={Candles}
-      alt="Candles"
+      image={{ src: Candles, alt: "Candles" }}
       date={new Date(2024, 0, 27, 20, 30)}
       title="Rachmaninoff: All&#8209;Night&nbsp;Vigil"
       programme={

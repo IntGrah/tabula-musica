@@ -6,8 +6,7 @@ export default function WilmslowConcert() {
     <Event
       basis="50%"
       cutoff="max-lg:as-bg"
-      src={Spring}
-      alt="Watercolour depiction of Spring"
+      image={{ src: Spring, alt: "Watercolour depiction of Spring" }}
       date={new Date(2023, 5, 10, 19, 30)}
       title="Tchaikovsky Piano Concerto No. 1"
       programme={
@@ -30,7 +29,7 @@ export default function WilmslowConcert() {
       }
       tickets={{
         href: "https://www.ticketsource.co.uk/whats-on/wilmslow/the-evans-theatre-wilmslow-leisure-centre/wilmslow-symphony-orchestra-summer-concert/e-ororyq",
-        price: "£12, £10 (Concessions) £2 (Under 18)"
+        price: "£12, £10 (Concessions) £2 (Under 18)",
       }}
       location="Wilmslow Leisure Centre"
     >

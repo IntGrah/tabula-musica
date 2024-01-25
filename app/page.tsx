@@ -10,7 +10,7 @@ import Quote from "./ui/quote";
 
 export default function Page() {
   return (
-    <div>
+    <>
       <div className="relative h-80 md:h-96 lg:h-[32rem]">
         <Image
           className="size-full -z-10 object-cover opacity-20"
@@ -28,7 +28,6 @@ export default function Page() {
       </div>
       <Events />
       <div className="relative h-96">
-        <ViewMore />
         <SectionHeader id="articles">Articles</SectionHeader>
       </div>
       <Articles />
@@ -38,6 +37,6 @@ export default function Page() {
         <SectionHeader id="contact">Contact</SectionHeader>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }

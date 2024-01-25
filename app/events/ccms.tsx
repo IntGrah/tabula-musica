@@ -7,8 +7,7 @@ export default function CCMSConcert() {
     <Event
       basis="50%"
       cutoff="max-xl:as-bg"
-      src={CCMS}
-      alt="Clare College Cartoon"
+      image={{ src: CCMS, alt: "Clare College Cartoon" }}
       date={new Date(2024, 1, 1, 20, 0)}
       title="CCMS Lent Term Concert"
       programme={

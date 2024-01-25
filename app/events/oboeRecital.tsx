@@ -7,8 +7,7 @@ export default function OboeRecital() {
     <Event
       basis="40%"
       cutoff="max-xl:as-bg"
-      src={PoulencPortrait}
-      alt="Pencil drawing of Francis Poulenc"
+      image={{ src: PoulencPortrait, alt: "Pencil drawing of Francis Poulenc" }}
       date={new Date(2024, 1, 24, 20, 0)}
       title="Oboe Recital"
       programme={

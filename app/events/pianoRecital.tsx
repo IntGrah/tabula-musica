@@ -7,8 +7,7 @@ export default function PianoRecital() {
     <Event
       basis="50%"
       cutoff="max-xl:as-bg"
-      src={LisztSonata}
-      alt="Manuscript of Liszt Sonata"
+      image={{ src: LisztSonata, alt: "Manuscript of Liszt Sonata" }}
       date={new Date(2024, 0, 29, 20, 0)}
       title="Ravel, Chopin, Liszt"
       programme={

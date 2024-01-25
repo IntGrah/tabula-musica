@@ -4,10 +4,10 @@ export default function About() {
       <h1 className="py-4 text-center text-6xl md:text-8xl font-mono bold uppercase tracking-wider">
         About
       </h1>
-      <h2 className="py-4 text-center text-4xl font-mono bold uppercase tracking-wider">
+      <h2 className="py-4 text-center text-3xl md:text-4xl font-mono bold uppercase tracking-wider">
         This site is work in progress.
       </h2>
-      <div className="px-4 sm:px-8 md:px-16 lg:px-48 xl:px-96 text-center text-xl font-mono">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-48 xl:px-96 text-center text-base sm:text-lg md:text-xl font-mono">
         <p className="py-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
           odio possimus nobis maxime eaque, optio vitae. Eos quae fuga, impedit

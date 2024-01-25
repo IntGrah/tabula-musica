@@ -7,8 +7,7 @@ export default function ClareRecital() {
     <Event
       basis="40%"
       cutoff="max-lg:as-bg"
-      src={ClareChapel}
-      alt="Clare College Chapel"
+      image={{ src: ClareChapel, alt: "Clare College Chapel" }}
       date={new Date(2024, 0, 29, 13, 15)}
       title="Clare Lunchtime Recital"
       programme={

@@ -1,21 +1,12 @@
-import RachmaninoffVigil from "./rachmaninoffVigil";
-import CCMSConcert from "./ccms";
-import ClareRecital from "./clareRecital";
-import OboeRecital from "./oboeRecital";
-import PianoRecital from "./pianoRecital";
-import MozartOperaScenes from "./mozartOperaScenes";
+import Footer from "../ui/footer";
+import Events from "./events";
 
-export default function Events() {
+export default function EventsPage() {
   return (
-    <div
-      className={`flex flex-wrap bg-gray-800 text-white shadow-2xl transition-all`}
-    >
-      <RachmaninoffVigil />
-      <ClareRecital />
-      <PianoRecital />
-      <CCMSConcert />
-      <OboeRecital />
-      <MozartOperaScenes />
-    </div>
+    <>
+      <Events />
+      <div className="h-96"></div>
+      <Footer />
+    </>
   );
 }

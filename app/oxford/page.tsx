@@ -3,7 +3,7 @@ import Image from "next/image";
 const Balliol =
   "https://www.balliol.ox.ac.uk/themes/custom/frontend/images/balliol-logo.svg";
 
-export default function OxfordEmail() {
+export default function OxfordPage() {
   return (
     <div className="flex flex-col p-16">
       <div className="flex justify-between">

@@ -1,11 +1,5 @@
-// import Chopin from "./chopin";
-import Liszt from "./liszt";
+import Articles from "./articles";
 
-export default function Articles() {
-  return (
-    <div className="md:py-4 bg-gradient-to-r from-gray-500 to-gray-400 shadow-2xl">
-      <Liszt />
-      {/* <Chopin /> */}
-    </div>
-  );
+export default function ArticlesPage() {
+  return <Articles />;
 }

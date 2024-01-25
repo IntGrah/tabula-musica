@@ -1,6 +1,6 @@
 import Footer from "../ui/footer";
 
-export default function Page() {
+export default function LisztPage() {
   return (
     <>
       <div>

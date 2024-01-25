@@ -1,14 +1,13 @@
 import Image from "next/image";
 import DieKunstDerFuge from "/public/die-kunst-der-fuge.jpg";
-import Articles from "./articles/page";
-import ViewMore from "./ui/viewMore";
+import Articles from "./articles/articles";
 import SectionHeader from "./ui/sectionHeader";
 import About from "./ui/about";
-import Events from "./events/page";
+import Events from "./events/events";
 import Footer from "./ui/footer";
 import Quote from "./ui/quote";
 
-export default function Page() {
+export default function HomePage() {
   return (
     <>
       <div className="relative h-80 md:h-96 lg:h-[32rem]">

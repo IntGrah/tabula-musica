@@ -15,6 +15,11 @@ export default function Chopin() {
         </>
       }
       date={new Date(2024, 0, 22)}
-    />
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sapiente quod
+      tenetur facere natus architecto. Amet voluptates, vitae eveniet
+      exercitationem quae officia odio asperiores, quos id reprehenderit eos
+      dignissimos sequi?
+    </Article>
   );
 }

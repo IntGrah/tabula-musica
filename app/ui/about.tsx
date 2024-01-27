@@ -30,7 +30,7 @@ export default function About() {
             of it. The fundamental motivation for experimentation should never
             be a desire to produce works that are unconventional. Philosophical
             nihilism isn&apos;t exactly fun, but does it really matter if it
-            isn't?
+            isn&apos;t?
           </q>
         </p>
       </div>

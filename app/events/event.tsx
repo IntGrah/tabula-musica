@@ -35,7 +35,7 @@ interface EventProps {
 export default function Event({
   basis,
   cutoff,
-  image,
+  image: { src, alt },
   date,
   title,
   children,
@@ -53,7 +53,8 @@ export default function Event({
       <div className="overflow-hidden">
         <Image
           className={`${cutoff} h-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
-          {...image}
+          src={src}
+          alt={alt}
         />
       </div>
       <div

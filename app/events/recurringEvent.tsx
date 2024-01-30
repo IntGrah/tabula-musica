@@ -36,7 +36,7 @@ interface EventProps {
 export default function Event({
   basis,
   cutoff,
-  image,
+  image: { src, alt },
   date,
   title,
   children,
@@ -51,21 +51,24 @@ export default function Event({
       className="flex grow relative min-w-80 h-96 group overflow-hidden cursor-pointer transition-all duration-500"
       style={{ flexBasis: basis }}
     >
-      <div className={`min-w-32 h-full ${cutoff} overflow-hidden`}>
+      <div className="overflow-hidden">
         <Image
-          className="h-full object-cover transition-all duration-500 ease-out group-hover:scale-105"
-          src={image.src}
-          alt={image.alt}
+          className={`${cutoff} h-full object-cover transition-all duration-500 ease-out group-hover:scale-105`}
+          src={src}
+          alt={alt}
         />
       </div>
-      <div className="flex flex-col min-w-72 p-4 pr-8 z-10">
+      <div
+        className="relative min-w-72 p-4 z-10"
+        onClick={() => setExtra(!extra)}
+      >
         <time
           className="text-gray-300 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}
         >
-          {date.toLocaleDateString(undefined, dateTimeFormatOptions).replaceAll(",", "")}
+          {date.toLocaleDateString(undefined, dateTimeFormatOptions)}
         </time>
-        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
+        <h1 className="py-1 text-2xl font-bold uppercase tracking-wider">
           {tickets ? (
             <Link className="decoration-2 hover:underline" href={tickets.href}>
               {title}
@@ -74,12 +77,8 @@ export default function Event({
             title
           )}
         </h1>
-        <p className="tracking-wide">{children}</p>
-        <hr className="my-2 border-gray-300/10" />
-        <div
-          className="relative grow overflow-hidden"
-          onClick={() => setExtra(!extra)}
-        >
+        <p className="py-1 tracking-wide">{children}</p>
+        <div className="relative text-gray-200">
           <div
             className={`absolute transition-all duration-300 ${
               extra ? "-left-8 opacity-0" : "left-0"
@@ -95,8 +94,7 @@ export default function Event({
             {performers}
           </div>
         </div>
-        <hr className="my-2 border-gray-300/10" />
-        <div className="text-gray-300 text-sm">
+        <div className="absolute bottom-4 text-gray-300 text-sm">
           {tickets ? (
             <p>
               <a className="hover:underline" href={tickets.href}>

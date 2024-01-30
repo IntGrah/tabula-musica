@@ -1,5 +1,5 @@
-import { TrinityOCR } from "./locations";
-import Event from "./event";
+import { TrinityOCR } from "../locations";
+import Event from "../event";
 import LisztSonata from "/public/liszt-sonata.jpg";
 
 export default function PianoRecital() {

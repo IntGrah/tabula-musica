@@ -48,9 +48,6 @@ export default function HomePage() {
           src={TrinityCollege}
           alt="Trinity College, Cambridge"
         />
-        <span className="absolute top-8 left-8 p-4 text-center font-mono text-gray-600">
-          I crow, I see, I forget.
-        </span>
         <SectionHeader id="contact">Contact</SectionHeader>
       </div>
       <Footer />

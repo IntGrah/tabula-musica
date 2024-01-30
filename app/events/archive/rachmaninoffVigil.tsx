@@ -1,5 +1,5 @@
-import { TrinityChapel } from "./locations";
-import Event from "./event";
+import { TrinityChapel } from "../locations";
+import Event from "../event";
 import Candles from "/public/candles.jpg";
 
 export default function RachmaninoffVigil() {

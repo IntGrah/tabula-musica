@@ -6,13 +6,15 @@ export default function CCMSConcert() {
   return (
     <Event
       basis="50%"
-      cutoff="max-xl:as-bg"
+      cutoff="max-lg:as-bg"
       image={{ src: CCMS, alt: "Clare College Cartoon" }}
       date={new Date(2024, 1, 1, 20, 0)}
-      title="CCMS Lent Term Concert"
+      title="CCMS Lent Concert"
       programme={
         <ol>
-          <li>Prokofiev - Symphony No. 1</li>
+          <li>
+            Prokofiev - Symphony No. 1 <q>Classical</q>
+          </li>
           <li>W. A. Mozart - Horn Concerto No. 4</li>
           <li>
             V. Williams - <i>The Wasps: Overture</i>
@@ -25,7 +27,7 @@ export default function CCMSConcert() {
       }
       performers={
         <ol>
-          <li>Clare College Music Society Orchestra</li>
+          <li>Clare College Orchestra</li>
           <li>Horn - Isaac Chan</li>
           <li>Baritone - Julian Manresa</li>
           <li>Mezzo-Soprano - Emma Caroe</li>

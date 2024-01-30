@@ -1,19 +1,19 @@
-import { ClareChapel as CC } from "./locations";
-import Event from "./event";
-import ClareChapel from "/public/clare-chapel.jpg";
+import { ClareChapel } from "../locations";
+import Event from "../event";
+import ClareChapelInterior from "/public/clare-chapel-interior.jpg";
 
 export default function ClareRecital() {
   return (
     <Event
       basis="40%"
       cutoff="max-lg:as-bg"
-      image={{ src: ClareChapel, alt: "Clare College Chapel" }}
+      image={{ src: ClareChapelInterior, alt: "Clare College Chapel" }}
       date={new Date(2024, 0, 29, 13, 15)}
       title="Clare Lunchtime Recital"
       programme={
         <ol>
           <li>Prokofiev - 5 Melodies</li>
-          <li>Brahms - Violin Sonata No. 1</li>
+          <li>Brahms - Violin Sonata No. 1 in G major</li>
         </ol>
       }
       performers={
@@ -22,7 +22,7 @@ export default function ClareRecital() {
           <li>Piano - Raphael Herberg</li>
         </ol>
       }
-      location={CC}
+      location={ClareChapel}
     >
       Weekly lunchtime recitals at Clare Chapel.
     </Event>

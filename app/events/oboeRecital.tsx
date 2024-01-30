@@ -1,13 +1,13 @@
 import { TrinityChapel } from "./locations";
 import Event from "./event";
-import PoulencPortrait from "/public/poulenc-portrait.jpg";
+import ChamberMusic from "/public/chamber-music.jpg";
 
 export default function OboeRecital() {
   return (
     <Event
       basis="40%"
       cutoff="max-xl:as-bg"
-      image={{ src: PoulencPortrait, alt: "Pencil drawing of Francis Poulenc" }}
+      image={{ src: ChamberMusic, alt: "Pencil drawing of Francis Poulenc" }}
       date={new Date(2024, 1, 24, 20, 0)}
       title="Oboe Recital"
       programme={
@@ -20,13 +20,13 @@ export default function OboeRecital() {
       performers={
         <ol>
           <li>Oboe - Edward Clynes</li>
-          <li>Piano, Harpsichord - Jeremy Chen</li>
+          <li>Piano - Jeremy Chen</li>
         </ol>
       }
       location={TrinityChapel}
     >
-      Edward Clynes plays Albinoni&apos;s most famous Oboe concerto, and two
-      French sonatas.
+      Edward Clynes plays Albinoni&apos;s D minor Oboe concerto, followed by
+      Saint-Saëns and Poulenc Oboe sonatas.
     </Event>
   );
 }

@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html>
       <head>
-        <title>IntGrah &ndash; Page</title>
+        <title>Tabula Musica</title>
       </head>
       <body>
         <Header />

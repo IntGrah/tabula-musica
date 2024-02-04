@@ -23,10 +23,8 @@ export default function OperaScenes() {
           <li>Director - Isaac Chan</li>
         </ol>
       }
-      tickets={{
-        href: "https://www.adcticketing.com/whats-on",
-        price: "£10, £6 (Concessions)",
-      }}
+      tickets="https://www.adcticketing.com/whats-on"
+      admission="£10, £6 (Concessions)"
       location={ClareChapel}
     >
       Scenes from Mozart Operas.

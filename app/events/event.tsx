@@ -3,6 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Location } from "./locations";
 
 const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   weekday: "short",
@@ -26,11 +27,9 @@ interface EventProps {
   children: React.ReactNode;
   programme: React.ReactNode;
   performers: React.ReactNode;
-  tickets?: {
-    href: string;
-    price: React.ReactNode;
-  };
-  location: React.ReactNode;
+  tickets?: string;
+  admission?: React.ReactNode;
+  location: Location;
 }
 
 export default function Event({
@@ -43,12 +42,13 @@ export default function Event({
   programme,
   performers,
   tickets,
+  admission = "Free admission",
   location,
 }: EventProps) {
   const [extra, setExtra] = useState(false);
   return (
     <div
-      className="flex grow relative min-w-80 h-96 group overflow-hidden cursor-pointer transition-all duration-500"
+      className="flex grow relative min-w-80 h-96 2xl:h-[28rem] group overflow-hidden cursor-pointer transition-all duration-500"
       style={{ flexBasis: basis }}
     >
       <div className={`min-w-32 h-full ${cutoff} overflow-hidden`}>
@@ -58,16 +58,18 @@ export default function Event({
           alt={image.alt}
         />
       </div>
-      <div className="flex flex-col min-w-72 p-4 pr-8 z-10">
+      <div className="flex flex-col size-full min-w-72 pl-4 pr-8 py-4 z-10">
         <time
           className="text-gray-300 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}
         >
-          {date.toLocaleDateString(undefined, dateTimeFormatOptions).replaceAll(",", "")}
+          {date
+            .toLocaleDateString(undefined, dateTimeFormatOptions)
+            .replace(",", "")}
         </time>
         <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
           {tickets ? (
-            <Link className="decoration-2 hover:underline" href={tickets.href}>
+            <Link className="decoration-2 hover:underline" href={tickets}>
               {title}
             </Link>
           ) : (
@@ -75,7 +77,7 @@ export default function Event({
           )}
         </h1>
         <p className="tracking-wide">{children}</p>
-        <hr className="my-2 border-gray-300/10" />
+        <hr className="my-1 border-gray-300/10" />
         <div
           className="relative grow overflow-hidden"
           onClick={() => setExtra(!extra)}
@@ -94,19 +96,22 @@ export default function Event({
           >
             {performers}
           </div>
+          <span className="absolute left-full">More</span>
         </div>
-        <hr className="my-2 border-gray-300/10" />
+        <hr className="my-1 border-gray-300/10" />
         <div className="text-gray-300 text-sm">
-          {tickets ? (
-            <p>
-              <a className="hover:underline" href={tickets.href}>
-                Tickets: {tickets.price}
+          <p>
+            {tickets ? (
+              <a className="hover:underline" href={tickets}>
+                Tickets: {admission}
               </a>
-            </p>
-          ) : (
-            <p>Free admission</p>
-          )}
-          {location}
+            ) : (
+              admission
+            )}
+          </p>
+          <a className="hover:underline" href={location.href}>
+            {location.name}
+          </a>
         </div>
       </div>
     </div>

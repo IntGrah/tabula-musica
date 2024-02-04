@@ -5,7 +5,7 @@ import Moonrise from "/public/moonrise.jpg";
 export default function TrinityOrchestra() {
   return (
     <Event
-      basis="50%"
+      basis="60%"
       cutoff="max-md:as-bg"
       image={{
         src: Moonrise,

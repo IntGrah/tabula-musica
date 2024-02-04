@@ -27,11 +27,12 @@ export default function WilmslowConcert() {
           <li>Conductor - Stephen Threlfall</li>
         </ol>
       }
-      tickets={{
-        href: "https://www.ticketsource.co.uk/whats-on/wilmslow/the-evans-theatre-wilmslow-leisure-centre/wilmslow-symphony-orchestra-summer-concert/e-ororyq",
-        price: "£12, £10 (Concessions) £2 (Under 18)",
+      tickets="https://www.ticketsource.co.uk/whats-on/wilmslow/the-evans-theatre-wilmslow-leisure-centre/wilmslow-symphony-orchestra-summer-concert/e-ororyq"
+      admission="£12, £10 (Concessions) £2 (Under 18)"
+      location={{
+        href: "https://maps.app.goo.gl/yZbJT9DaHBp1on6bA",
+        name: "Wilmslow Leisure Centre",
       }}
-      location="Wilmslow Leisure Centre"
     >
       The Wilmslow Symphony Orchestra invites soloist Jeremy Chen for its 76th
       concert season.

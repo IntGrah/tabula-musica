@@ -6,31 +6,26 @@ export default function About() {
       </h1>
       <div className="px-4 sm:px-8 md:px-16 lg:px-48 xl:px-96 text-center text-base sm:text-lg md:text-xl font-mono">
         <p className="py-4">
-          I (the author of the page) am a Computer Science undergraduate at the
-          University of Cambridge, which is an awkward position to be in, as I
-          had studied music full time up until then. My interests primarily lie
-          in the intersection of computer algorithms and music, and a majority
-          would say that these are mutually exclusive subjects. But actually
-          there are plenty of things you can discover in this weird conjunction
-          of specialisms. In the future I may publicise a few projects on this
-          page, which include, but are not limited to: artificial intelligence
-          aided musical composition, harmonic and structural analysis, and
-          feature guided interpolation.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quo
+          quaerat ea quisquam, nesciunt illo. Saepe quasi recusandae reiciendis.
+          Pariatur aut dolorum debitis saepe natus placeat beatae atque
+          perspiciatis earum. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Sed quo quaerat ea quisquam, nesciunt illo. Saepe
+          quasi recusandae reiciendis. Pariatur aut dolorum debitis saepe natus
+          placeat beatae atque perspiciatis earum.
         </p>
         <h1 className="py-4 text-center text-2xl md:text-3xl font-mono bold uppercase tracking-wider">
           Good to know
         </h1>
         <p className="py-4">
           <q className="italic">
-            Any recommendations of Jazz music must be well grounded, or will
-            simply not be entertained. Nor will anything related to popular
-            music, specifically, simplistic rubbish which is the product of the
-            capitalisation and industrialisation of music. Faith only has done
-            justice to its place in art and even then, we should have grown out
-            of it. The fundamental motivation for experimentation should never
-            be a desire to produce works that are unconventional. Philosophical
-            nihilism isn&apos;t exactly fun, but does it really matter if it
-            isn&apos;t?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
+            dolor commodi fugit fugiat corrupti dolorem consequatur dolore
+            obcaecati ad, sed itaque quaerat facere reprehenderit culpa officia
+            ducimus vero odit deleniti? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Facilis odio modi nostrum blanditiis dignissimos
+            ipsa ratione reiciendis amet dolorem cupiditate? Iusto, facilis
+            fugit consequuntur quia vero doloremque eos eum ipsa.
           </q>
         </p>
       </div>

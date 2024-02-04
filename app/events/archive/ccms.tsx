@@ -1,5 +1,5 @@
-import { WestRoad } from "./locations";
-import Event from "./event";
+import { WestRoad } from "../locations";
+import Event from "../event";
 import CCMS from "/public/ccms.jpg";
 
 export default function CCMSConcert() {
@@ -34,10 +34,8 @@ export default function CCMSConcert() {
           <li>Soprano - Emma Paterson</li>
         </ol>
       }
-      tickets={{
-        href: "https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert",
-        price: "£10, £6 (Concessions)",
-      }}
+      tickets="https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert"
+      admission="£10, £6 (Concessions)"
       location={WestRoad}
     >
       Clare College Music Society returns to West Road Concert Hall with

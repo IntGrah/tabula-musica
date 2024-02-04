@@ -23,7 +23,6 @@ export default function HomePage() {
         >
           Home
         </h1>
-        <Quote />
         <SectionHeader id="events">Events</SectionHeader>
       </div>
       <Events />
@@ -31,23 +30,14 @@ export default function HomePage() {
         <SectionHeader id="articles">Articles</SectionHeader>
       </div>
       <Articles />
-      <div className="relative h-72">
-        <span className="absolute top-24 right-24 p-4 text-center text-lg font-mono text-gray-800">
-          <q>
-            Hang on tight, I may have
-            <br />
-            a solution to a problem that
-            <br />I have imposed on you myself!
-          </q>
-        </span>
-      </div>
+      <div className="h-72"></div>
       <About />
       <div className="relative h-96">
-        <Image
+        {/* <Image
           className="size-full -z-10 object-cover opacity-20"
           src={TrinityCollege}
           alt="Trinity College, Cambridge"
-        />
+        /> */}
         <SectionHeader id="contact">Contact</SectionHeader>
       </div>
       <Footer />

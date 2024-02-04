@@ -22,10 +22,8 @@ export default function RachmaninoffVigil() {
           <li>Trinity College Music Society Orchestra</li>
         </ol>
       }
-      tickets={{
-        href: "https://www.eventbrite.com/e/rachmaninoff-all-night-vigil-tickets-790962037747",
-        price: "By donation only",
-      }}
+      tickets="https://www.eventbrite.com/e/rachmaninoff-all-night-vigil-tickets-790962037747"
+      admission="Admission by donation only"
       location={TrinityChapel}
     >
       A performance of Sergei Rachmaninoff&apos;s stunning All-Night Vigil in

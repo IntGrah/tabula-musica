@@ -29,8 +29,7 @@ export default function LoweEnsemble() {
       location={TrinityChapel}
     >
       A Baroque ensemble comprising five siblings studying at Girton College,
-      the Royal College of Music and Trinity Laban Conservatoire, perform a
-      programme of much-loved music by French composers.
+      the Royal College of Music and Trinity Laban Conservatoire.
     </Event>
   );
 }

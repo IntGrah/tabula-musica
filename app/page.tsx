@@ -11,7 +11,7 @@ import Quote from "./ui/quote";
 export default function HomePage() {
   return (
     <>
-      <div className="relative h-80 md:h-96 lg:h-[32rem]">
+      <div className="relative h-80 md:h-96">
         <Image
           className="size-full -z-10 object-cover opacity-20"
           src={DieKunstDerFuge}

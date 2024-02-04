@@ -6,7 +6,7 @@ export default function CUOConcert() {
   return (
     <Event
       basis="60%"
-      cutoff="max-lg:as-bg"
+      cutoff="max-2xl:as-bg"
       image={{ src: Rachmaninoff, alt: "Rachmaninoff at Steinway Piano" }}
       date={new Date(2024, 1, 10, 19, 30)}
       title="Rhapsody on a theme of Paganini"

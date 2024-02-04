@@ -65,7 +65,7 @@ export default function Event({
         >
           {date
             .toLocaleDateString(undefined, dateTimeFormatOptions)
-            .replace(",", "")}
+            .replaceAll(",", "")}
         </time>
         <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
           {tickets ? (

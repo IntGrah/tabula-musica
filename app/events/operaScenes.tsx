@@ -6,7 +6,7 @@ export default function OperaScenes() {
   return (
     <Event
       basis="50%"
-      cutoff="max-lg:as-bg"
+      cutoff="max-sm:as-bg"
       image={{ src: Figaro, alt: "The Marriage of Figaro" }}
       date={new Date(2024, 2, 9, 20, 0)}
       title="Mozart Opera Scenes Gala"

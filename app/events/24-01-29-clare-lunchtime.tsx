@@ -1,8 +1,8 @@
-import { ClareChapel } from "../locations";
-import Event from "../event";
+import { ClareChapel } from "./locations";
+import Event from "./event";
 import ClareChapelInterior from "/public/clare-chapel-interior.jpg";
 
-export default function ClareRecital() {
+export default function ClareLunchtime() {
   return (
     <Event
       basis="40%"

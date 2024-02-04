@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import Header from "@/app/ui/header";
+import Footer from "@/app/ui/footer";
 
 export default function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default function RootLayout({
         <main className="pt-20 bg-gradient-radial from-violet-200/60 to-black/30 min-h-screen">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

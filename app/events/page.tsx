@@ -3,10 +3,9 @@ import Events from "./events";
 
 export default function EventsPage() {
   return (
-    <>
+    <div>
       <Events />
       <div className="h-96"></div>
-      <Footer />
-    </>
+    </div>
   );
 }

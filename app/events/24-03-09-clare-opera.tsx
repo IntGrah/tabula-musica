@@ -2,7 +2,7 @@ import { ClareChapel } from "./locations";
 import Event from "./event";
 import Figaro from "/public/figaro.jpg";
 
-export default function OperaScenes() {
+export default function ClareOpera() {
   return (
     <Event
       basis="50%"

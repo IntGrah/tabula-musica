@@ -1,8 +1,8 @@
-import { WestRoad } from "../locations";
-import Event from "../event";
+import { WRCH } from "./locations";
+import Event from "./event";
 import CCMS from "/public/ccms.jpg";
 
-export default function CCMSConcert() {
+export default function WRCHCCMS() {
   return (
     <Event
       basis="50%"
@@ -36,7 +36,7 @@ export default function CCMSConcert() {
       }
       tickets="https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert"
       admission="£10, £6 (Concessions)"
-      location={WestRoad}
+      location={WRCH}
     >
       Clare College Music Society returns to West Road Concert Hall with
       Prokofiev, Mozart and great English choral works.

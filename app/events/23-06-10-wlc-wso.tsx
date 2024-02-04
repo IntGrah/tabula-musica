@@ -1,7 +1,7 @@
-import Event from "../event";
+import Event from "./event";
 import Spring from "/public/spring.jpg";
 
-export default function WilmslowConcert() {
+export default function WLCWSO() {
   return (
     <Event
       basis="50%"

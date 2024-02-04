@@ -1,8 +1,8 @@
-import { TrinityChapel } from "./locations";
+import { GirtonChapel } from "./locations";
 import Event from "./event";
 import Lowe from "/public/lowe-ensemble.jpg";
 
-export default function LoweEnsemble() {
+export default function GirtonLowe() {
   return (
     <Event
       basis="50%"
@@ -26,7 +26,7 @@ export default function LoweEnsemble() {
           <li>Soprano, Harpsichord - Myriam Lowe</li>
         </ol>
       }
-      location={TrinityChapel}
+      location={GirtonChapel}
     >
       A Baroque ensemble comprising five siblings studying at Girton College,
       the Royal College of Music and Trinity Laban Conservatoire.

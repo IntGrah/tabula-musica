@@ -3,11 +3,6 @@ export interface Location {
   name: React.ReactNode;
 }
 
-export const WestRoad: Location = {
-  href: "https://maps.app.goo.gl/6WvnfHyj1VCWE9Pb6",
-  name: "West Road Concert Hall, Cambridge",
-};
-
 export const ClareChapel: Location = {
   href: "https://maps.app.goo.gl/g8KcXuNnv4WjJDLS8",
   name: "Clare College Chapel, Cambridge",
@@ -26,4 +21,9 @@ export const TrinityChapel: Location = {
 export const TrinityOCR: Location = {
   href: "https://maps.app.goo.gl/4ZDtYt3HArt6S2P7A",
   name: "Trinity College Old Combination Room, Cambridge",
+};
+
+export const WRCH: Location = {
+  href: "https://maps.app.goo.gl/6WvnfHyj1VCWE9Pb6",
+  name: "West Road Concert Hall, Cambridge",
 };

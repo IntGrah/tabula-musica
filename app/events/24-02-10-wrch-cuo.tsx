@@ -1,8 +1,8 @@
-import { WestRoad } from "./locations";
+import { WRCH } from "./locations";
 import Event from "./event";
 import Rachmaninoff from "/public/rachmaninoff-steinway.jpg";
 
-export default function CUOConcert() {
+export default function WRCHCUO() {
   return (
     <Event
       basis="60%"
@@ -31,7 +31,7 @@ export default function CUOConcert() {
       }
       tickets="https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert"
       admission="£10, £6 (Concessions)"
-      location={WestRoad}
+      location={WRCH}
     >
       Two flagship University ensembles, the Cambridge University Orchestra and
       Chamber Choir, join under the baton of Bertie Baigent, along with the

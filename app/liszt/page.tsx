@@ -94,7 +94,6 @@ export default function LisztPage() {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,12 +1,9 @@
 import Image from "next/image";
 import DieKunstDerFuge from "/public/die-kunst-der-fuge.jpg";
-import TrinityCollege from "/public/trinity-college.jpg";
 import Articles from "./articles/articles";
 import SectionHeader from "./ui/sectionHeader";
 import About from "./ui/about";
 import Events from "./events/events";
-import Footer from "./ui/footer";
-import Quote from "./ui/quote";
 
 export default function HomePage() {
   return (
@@ -33,14 +30,8 @@ export default function HomePage() {
       <div className="h-72"></div>
       <About />
       <div className="relative h-96">
-        {/* <Image
-          className="size-full -z-10 object-cover opacity-20"
-          src={TrinityCollege}
-          alt="Trinity College, Cambridge"
-        /> */}
         <SectionHeader id="contact">Contact</SectionHeader>
       </div>
-      <Footer />
     </>
   );
 }

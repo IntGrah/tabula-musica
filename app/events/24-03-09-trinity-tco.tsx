@@ -2,7 +2,7 @@ import { TrinityChapel } from "./locations";
 import Event from "./event";
 import Moonrise from "/public/moonrise.jpg";
 
-export default function TrinityOrchestra() {
+export default function TrinityTCO() {
   return (
     <Event
       basis="60%"

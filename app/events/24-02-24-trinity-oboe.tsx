@@ -2,7 +2,7 @@ import { TrinityChapel } from "./locations";
 import Event from "./event";
 import ChamberMusic from "/public/chamber-music.jpg";
 
-export default function OboeRecital() {
+export default function TrinityOboe() {
   return (
     <Event
       basis="40%"

@@ -1,6 +1,10 @@
-import "@/app/globals.css";
-import Header from "@/app/ui/header";
-import Footer from "@/app/ui/footer";
+import "./globals.css";
+import Header from "./ui/header";
+import Footer from "./ui/footer";
+import Subtitle from "./ui/subtitle";
+import SectionHeader from "./ui/section-header";
+import Image from "next/image";
+import DieKunstDerFuge from "/public/die-kunst-der-fuge.jpg";
 
 export default function RootLayout({
   children,
@@ -14,6 +18,15 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
+        <div className="relative h-96 md:h-[28rem]">
+          <Image
+            className="size-full object-cover opacity-20"
+            src={DieKunstDerFuge}
+            alt="Manuscript of The Art of Fugue"
+          />
+          <Subtitle />
+          <SectionHeader id="events">Events</SectionHeader>
+        </div>
         <main className="bg-gradient-radial from-amber-200/60 to-amber-100/50 min-h-screen">
           {children}
         </main>

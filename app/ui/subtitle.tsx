@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import TabulaMusica from "/public/tabula-musica.png";
 
-export default function Home() {
+export default function Subtitle() {
   const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScroll(window.scrollY);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  });
+  }, []);
 
   return (
     <div

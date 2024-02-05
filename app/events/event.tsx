@@ -48,7 +48,7 @@ export default function Event({
   const [extra, setExtra] = useState(false);
   return (
     <div
-      className="flex grow relative min-w-80 h-96 2xl:h-[28rem] group overflow-hidden cursor-pointer transition-all duration-500"
+      className="flex grow relative min-w-80 max-w-7xl h-96 2xl:h-[28rem] group overflow-hidden cursor-pointer transition-all duration-500"
       style={{ flexBasis: basis }}
     >
       <div className={`min-w-32 h-full ${cutoff} overflow-hidden`}>
@@ -58,7 +58,7 @@ export default function Event({
           alt={image.alt}
         />
       </div>
-      <div className="flex flex-col size-full min-w-72 pl-4 pr-8 py-4 z-10">
+      <div className="flex flex-col size-full min-w-80 pl-4 pr-8 py-4 z-10">
         <time
           className="text-gray-300 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}
@@ -79,7 +79,7 @@ export default function Event({
         <p className="tracking-wide">{children}</p>
         <hr className="my-1 border-gray-300/10" />
         <div
-          className="relative grow overflow-hidden"
+          className="relative grow min-h-fit text-gray-200/90"
           onClick={() => setExtra(!extra)}
         >
           <div
@@ -96,7 +96,6 @@ export default function Event({
           >
             {performers}
           </div>
-          <span className="absolute left-full">More</span>
         </div>
         <hr className="my-1 border-gray-300/10" />
         <div className="text-gray-300 text-sm">

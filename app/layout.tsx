@@ -14,7 +14,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main className="pt-20 bg-gradient-radial from-violet-200/60 to-black/30 min-h-screen">
+        <main className="bg-gradient-radial from-amber-200/60 to-amber-100/50 min-h-screen">
           {children}
         </main>
         <Footer />

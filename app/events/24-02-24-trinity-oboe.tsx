@@ -5,7 +5,7 @@ import ChamberMusic from "/public/chamber-music.jpg";
 export default function TrinityOboe() {
   return (
     <Event
-      basis="40%"
+      basis="30%"
       cutoff="max-xl:as-bg"
       image={{ src: ChamberMusic, alt: "Pencil drawing of Francis Poulenc" }}
       date={new Date(2024, 1, 24, 20, 0)}

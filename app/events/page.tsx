@@ -6,7 +6,7 @@ import TrinityTCO from "./24-03-09-trinity-tco";
 
 export default function Events() {
   return (
-    <div className="flex flex-wrap bg-gray-800 text-white shadow-2xl transition-all">
+    <div className="flex flex-wrap bg-gray-800/95 text-white shadow-2xl transition-all">
       <WRCHCUO />
       <TrinityOboe />
       <GirtonLowe />

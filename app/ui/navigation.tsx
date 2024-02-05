@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <nav className="flex md:gap-4 xl:gap-8 justify-center h-12 text-gray-200 text-xs sm:text-sm xl:text-base tracking-wider text-center">
+    <nav className="flex md:gap-4 xl:gap-8 justify-center transition-colors duration-500 hover:bg-amber-100/40">
       <NavLink href="/#home">Home</NavLink>
       <NavLink href="/#events">Events</NavLink>
       <NavLink href="/#articles">Articles</NavLink>
@@ -20,7 +20,7 @@ export function NavLink({
   href: string;
 }) {
   return (
-    <Link className="w-24 py-4 transition-colors hover:text-white" href={href}>
+    <Link className="w-24 py-3 text-center text-sm sm:text-sm xl:text-base transition-colors text-cyan-800 hover:text-cyan-600 tracking-wider" href={href}>
       {children}
     </Link>
   );

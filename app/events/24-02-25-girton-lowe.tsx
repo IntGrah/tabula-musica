@@ -5,7 +5,7 @@ import Lowe from "/public/lowe-ensemble.jpg";
 export default function GirtonLowe() {
   return (
     <Event
-      basis="50%"
+      basis="40%"
       cutoff="max-xl:as-bg"
       image={{ src: Lowe, alt: "Lowe Ensemble" }}
       date={new Date(2024, 1, 25, 14, 30)}

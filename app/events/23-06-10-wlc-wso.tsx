@@ -28,7 +28,7 @@ export default function WLCWSO() {
         </ol>
       }
       tickets="https://www.ticketsource.co.uk/whats-on/wilmslow/the-evans-theatre-wilmslow-leisure-centre/wilmslow-symphony-orchestra-summer-concert/e-ororyq"
-      admission="£12, £10 (Concessions) £2 (Under 18)"
+      admission="£12 | £10 (Concessions) | £2 (Under 18)"
       location={{
         href: "https://maps.app.goo.gl/yZbJT9DaHBp1on6bA",
         name: "Wilmslow Leisure Centre",

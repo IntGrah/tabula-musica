@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html className="scroll-smooth">
       <head>
         <title>Tabula Musica</title>
       </head>

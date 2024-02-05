@@ -5,14 +5,14 @@ import Figaro from "/public/figaro.jpg";
 export default function ClareOpera() {
   return (
     <Event
-      basis="40%"
+      basis="50%"
       cutoff="max-md:as-bg"
       image={{ src: Figaro, alt: "The Marriage of Figaro" }}
       date={new Date(2024, 2, 9, 20, 0)}
       title="Mozart Opera Scenes Gala"
       programme={
         <ol>
-          Selections
+          <i>Selections from</i>
           <li>
             W. A. Mozart - <i>Don Giovanni</i>
           </li>
@@ -28,7 +28,7 @@ export default function ClareOpera() {
         </ol>
       }
       tickets="https://www.adcticketing.com/whats-on"
-      admission="£10, £6 (Concessions)"
+      admission="£10 | £6 (Concessions)"
       location={ClareChapel}
     >
       Scenes from Mozart Operas.

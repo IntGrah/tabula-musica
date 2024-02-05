@@ -58,7 +58,7 @@ export default function Event({
           alt={image.alt}
         />
       </div>
-      <div className="flex flex-col size-full min-w-80 pl-4 pr-8 py-4 z-10">
+      <div className="flex flex-col size-full min-w-80 px-4 py-4 z-10">
         <time
           className="text-gray-300 font-mono uppercase tracking-wider"
           dateTime={date.toISOString()}
@@ -76,7 +76,7 @@ export default function Event({
             title
           )}
         </h1>
-        <p className="tracking-wide">{children}</p>
+        <p className="">{children}</p>
         <hr className="my-1 border-gray-300/10" />
         <div
           className="relative grow min-h-fit text-gray-200/90"

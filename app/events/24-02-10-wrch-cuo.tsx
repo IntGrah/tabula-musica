@@ -29,13 +29,12 @@ export default function WRCHCUO() {
           <li>Conductor - Bertie Paigent</li>
         </ol>
       }
-      tickets="https://www.cmp.cam.ac.uk/rhapsody"
-      admission="£10, £6 (Concessions)"
+      tickets="https://www.saffronhall.com/choose-seats?instance=175241AGRQBKQKLMHKSQPKLPPDSHPSLLH"
+      admission="£10 | £6 (Concessions)"
       location={WRCH}
     >
-      Two flagship University ensembles join under the baton of Bertie Baigent
-      along with the winner of the 2022-2023 Concerto Competition, Madeleine
-      Brown.
+      Two flagship University ensembles under the baton of Bertie Baigent, along
+      with the 2022-2023 Concerto Competition winner, Madeleine Brown.
     </Event>
   );
 }

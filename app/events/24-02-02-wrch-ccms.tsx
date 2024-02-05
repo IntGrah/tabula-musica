@@ -35,7 +35,7 @@ export default function WRCHCCMS() {
         </ol>
       }
       tickets="https://www.adcticketing.com/whats-on/concert/ccms-lent-term-concert"
-      admission="£10, £6 (Concessions)"
+      admission="£10 | £6 (Concessions)"
       location={WRCH}
     >
       Clare College Music Society returns to West Road Concert Hall with

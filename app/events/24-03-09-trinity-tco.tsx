@@ -5,7 +5,7 @@ import Moonrise from "/public/moonrise.jpg";
 export default function TrinityTCO() {
   return (
     <Event
-      basis="60%"
+      basis="50%"
       cutoff="max-md:as-bg"
       image={{
         src: Moonrise,

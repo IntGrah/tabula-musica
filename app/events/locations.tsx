@@ -13,6 +13,11 @@ export const GirtonChapel: Location = {
   name: "Girton College Chapel, Cambridge",
 };
 
+export const GirtonHall: Location = {
+  href: "https://maps.app.goo.gl/N8TJoAMZe2ji94n3A",
+  name: "Girton College Great Hall, Cambridge",
+};
+
 export const TrinityChapel: Location = {
   href: "https://maps.app.goo.gl/Bc62zV1P13eXP3cKA",
   name: "Trinity College Chapel, Cambridge",

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import DieKunstDerFuge from "/public/die-kunst-der-fuge.jpg";
+import Home from "./ui/home";
 import SectionHeader from "./ui/section-header";
 import About from "./ui/about";
 import Events from "./events/page";
 import Articles from "./articles/page";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <div className="relative h-96 md:h-[28rem]">
@@ -14,16 +15,7 @@ export default function Home() {
           src={DieKunstDerFuge}
           alt="Manuscript of The Art of Fugue"
         />
-        <h1
-          id="home"
-          className="absolute top-0 pt-32 pl-8 text-6xl font-mono uppercase tracking-widest text-violet-950/80"
-        >
-          Home
-        </h1>
-
-        <h2 className="absolute top-0 pt-48 pl-10 tracking-wide text-violet-900/80">
-          Cambridge-based Music Magazine
-        </h2>
+        <Home />
         <SectionHeader id="events">Events</SectionHeader>
       </div>
       <Events />
@@ -31,7 +23,9 @@ export default function Home() {
         <SectionHeader id="articles">Articles</SectionHeader>
       </div>
       <Articles />
-      <div className="h-72"></div>
+      <div className="relative h-72">
+        <div id="about" className="absolute size-full bottom-0"></div>
+      </div>
       <About />
       <div className="relative h-96">
         <SectionHeader id="contact">Contact</SectionHeader>

@@ -15,7 +15,7 @@ export default function About() {
           placeat beatae atque perspiciatis earum.
         </p>
         <h1 className="py-4 text-center text-2xl md:text-3xl font-mono bold uppercase tracking-wider">
-          Good to know
+          Also
         </h1>
         <p className="py-4">
           <q className="italic">

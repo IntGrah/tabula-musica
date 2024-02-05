@@ -35,7 +35,7 @@ export default function Article({
           alt={alt}
         />
       </div>
-      <div className="relative min-w-72 xl:max-w-2xl p-8 font-bold tracking-wider bg-gradient-to-r from-teal-950/50 to-teal-950/60">
+      <div className="relative min-w-72 xl:max-w-2xl p-8 font-bold tracking-wider bg-gray-800/80">
         <h1 className="py-2 text-3xl sm:text-4xl text-white uppercase decoration-2 group-hover:underline">
           {title}
         </h1>

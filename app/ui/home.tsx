@@ -1,12 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import TabulaMusica from "/public/tabula-musica.png";
 
 export default function Home() {
-  const [scroll, setScroll] = useState(window.scrollY);
-  window.addEventListener("scroll", () => setScroll(window.scrollY));
+  const [scroll, setScroll] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => setScroll(window.scrollY);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div

@@ -12,8 +12,7 @@ export default function Chopin() {
       date={new Date(2024, 0, 22)}
     >
       Vel sapiente quod tenetur facere natus architecto. Amet voluptates, vitae
-      eveniet exercitationem quae officia odio asperiores, quos id reprehenderit
-      eos dignissimos sequi?
+      eveniet exercitationem quae officia odio asperiores?
     </Article>
   );
 }

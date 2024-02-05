@@ -12,8 +12,7 @@ export default function Liszt() {
       date={new Date(2023, 11, 28)}
     >
       Reprehenderit corporis eos, placeat consequuntur totam aspernatur
-      accusamus saepe, quidem perspiciatis vitae fuga commodi. Voluptate,
-      officiis deleniti aliquam debitis aperiam corrupti cumque!
+      accusamus saepe, quidem perspiciatis vitae fuga commodi.
     </Article>
   );
 }

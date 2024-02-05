@@ -11,7 +11,7 @@ export default function Home() {
     const onScroll = () => setScroll(window.scrollY);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  });
 
   return (
     <div

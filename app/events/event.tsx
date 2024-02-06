@@ -52,7 +52,7 @@ export default function EventCard({
 }) {
   const [extra, setExtra] = useState(false);
   return (
-    <div
+    <article
       className="flex grow relative min-w-80 max-w-7xl h-96 group overflow-hidden cursor-pointer transition-all duration-500"
       style={{ flexBasis: basis }}
     >
@@ -128,6 +128,6 @@ export default function EventCard({
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

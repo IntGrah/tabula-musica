@@ -25,7 +25,7 @@ export default function RootLayout({
           />
           <Subtitle />
         </div>
-        <main className="bg-gradient-radial from-amber-200/60 to-amber-100/50 min-h-screen">
+        <main className="min-h-screen bg-amber-200/40">
           {children}
         </main>
         <Footer />

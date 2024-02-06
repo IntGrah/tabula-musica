@@ -7,7 +7,7 @@ const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",
 };
 
-export interface ArticleSummaryProps {
+export interface ArticleCardProps {
   href: string;
   image: {
     src: StaticImageData;
@@ -22,7 +22,7 @@ export interface ArticleSummaryProps {
 export default function ArticleSummary({
   props: { href, image, title, subtitle, description, date },
 }: {
-  props: ArticleSummaryProps;
+  props: ArticleCardProps;
 }) {
   return (
     <article className="flex grow w-full max-w-7xl h-96 shadow-2xl group cursor-pointer">

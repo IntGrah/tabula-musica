@@ -1,7 +1,7 @@
-import { ArticleSummaryProps } from "./article-summary";
+import { ArticleCardProps } from "./article-card";
 import LisztSonataEnding from "/public/liszt-sonata-end.jpg";
 
-export const summary: ArticleSummaryProps = {
+export const summary: ArticleCardProps = {
   href: "/#articles",
   image: {
     src: LisztSonataEnding,

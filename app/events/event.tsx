@@ -16,7 +16,7 @@ const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   minute: "2-digit",
 };
 
-interface EventProps {
+export interface EventCardProps {
   basis: string;
   cutoff: string;
   image: {
@@ -25,27 +25,31 @@ interface EventProps {
   };
   date: Date;
   title: React.ReactNode;
-  children: React.ReactNode;
+  description: React.ReactNode;
   programme: React.ReactNode;
   performers: React.ReactNode;
   tickets?: string;
-  admission?: React.ReactNode;
+  admission: React.ReactNode;
   location: Location;
 }
 
-export default function Event({
-  basis,
-  cutoff,
-  image,
-  date,
-  title,
-  children,
-  programme,
-  performers,
-  tickets,
-  admission = "Free admission",
-  location,
-}: EventProps) {
+export default function EventCard({
+  props: {
+    basis,
+    cutoff,
+    image,
+    date,
+    title,
+    description,
+    programme,
+    performers,
+    tickets,
+    admission,
+    location,
+  },
+}: {
+  props: EventCardProps;
+}) {
   const [extra, setExtra] = useState(false);
   return (
     <div
@@ -79,7 +83,7 @@ export default function Event({
             title
           )}
         </h1>
-        <p className="text-white">{children}</p>
+        <div className="text-white">{description}</div>
         <hr className="my-1 border-gray-300/10" />
         <div
           className="relative grow min-h-fit text-gray-200/90"

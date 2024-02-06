@@ -2,7 +2,6 @@ import "./globals.css";
 import Header from "./ui/header";
 import Footer from "./ui/footer";
 import Subtitle from "./ui/subtitle";
-import SectionHeader from "./ui/section-header";
 import Image from "next/image";
 import DieKunstDerFuge from "/public/die-kunst-der-fuge.jpg";
 
@@ -25,7 +24,6 @@ export default function RootLayout({
             alt="Manuscript of The Art of Fugue"
           />
           <Subtitle />
-          <SectionHeader id="events">Events</SectionHeader>
         </div>
         <main className="bg-gradient-radial from-amber-200/60 to-amber-100/50 min-h-screen">
           {children}

@@ -1,11 +1,13 @@
-import Liszt from "./23-12-28-liszt";
-import Chopin from "./24-01-22-chopin";
+import SectionTitle from "../ui/section-title";
+import Liszt from "./24-02-06-liszt";
+import LisztSonata from "./24-02-05-liszt-sonata";
 
 export default function Articles() {
   return (
-    <div className="md:py-4 bg-gradient-to-r from-indigo-950/80 to-indigo-900/80 shadow-2xl">
+    <div className="relative md:py-4 bg-gradient-to-r from-indigo-950/80 to-indigo-900/80 shadow-2xl">
+      <SectionTitle text="articles" />
       <Liszt />
-      <Chopin />
+      <LisztSonata />
     </div>
   );
 }

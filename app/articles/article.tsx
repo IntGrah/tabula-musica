@@ -35,7 +35,7 @@ export default function Article({
           alt={alt}
         />
       </div>
-      <div className="relative min-w-72 xl:max-w-2xl p-8 font-bold tracking-wider bg-gray-800/80">
+      <div className="relative min-w-72 xl:max-w-2xl p-8 tracking-wider bg-gray-800/80">
         <h1 className="py-2 text-3xl sm:text-4xl text-white uppercase decoration-2 group-hover:underline">
           {title}
         </h1>
@@ -43,7 +43,7 @@ export default function Article({
         <div className="py-4 sm:text-lg tracking-wide">
           <p className="text-gray-300">{children}</p>
           <time
-            className="absolute bottom-4 text-gray-400 font-mono uppercase tracking-wider"
+            className="absolute bottom-4 text-gray-400 font-mono tracking-wider"
             dateTime={date.toISOString()}
           >
             {date.toLocaleDateString(undefined, dateTimeFormatOptions)}

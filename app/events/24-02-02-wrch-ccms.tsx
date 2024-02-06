@@ -1,13 +1,13 @@
 import { WRCH } from "./locations";
 import Event from "./event";
-import CCMS from "/public/ccms.jpg";
+import ClareCollegeCartoon from "/public/clare-college-cartoon.jpg";
 
 export default function WRCHCCMS() {
   return (
     <Event
       basis="50%"
       cutoff="max-lg:as-bg"
-      image={{ src: CCMS, alt: "Clare College Cartoon" }}
+      image={{ src: ClareCollegeCartoon, alt: "Clare College Cartoon" }}
       date={new Date(2024, 1, 1, 20, 0)}
       title="CCMS Lent Concert"
       programme={

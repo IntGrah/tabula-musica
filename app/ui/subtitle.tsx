@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import Image from "next/image";
 import TabulaMusica from "/public/tabula-musica.png";
+
+const style: CSSProperties = { fontVariant: "small-caps" };
 
 export default function Subtitle() {
   const [scroll, setScroll] = useState(0);
@@ -15,24 +17,28 @@ export default function Subtitle() {
   }, []);
 
   return (
-    <div
-      className="absolute top-0 p-8 pt-32 border-l-8 border-violet-900"
-      style={{ opacity: 1 - scroll / 120 }}
-    >
-      <h1 className="text-lg uppercase tracking-wider text-violet-900/90">
-        Cambridge-Based
-      </h1>
-      <h2 className="text-sm tracking-wider text-violet-900/90">
-        <Image
-          className="float-left"
-          src={TabulaMusica}
-          alt="Logo"
-          width={40}
-        />
-        Music Magazine
-        <br />
-        <span className="text-violet-900/50">Est. 2023</span>
-      </h2>
+    <div className="absolute top-0 size-60 p-8 pt-32 border-l-8 font-serif border-l-violet-900/80">
+      <div style={{ opacity: 1 - scroll / 120 }}>
+        <h1
+          className="text-lg tracking-widest text-violet-900/90"
+          style={style}
+        >
+          Cambridge-Based
+        </h1>
+        <h2 className="tracking-wider text-violet-900/90">
+          <Image
+            className="float-left"
+            src={TabulaMusica}
+            alt="Logo"
+            width={40}
+          />
+          <span>Music Magazine</span>
+          <br />
+          <span className="text-sm text-violet-900/50" style={style}>
+            Est. 2023
+          </span>
+        </h2>
+      </div>
     </div>
   );
 }

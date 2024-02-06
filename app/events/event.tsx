@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Location } from "./locations";
+import classNames from "classnames";
 
 const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
   weekday: "short",
@@ -48,10 +49,12 @@ export default function Event({
   const [extra, setExtra] = useState(false);
   return (
     <div
-      className="flex grow relative min-w-80 max-w-7xl h-96 2xl:h-[28rem] group overflow-hidden cursor-pointer transition-all duration-500"
+      className="flex grow relative min-w-80 max-w-7xl h-96 group overflow-hidden cursor-pointer transition-all duration-500"
       style={{ flexBasis: basis }}
     >
-      <div className={`min-w-32 h-full ${cutoff} overflow-hidden`}>
+      <div
+        className={classNames("min-w-32", "h-full", cutoff, "overflow-hidden")}
+      >
         <Image
           className="h-full object-cover transition-all duration-500 ease-out group-hover:scale-105"
           src={image.src}
@@ -83,16 +86,24 @@ export default function Event({
           onClick={() => setExtra(!extra)}
         >
           <div
-            className={`absolute transition-all duration-300 ${
-              extra ? "-left-8 opacity-0" : "left-0"
-            }`}
+            className={classNames(
+              "absolute",
+              "transition-all",
+              "duration-300",
+              { "-left-8 opacity-0": extra },
+              { "left-0": !extra }
+            )}
           >
             {programme}
           </div>
           <div
-            className={`absolute transition-all duration-300 ${
-              extra ? "left-0" : "left-8 opacity-0"
-            }`}
+            className={classNames(
+              "absolute",
+              "transition-all",
+              "duration-300",
+              { "left-0": extra },
+              { "left-8 opacity-0": !extra }
+            )}
           >
             {performers}
           </div>

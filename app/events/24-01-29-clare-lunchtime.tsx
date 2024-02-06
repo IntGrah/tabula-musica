@@ -1,6 +1,6 @@
 import { ClareChapel } from "./locations";
 import Event from "./event";
-import ClareChapelInterior from "/public/clare-chapel-interior.jpg";
+import ClareChapelInterior from "/public/clare-chapel.jpg";
 
 export default function ClareLunchtime() {
   return (

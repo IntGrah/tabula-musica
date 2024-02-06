@@ -39,16 +39,18 @@ export default function Header() {
 function LogoText({ fontScale }: { fontScale: number }) {
   return (
     <div className="relative py-3 text-center">
-      <Link
-        className="font-serif font-medium tracking-wider xs:tracking-widest sm:tracking-[0.2em] uppercase text-violet-900/95"
-        href="/"
-        style={{
-          fontSize: 36 - 12 * fontScale,
-          lineHeight: `${48 - 12 * fontScale}px`,
-        }}
-      >
-        Tabula&nbsp;Musica
-      </Link>
+      <h1>
+        <Link
+          className="font-serif font-medium tracking-wider xs:tracking-widest sm:tracking-[0.2em] uppercase text-violet-900/95"
+          href="/"
+          style={{
+            fontSize: 36 - 12 * fontScale,
+            lineHeight: `${48 - 12 * fontScale}px`,
+          }}
+        >
+          Tabula&nbsp;Musica
+        </Link>
+      </h1>
       <hr
         className="absolute bottom-0 m-auto w-64 border-violet-900/80"
         style={{

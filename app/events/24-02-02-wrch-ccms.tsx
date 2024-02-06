@@ -1,6 +1,6 @@
 import { WRCH } from "./locations";
 import Event from "./event";
-import ClareCollegeCartoon from "/public/clare-college-cartoon.jpg";
+import ClareCollegeCartoon from "/public/clare-cartoon.jpg";
 
 export default function WRCHCCMS() {
   return (

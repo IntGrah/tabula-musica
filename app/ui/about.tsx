@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <div className="py-8 md:py-16 bg-gray-950 text-white">
-      <h1 className="py-4 text-center text-2xl md:text-3xl font-mono bold uppercase tracking-wider">
+    <section className="py-8 md:py-16 bg-gray-950 text-white">
+      <h1 className="py-4 text-center text-2xl md:text-3xl font-serif bold uppercase tracking-wider">
         About
       </h1>
       <div className="px-4 sm:px-8 md:px-16 lg:px-48 xl:px-96 text-center text-base sm:text-lg md:text-xl font-mono">
@@ -29,6 +29,6 @@ export default function About() {
           </q>
         </p>
       </div>
-    </div>
+    </section>
   );
 }

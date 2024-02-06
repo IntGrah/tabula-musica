@@ -1,13 +1,14 @@
 import SectionTitle from "../ui/section-title";
-import Liszt from "./24-02-06-liszt";
-import LisztSonata from "./24-02-05-liszt-sonata";
+import * as Liszt from "./24-02-06-liszt";
+import * as LisztSonata from "./24-02-05-liszt-sonata";
+import ArticleSummary from "./article-summary";
 
 export default function Articles() {
   return (
-    <div className="relative md:py-4 bg-gradient-to-r from-indigo-950/80 to-indigo-900/80 shadow-2xl">
+    <div className="relative flex flex-wrap">
       <SectionTitle text="articles" />
-      <Liszt />
-      <LisztSonata />
+      <ArticleSummary props={Liszt.summary} />
+      <ArticleSummary props={LisztSonata.summary}/>
     </div>
   );
 }

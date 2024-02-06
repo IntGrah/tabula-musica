@@ -70,7 +70,7 @@ export default function Event({
             .toLocaleDateString(undefined, dateTimeFormatOptions)
             .replaceAll(",", "")}
         </time>
-        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider">
+        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider text-white">
           {tickets ? (
             <Link className="decoration-2 hover:underline" href={tickets}>
               {title}
@@ -79,7 +79,7 @@ export default function Event({
             title
           )}
         </h1>
-        <p className="">{children}</p>
+        <p className="text-white">{children}</p>
         <hr className="my-1 border-gray-300/10" />
         <div
           className="relative grow min-h-fit text-gray-200/90"

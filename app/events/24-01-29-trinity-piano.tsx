@@ -1,6 +1,6 @@
 import { TrinityOCR } from "./locations";
 import Event from "./event";
-import LisztSonata from "/public/liszt-sonata.jpg";
+import LisztSonata from "/public/liszt-sonata-end.jpg";
 
 export default function TrinityPiano() {
   return (

@@ -8,7 +8,7 @@ import GirtonStJohn from "./24-03-08-girton-st-john";
 
 export default function Events() {
   return (
-    <div className="relative flex flex-wrap bg-gray-800/95 text-white shadow-2xl transition-all">
+    <div className="relative flex flex-wrap bg-gray-800/95 shadow-2xl">
       <SectionTitle text="events" />
       <WRCHCUO />
       <TrinityOboe />

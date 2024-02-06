@@ -12,19 +12,20 @@ export const summary: EventCardProps = {
   date: new Date(2024, 2, 9, 20, 0),
   title: "Trinity College Orchestra",
   description: <p>Trinity College Orchestra plays Dvořák and Tchaikovsky.</p>,
-  programme: [
+  programme: (
     <ol>
       <li>Dvořák - Cello Concerto</li>
       <li>Tchaikovsky - Symphony No. 5</li>
-    </ol>,
-  ],
-  performers: [
+    </ol>
+  ),
+  performers: (
     <ol>
       <li>Trinity College Orchestra</li>
       <li>Cello - Doraly Gill</li>
       <li>Conductor - Rhys Lewis</li>
-    </ol>,
-  ],
+    </ol>
+  ),
+
   admission: "Free admission",
   location: TrinityChapel,
 };

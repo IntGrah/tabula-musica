@@ -32,7 +32,7 @@ export const summary: EventCardProps = {
   performers: (
     <ol>
       <li>Clare College Orchestra</li>
-      <li>Horn - Isaac Chan"</li>
+      <li>Horn - Isaac Chan</li>
       <li>Baritone - Julian Manresa</li>
       <li>Mezzo-Soprano - Emma Caroe</li>
       <li>Soprano - Emma Paterson</li>

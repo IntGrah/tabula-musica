@@ -9,7 +9,7 @@ export const summary: EventCardProps = {
   date: new Date(2024, 2, 9, 20, 0),
   title: "Mozart Opera Scenes Gala",
   description: <p>Scenes from Mozart Operas.</p>,
-  programme: [
+  programme: (
     <ol>
       <i>Selections from</i>
       <li>
@@ -18,8 +18,8 @@ export const summary: EventCardProps = {
       <li>
         W. A. Mozart - <i>The Marriage of Figaro</i>
       </li>
-    </ol>,
-  ],
+    </ol>
+  ),
   performers: (
     <ol>
       <li>Clare College Orchestra</li>

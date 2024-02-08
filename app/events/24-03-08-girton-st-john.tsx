@@ -33,7 +33,7 @@ export const summary: EventCardProps = {
     </ol>
   ),
   tickets:
-    "https://www.saffronhall.com/choose-seats?instance: 175641ALDJDLTBSRPBGGQVRRLDGNNPDKN",
+    "https://www.saffronhall.com/choose-seats?instance=175641ALDJDLTBSRPBGGQVRRLDGNNPDKN",
   admission: "£25 | £22.50 (Concessions) | £5 (Cambridge University Students)",
   location: GirtonHall,
 };

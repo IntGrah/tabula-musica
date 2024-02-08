@@ -4,7 +4,7 @@ import LisztSonataEnd from "/public/liszt-sonata-end.jpg";
 export default function LisztPage() {
   return (
     <article>
-      <header className="sticky top-[108px] px-8 py-4 bg-gradient-to-r from-amber-100 to-amber-200 shadow-lg">
+      <header className="sticky top-[108px] px-8 py-4 bg-gradient-to-r from-amber-100/80 to-amber-200/80 backdrop-blur-sm shadow-lg">
         <div className="m-auto max-w-5xl font-bold tracking-wider">
           <h1 className="py-2 text-4xl uppercase text-violet-900/80">
             The Liszt Sonata:

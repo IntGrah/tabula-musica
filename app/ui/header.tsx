@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header
-      className="w-full fixed z-50 bg-amber-100 transition-opacity duration-500"
+      className="fixed w-full z-50 bg-amber-100 transition-all duration-500"
       style={style}
     >
       <LogoText fontScale={Math.min(scroll / 720, 1)} />

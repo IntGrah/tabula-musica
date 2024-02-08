@@ -34,7 +34,7 @@ export const summary: EventCardProps = {
     </ol>
   ),
   tickets:
-    "https://www.saffronhall.com/choose-seats?instance: 175241AGRQBKQKLMHKSQPKLPPDSHPSLLH",
+    "https://www.saffronhall.com/choose-seats?instance=175241AGRQBKQKLMHKSQPKLPPDSHPSLLH",
   admission: "£10 | £6 (Concessions)",
   location: WRCH,
 };

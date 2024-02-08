@@ -33,7 +33,7 @@ export default function ArticleSummary({
           alt={image.alt}
         />
       </div>
-      <div className="relative p-8 tracking-wider bg-gradient-to-r from-amber-950/95 to-amber-950/90">
+      <div className="relative p-8 tracking-wider bg-cyan-900">
         <h1 className="py-2">
           <Link
             className="text-3xl sm:text-4xl font-semibold text-white hover:underline"

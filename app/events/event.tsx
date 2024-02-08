@@ -51,6 +51,7 @@ export default function EventCard({
   props: EventCardProps;
 }) {
   const [extra, setExtra] = useState(false);
+
   return (
     <article
       className="flex grow relative min-w-80 max-w-7xl h-96 group overflow-hidden cursor-pointer transition-all duration-500"

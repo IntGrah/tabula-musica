@@ -15,7 +15,7 @@ export default function RootLayout({
       <head>
         <title>Tabula Musica</title>
       </head>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <Header />
         <div className="relative h-96 md:h-[28rem]">
           <Image
@@ -25,7 +25,7 @@ export default function RootLayout({
           />
           <Subtitle />
         </div>
-        <main className="min-h-screen bg-amber-200/40">
+        <main className="grow bg-amber-200/40">
           {children}
         </main>
         <Footer />

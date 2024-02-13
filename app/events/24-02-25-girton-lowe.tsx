@@ -25,8 +25,8 @@ export const summary: EventCardProps = {
     <ol>
       <li>Violin, Viola - Joseph Lowe</li>
       <li>Violin - Gabriel Lowe</li>
-      <li>Violoncello, Viola da gamba - Xavier Lowe</li>
-      <li>Violoncello - Santiago Lowe</li>
+      <li>Cello, Viola da gamba - Xavier Lowe</li>
+      <li>Cello - Santiago Lowe</li>
       <li>Soprano, Harpsichord - Myriam Lowe</li>
     </ol>
   ),

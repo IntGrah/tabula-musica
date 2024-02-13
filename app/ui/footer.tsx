@@ -76,7 +76,7 @@ function Contact() {
 function Legal() {
   return (
     <p className="py-4 text-xs font-mono tracking-wide text-neutral-400">
-      © 2024 Jeremy Chen. All rights reserved.
+      © 2024 Tabula Musica. All rights reserved.
     </p>
   );
 }

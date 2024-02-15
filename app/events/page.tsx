@@ -8,15 +8,15 @@ import * as TrinityTCO from "./24-03-09-trinity-tco";
 import * as GirtonStJohn from "./24-03-08-girton-st-john";
 
 export default function Events() {
-  return (
-    <div className="relative flex flex-wrap bg-gray-800/95 shadow-2xl">
-      <SectionTitle text="events" />
-      <EventCard props={WrchCuo.summary} />
-      <EventCard props={TrinityOboe.summary} />
-      <EventCard props={GirtonLowe.summary} />
-      <EventCard props={GirtonStJohn.summary} />
-      <EventCard props={ClareOpera.summary} />
-      <EventCard props={TrinityTCO.summary} />
-    </div>
-  );
+    return (
+        <div className="relative flex flex-wrap bg-gray-800/95 shadow-2xl">
+            <SectionTitle text="events" />
+            <EventCard props={WrchCuo.summary} />
+            <EventCard props={TrinityOboe.summary} />
+            <EventCard props={GirtonLowe.summary} />
+            <EventCard props={GirtonStJohn.summary} />
+            <EventCard props={ClareOpera.summary} />
+            <EventCard props={TrinityTCO.summary} />
+        </div>
+    );
 }

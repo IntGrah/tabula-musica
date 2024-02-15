@@ -1,9 +1,9 @@
 export default function About() {
   return (
     <section className="py-8 md:py-16 bg-gray-950 text-white">
-      <h1 className="py-4 text-center text-2xl md:text-3xl font-serif bold uppercase tracking-wider">
+      <h3 className="py-4 text-center text-2xl md:text-3xl font-serif bold uppercase tracking-wider">
         About
-      </h1>
+      </h3>
       <div className="px-4 sm:px-8 md:px-16 lg:px-48 xl:px-96 text-center text-base sm:text-lg md:text-xl font-mono">
         <p className="py-4">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quo
@@ -14,9 +14,9 @@ export default function About() {
           quasi recusandae reiciendis. Pariatur aut dolorum debitis saepe natus
           placeat beatae atque perspiciatis earum.
         </p>
-        <h1 className="py-4 text-center text-2xl md:text-3xl font-mono bold uppercase tracking-wider">
+        <h3 className="py-4 text-center text-2xl md:text-3xl font-mono bold uppercase tracking-wider">
           Also
-        </h1>
+        </h3>
         <p className="py-4">
           <q className="italic">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda

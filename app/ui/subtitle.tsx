@@ -19,25 +19,24 @@ export default function Subtitle() {
   return (
     <div className="absolute top-0 size-60 p-8 pt-32 border-l-8 font-serif border-l-violet-900/80">
       <div style={{ opacity: 1 - scroll / 120 }}>
-        <h1
+        <h3
           className="text-lg tracking-widest text-violet-900/90"
           style={style}
         >
           Cambridge-Based
-        </h1>
-        <h2 className="tracking-wider text-violet-900/90">
+        </h3>
+        <div className="tracking-wider text-violet-900/90">
           <Image
             className="float-left"
             src={TabulaMusica}
             alt="Logo"
             width={40}
           />
-          <span>Music Magazine</span>
-          <br />
-          <span className="text-sm text-violet-900/50" style={style}>
+          <h4>Music Magazine</h4>
+          <h5 className="text-sm text-violet-900/50" style={style}>
             Est. 2023
-          </span>
-        </h2>
+          </h5>
+        </div>
       </div>
     </div>
   );

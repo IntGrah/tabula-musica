@@ -18,9 +18,9 @@ function Contact() {
   return (
     <div className="flex max-sm:flex-col py-6">
       <div className="grow min-w-80">
-        <h1 className="text-lg font-serif uppercase tracking-widest text-cyan-100/80">
+        <h2 className="text-lg font-serif uppercase tracking-widest text-cyan-100/80">
           Contact
-        </h1>
+        </h2>
         <div className="py-4 font-mono text-neutral-200">
           <p>
             <Link
@@ -47,9 +47,9 @@ function Contact() {
         </div>
       </div>
       <div className="grow">
-        <h1 className="text-lg font-serif uppercase tracking-widest text-cyan-100/80">
+        <h3 className="text-lg font-serif uppercase tracking-widest text-cyan-100/80">
           Subscribe
-        </h1>
+        </h3>
         <div className="flex sm:max-md:flex-col gap-4 py-4 text-lg text-neutral-200">
           <p>
             <Link

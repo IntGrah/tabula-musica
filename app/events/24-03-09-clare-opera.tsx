@@ -11,7 +11,9 @@ export const summary: EventCardProps = {
   description: <p>Scenes from Mozart Operas.</p>,
   programme: (
     <ol>
-      <i>Selections from</i>
+      <li>
+        <i>Selections from</i>
+      </li>
       <li>
         W. A. Mozart - <i>Don Giovanni</i>
       </li>

@@ -75,7 +75,7 @@ export default function EventCard({
             .toLocaleDateString(undefined, dateTimeFormatOptions)
             .replaceAll(",", "")}
         </time>
-        <h1 className="py-2 text-2xl font-bold uppercase tracking-wider text-white">
+        <h3 className="py-2 text-2xl font-bold uppercase tracking-wider text-white">
           {tickets ? (
             <Link className="decoration-2 hover:underline" href={tickets}>
               {title}
@@ -83,7 +83,7 @@ export default function EventCard({
           ) : (
             title
           )}
-        </h1>
+        </h3>
         <div className="text-white">{description}</div>
         <hr className="my-1 border-gray-300/10" />
         <div

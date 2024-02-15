@@ -34,17 +34,17 @@ export default function ArticleSummary({
         />
       </div>
       <div className="relative p-8 tracking-wider bg-cyan-900">
-        <h1 className="py-2">
+        <h2 className="py-2">
           <Link
             className="text-3xl sm:text-4xl font-semibold text-white hover:underline"
             href={href}
           >
             {title}
           </Link>
-        </h1>
-        <h2 className="py-2 text-lg sm:text-2xl text-gray-200/90">
-          {subtitle}
         </h2>
+        <h3 className="py-2 text-lg sm:text-2xl text-gray-200/90">
+          {subtitle}
+        </h3>
         <div className="py-4 sm:text-lg tracking-wide">
           <p className="text-gray-200/90">{description}</p>
           <time

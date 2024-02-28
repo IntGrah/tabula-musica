@@ -4,6 +4,9 @@ import Link from "next/link";
 import { CSSProperties, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
+import TabulaMusica from "/public/tabula-musica.png";
+import Image from "next/image";
+
 export default function Header() {
     const [scroll, setScroll] = useState(0);
     const [opacity, setOpacity] = useState(0);
@@ -35,6 +38,29 @@ export default function Header() {
         >
             <LogoText fontScale={Math.min(scroll / 720, 1)} />
             <NavBar />
+            <div className="absolute left-[25%] top-[130%]">
+                <h3 className="text-lg font-serif uppercase tracking-widest text-cyan-100/80">
+                    Subscribe
+                </h3>
+                <div className="flex sm:max-md:flex-col gap-4 py-4 text-3xl text-neutral-200">
+                    <p>
+                        <Link
+                            className="px-8 py-4 rounded-full tracking-wider font-serif text-cyan-800 transition-colors bg-amber-100 hover:bg-amber-100/90"
+                            href="https://lists.srcf.net/mailman/listinfo"
+                        >
+                            Mailing&nbsp;List
+                        </Link>
+                    </p>
+                    <p>
+                        <Link
+                            className="px-8 py-4 rounded-full tracking-wider font-serif text-cyan-800 transition-colors bg-amber-100 hover:bg-amber-100/90"
+                            href="/#contact"
+                        >
+                            Magazine
+                        </Link>
+                    </p>
+                </div>
+            </div>
         </header>
     );
 }
@@ -43,6 +69,14 @@ function LogoText({ fontScale }: { fontScale: number }) {
     return (
         <div className="relative py-3 text-center">
             <h1>
+                <div className="text-center">
+                    <Image
+                        className="m-auto"
+                        width={50}
+                        src={TabulaMusica}
+                        alt=""
+                    />
+                </div>
                 <Link
                     className="font-serif font-medium tracking-wider xs:tracking-widest sm:tracking-[0.2em] uppercase text-violet-900/95"
                     href="/"
@@ -70,7 +104,9 @@ function NavBar() {
 
     return (
         <nav className="flex justify-center">
-            <NavLink href={pathname === "/" ? "/#articles" : "/articles"}>Articles</NavLink>
+            <NavLink href={pathname === "/" ? "/#articles" : "/articles"}>
+                Articles
+            </NavLink>
             <NavLink href="/events">Events</NavLink>
             <NavLink href="/#about">About</NavLink>
             <NavLink href="/#contact">Contact</NavLink>

@@ -90,7 +90,7 @@ function NavLink({
             className="relative w-20 sm:w-24 md:w-28 xl:w-32 py-3 text-center group"
             href={href}
         >
-            <span className="text-sm sm:text-base tracking-wider text-cyan-800 group-hover:text-cyan-600">
+            <span className="text-sm sm:text-base font-serif tracking-wider text-cyan-800 group-hover:text-cyan-600">
                 {children}
             </span>
             <hr className="absolute bottom-2 left-1/2 w-0 border-cyan-600/40 transition-all group-hover:left-[20%] group-hover:w-[60%]" />

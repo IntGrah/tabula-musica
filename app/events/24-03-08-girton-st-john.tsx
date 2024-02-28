@@ -3,7 +3,7 @@ import { GirtonHall } from "./locations";
 import GirtonCollege from "/public/girton-college.jpg";
 
 export const summary: EventCardProps = {
-    basis: "60%",
+    basis: "50%",
     cutoff: "max-xl:as-bg",
     image: {
         src: GirtonCollege,

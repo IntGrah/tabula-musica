@@ -3,7 +3,7 @@ import { TrinityChapel } from "./locations";
 import Moonrise from "/public/moonrise.jpg";
 
 export const summary: EventCardProps = {
-    basis: "50%",
+    basis: "60%",
     cutoff: "max-md:as-bg",
     image: {
         src: Moonrise,

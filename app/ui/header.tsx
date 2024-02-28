@@ -70,8 +70,8 @@ function NavBar() {
 
     return (
         <nav className="flex justify-center">
-            <NavLink href={pathname === "/" ? "/#events" : "/events"}>Events</NavLink>
             <NavLink href={pathname === "/" ? "/#articles" : "/articles"}>Articles</NavLink>
+            <NavLink href="/events">Events</NavLink>
             <NavLink href="/#about">About</NavLink>
             <NavLink href="/#contact">Contact</NavLink>
         </nav>

@@ -91,13 +91,11 @@ function FooterButton({
     children: React.ReactNode;
 }) {
     return (
-        <div>
-            <Link
-                className="px-4 py-2 rounded-full tracking-wider font-serif text-cyan-800 transition-colors bg-amber-100 hover:bg-amber-100/90"
-                href={href}
-            >
-                {children}
-            </Link>
-        </div>
+        <Link
+            className="px-4 py-2 rounded-full tracking-wider font-serif text-cyan-800 transition-colors bg-amber-100 hover:bg-amber-100/90"
+            href={href}
+        >
+            {children}
+        </Link>
     );
 }

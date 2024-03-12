@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { CSSProperties, useEffect, useState } from "react";
 
 export default function Header() {
@@ -79,7 +80,7 @@ function Logo({ scale }: { scale: number }) {
 
 function SideBar() {
     return (
-        <button className="absolute top-0 right-0 flex p-6 h-[72px] max-lg:hidden">
+        <button className="absolute top-0 right-0 flex p-5 h-[72px] max-lg:hidden">
             <SideButton>Subscribe</SideButton>
             <Separator />
             <SideButton>Sign in</SideButton>
@@ -89,10 +90,14 @@ function SideBar() {
 
 function SideButton({ children }: { children: React.ReactNode }) {
     return (
-        <a className="relative flex grow h-full items-center cursor-pointer group">
-            <span className="tracking-wider transition-colors text-violet-900 group-hover:text-violet-700">{children}</span>
-            <hr className="absolute bottom-0 w-full border-violet-600 transition-opacity opacity-0 group-hover:opacity-100" />
-        </a>
+        <Link
+            className="relative px-3 flex grow h-full items-center rounded-full cursor-pointer transition-colors bg-black/10 hover:bg-violet-900 group"
+            href=""
+        >
+            <span className="tracking-wider transition-colors text-violet-900 group-hover:text-white">
+                {children}
+            </span>
+        </Link>
     );
 }
 
@@ -108,7 +113,7 @@ function NavLink({
     children: React.ReactNode;
 }) {
     return (
-        <a
+        <Link
             className="relative w-20 sm:w-24 md:w-28 xl:w-32 py-3 text-center group"
             href={href}
         >
@@ -116,7 +121,7 @@ function NavLink({
                 {children}
             </span>
             <hr className="absolute bottom-2 left-1/2 w-0 border-cyan-500 transition-all group-hover:left-[20%] group-hover:w-[60%]" />
-        </a>
+        </Link>
     );
 }
 
@@ -124,8 +129,9 @@ function Search() {
     return (
         <form className="h-12 py-1 absolute right-4 max-lg:hidden">
             <input
-                className="h-full px-4 w-40 focus:w-60 text-cyan-800 bg-black/5 outline-none rounded transition-all border border-transparent focus:border-gray-400 placeholder:text-gray-500"
+                className="h-full px-4 w-48 focus:w-60 text-cyan-800 bg-black/5 outline-none rounded transition-all border border-transparent focus:border-gray-400 placeholder:text-gray-500"
                 placeholder="Search articles..."
+                autoFocus
             />
         </form>
     );

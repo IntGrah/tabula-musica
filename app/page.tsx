@@ -2,8 +2,8 @@ import About from "./ui/about";
 import Articles from "./articles/page";
 import Image from "next/image";
 import Header from "./ui/header";
-import TabulaMusica from "/public/tabula-musica.jpg";
 import ArtOfFugue from "/public/art-of-fugue.jpg";
+import TabulaMusica from "/public/tabula-musica.jpg";
 
 export default function HomePage() {
     return (
@@ -16,14 +16,11 @@ export default function HomePage() {
                     alt="Manuscript of The Art of Fugue"
                 />
             </div>
-            <div className="h-24">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Perspiciatis exercitationem officia mollitia, saepe porro harum,
-                vero sapiente explicabo, temporibus corporis asperiores quos qui
-                aperiam deleniti nam debitis quasi voluptates tempora!
+            <div className="py-8 h-40">
+                <h2 className="text-center text-5xl text-violet-900">Latest Issue</h2>
             </div>
-            <div className="opacity-70 md:px-16">
-                <Image src={TabulaMusica} alt="" />
+            <div className="md:px-16">
+                <Image className="m-auto w-full max-w-4xl" src={TabulaMusica} alt="" />
             </div>
             <div id="about" className="h-72"></div>
             <About />

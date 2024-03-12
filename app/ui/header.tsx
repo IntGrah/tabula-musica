@@ -1,25 +1,30 @@
-import Link from "next/link";
-import { CSSProperties } from "react";
+"use client";
 
-export default function Header({
-    solid,
-    overlay,
-}: {
-    solid: boolean;
-    overlay: boolean;
-}) {
+import Link from "next/link";
+import { CSSProperties, useEffect, useState } from "react";
+
+export default function Header({ overlay }: { overlay: boolean }) {
+    const [solid, setSolid] = useState(false);
+    // const [opacity, setOpacity] = useState(0);
+
+    useEffect(() => {
+        const onScroll = () => setSolid(scrollY >= 240);
+        onScroll();
+        // setOpacity(1);
+        addEventListener("scroll", onScroll);
+        return () => removeEventListener("scroll", onScroll);
+    }, []);
+
     const bgStyle: CSSProperties = {
         backgroundColor: `rgba(254, 243, 199, ${solid ? 0.8 : 0})`,
-        backdropFilter: `blur(${solid ? 4 : 0}px)`,
-        boxShadow: `0 ${solid ? 24 : 0}px ${solid ? 48 : 0}px ${
-            solid ? -12 : 0
-        }px rgba(0, 0, 0, 0.25)`,
+        backdropFilter: solid ? "blur(4px)" : "none",
+        boxShadow: solid ? "0 2px 12px rgba(0, 0, 0, 0.2)" : "none",
         position: overlay ? "fixed" : "sticky",
     };
 
     return (
         <header
-            className="top-0 w-full z-50 font-serif transition-all"
+            className="top-0 w-full z-50 font-serif transition-all duration-500"
             style={bgStyle}
         >
             <div className="relative flex md:justify-center">

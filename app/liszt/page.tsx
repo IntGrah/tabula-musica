@@ -77,7 +77,9 @@ export default function LisztPage() {
                             src={LisztSonataEnd}
                             alt="Manuscript of Liszt Sonata ending"
                         />
-                        <figcaption>Lest</figcaption>
+                        <figcaption className="italic text-gray-600">
+                            Image caption
+                        </figcaption>
                     </figure>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Suscipit est dicta exercitationem, autem enim tempora

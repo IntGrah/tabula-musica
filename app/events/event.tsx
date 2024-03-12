@@ -4,7 +4,6 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Location } from "./locations";
-import classNames from "classnames";
 
 export interface EventCardProps {
     basis: string;
@@ -89,14 +88,7 @@ function EventImage({
     image: { src: StaticImageData; alt: string };
 }) {
     return (
-        <div
-            className={classNames(
-                "min-w-32",
-                "h-full",
-                cutoff,
-                "overflow-hidden"
-            )}
-        >
+        <div className={`min-w-32 h-full ${cutoff} overflow-hidden`}>
             <Image
                 className="h-full object-cover transition-all duration-500 ease-out group-hover:scale-105"
                 src={image.src}
@@ -146,24 +138,14 @@ function EventInformation({
             onClick={onClick}
         >
             <div
-                className={classNames(
-                    "absolute",
-                    "transition-all",
-                    "duration-300",
-                    { "-left-8 opacity-0": extra },
-                    { "left-0": !extra }
-                )}
+                className="absolute transition-all duration-300"
+                style={{ left: extra ? "-8px" : "0px", opacity: extra ? 0 : 1 }}
             >
                 {programme}
             </div>
             <div
-                className={classNames(
-                    "absolute",
-                    "transition-all",
-                    "duration-300",
-                    { "left-0": extra },
-                    { "left-8 opacity-0": !extra }
-                )}
+                className="absolute transition-all duration-300"
+                style={{ left: extra ? "0px" : "8px", opacity: extra ? 1 : 0 }}
             >
                 {performers}
             </div>

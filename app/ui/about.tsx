@@ -15,7 +15,7 @@ export default function About() {
                     reiciendis. Pariatur aut dolorum debitis saepe natus placeat
                     beatae atque perspiciatis earum.
                 </p>
-                <h3 className="py-4 text-center text-2xl md:text-3xl font-mono bold uppercase tracking-wider">
+                <h3 className="py-4 text-center text-2xl md:text-3xl font-serif bold uppercase tracking-wider">
                     Also
                 </h3>
                 <p className="py-4">

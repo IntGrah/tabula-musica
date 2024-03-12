@@ -28,7 +28,7 @@ export const summary: EventCardProps = {
             <li>Director - Isaac Chan</li>
         </ol>
     ),
-    tickets: "https://www.adcticketing.com/whats-on",
+    tickets: "https://www.adcticketing.com/whats-on/opera/ccms-the-best-of-mozart-operas/",
     admission: "£10 | £6 (Concessions)",
     location: ClareChapel,
 };

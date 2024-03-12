@@ -9,26 +9,24 @@ export default function HomePage() {
     return (
         <main>
             <Header />
-            <div className="h-80 sm:h-96 md:h-[28rem]">
+            <figure className="h-80 sm:h-96 md:h-[28rem]">
                 <Image
                     className="size-full object-cover opacity-20"
                     src={ArtOfFugue}
                     alt="Manuscript of The Art of Fugue"
                 />
-            </div>
-            <div className="py-8 h-40">
+            </figure>
+            <hgroup className="md:px-16 py-8">
                 <h2 className="text-center text-5xl text-violet-900">
                     Latest Issue
                 </h2>
-            </div>
-            <div className="md:px-16">
                 <Image
                     className="m-auto w-full max-w-4xl"
                     src={TabulaMusica}
                     alt=""
                 />
-            </div>
-            <div id="about" className="h-72"></div>
+            </hgroup>
+            <section id="about" className="h-72"></section>
             <About />
             <div className="h-72"></div>
             <Articles />

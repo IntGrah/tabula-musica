@@ -4,27 +4,24 @@ import Link from "next/link";
 import { CSSProperties, useEffect, useState } from "react";
 
 export default function Header() {
-    const [scroll, setScroll] = useState(0);
+    const [solid, setSolid] = useState(false);
     const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
-        const onScroll = () => setScroll(window.scrollY);
+        const onScroll = () => setSolid(scrollY < 240);
         onScroll();
         setOpacity(1);
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
+        addEventListener("scroll", onScroll);
+        return () => removeEventListener("scroll", onScroll);
     }, []);
 
-    const scrollSolid = 240;
     const bgStyle: CSSProperties = {
         opacity,
-        backgroundColor: `rgba(254, 243, 199, ${
-            scroll < scrollSolid ? 0 : 0.8
-        })`,
-        backdropFilter: `blur(${scroll < scrollSolid ? 0 : 4}px)`,
-        boxShadow: `0 ${scroll < scrollSolid ? 0 : 24}px ${
-            scroll < scrollSolid ? 0 : 48
-        }px ${scroll < scrollSolid ? 0 : -12}px rgba(0, 0, 0, 0.25)`,
+        backgroundColor: `rgba(254, 243, 199, ${solid ? 0 : 0.8})`,
+        backdropFilter: `blur(${solid ? 0 : 4}px)`,
+        boxShadow: `0 ${solid ? 0 : 24}px ${solid ? 0 : 48}px ${
+            solid ? 0 : -12
+        }px rgba(0, 0, 0, 0.25)`,
     };
 
     return (
@@ -32,77 +29,82 @@ export default function Header() {
             className="fixed w-full z-50 font-serif transition-all"
             style={bgStyle}
         >
-            <div className="relative">
-                <Logo scale={Math.min(scroll / 720, 1)} />
-                <SideBar />
+            <div className="relative flex md:justify-center">
+                <Logo />
+                <Menu />
             </div>
-            <nav className="flex justify-center">
+            <nav className="relative flex px-4 md:justify-center">
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/events">Events</NavLink>
                 <NavLink href="/#about">About</NavLink>
                 <NavLink href="/#contact">Contact</NavLink>
-                <Search />
+                <NavSearch />
             </nav>
         </header>
     );
 }
 
-function Logo({ scale }: { scale: number }) {
+function Logo() {
     return (
-        <div
-            className="relative text-center"
-            style={{
-                height: 80 - 8 * scale,
-            }}
-        >
+        <div className="relative h-16 px-8 text-center transition-all">
             <div className="py-4">
                 <a
-                    className="font-medium text-4xl tracking-widest xs:tracking-[0.2em] sm:tracking-[0.3em] uppercase text-violet-900 select-none"
+                    className="font-medium text-2xl tracking-widest xs:tracking-[0.2em] uppercase text-violet-900 select-none"
                     href="/"
-                    style={{
-                        fontSize: 32 - 8 * scale,
-                        lineHeight: `${48 - 8 * scale}px`,
-                    }}
                 >
                     Tabula&nbsp;Musica
                 </a>
             </div>
-            <hr
-                className="absolute bottom-0 m-auto w-64 border-violet-900"
-                style={{
-                    left: `calc(50% - ${84 + 24 * scale}px)`,
-                    width: 168 + 48 * scale,
-                }}
-            />
+            <hr className="absolute bottom-2 m-auto left-[15%] w-[70%] border-violet-900" />
         </div>
     );
 }
 
-function SideBar() {
+function Menu() {
     return (
-        <button className="absolute top-0 right-0 flex p-5 h-[72px] transition-opacity duration-500 max-lg:opacity-0">
-            <SideButton>Subscribe</SideButton>
-            <Separator />
-            <SideButton>Sign in</SideButton>
-        </button>
+        <menu className="absolute top-0 flex justify-end right-4 h-16 py-4 transition-opacity max-sm:opacity-0">
+            <MenuButton href="/subscribe">Subscribe</MenuButton>
+            <MenuSeparator />
+            <MenuButton href="/signin">Sign in</MenuButton>
+        </menu>
     );
 }
 
-function SideButton({ children }: { children: React.ReactNode }) {
+function MenuButton({
+    href,
+    children,
+}: {
+    href: string;
+    children: React.ReactNode;
+}) {
     return (
-        <Link
-            className="relative px-3 flex grow h-full items-center rounded-full cursor-pointer transition-colors bg-black/10 hover:bg-violet-900 group"
-            href=""
-        >
-            <span className="tracking-wider transition-colors text-violet-900 group-hover:text-white">
+        <li className="flex">
+            <Link
+                className="flex px-3 items-center rounded-full cursor-pointer transition-colors bg-black/10 hover:bg-violet-900 tracking-wider text-violet-900 hover:text-white group"
+                href={href}
+            >
                 {children}
-            </span>
-        </Link>
+            </Link>
+        </li>
     );
 }
 
-function Separator() {
+function MenuSeparator() {
     return <div className="mx-2 h-full border-l border-violet-800" />;
+}
+
+function NavSearch() {
+    return (
+        <search className="absolute right-4 h-full py-1 transition-opacity max-sm:opacity-0">
+            <form className="h-full">
+                <input
+                    className="h-full px-4 w-36 focus:w-48 text-cyan-800 bg-black/5 outline-none rounded-lg border border-transparent transition-all focus:border-gray-400 focus:bg-black/10 placeholder:text-gray-500 focus:placeholder:text-gray-600"
+                    placeholder="Search articles..."
+                    autoFocus
+                />
+            </form>
+        </search>
+    );
 }
 
 function NavLink({
@@ -114,7 +116,7 @@ function NavLink({
 }) {
     return (
         <Link
-            className="relative w-20 sm:w-24 md:w-28 xl:w-32 py-3 text-center group"
+            className="relative w-20 lg:w-28 xl:w-32 py-3 text-center group"
             href={href}
         >
             <span className="tracking-wider text-cyan-800 group-hover:text-cyan-600">
@@ -122,17 +124,5 @@ function NavLink({
             </span>
             <hr className="absolute bottom-2 left-1/2 w-0 border-cyan-500 transition-all group-hover:left-[20%] group-hover:w-[60%]" />
         </Link>
-    );
-}
-
-function Search() {
-    return (
-        <form className="h-12 py-1 absolute right-4 transition-opacity duration-500 max-lg:opacity-0">
-            <input
-                className="h-full px-4 w-48 focus:w-60 text-cyan-800 bg-black/5 outline-none rounded transition-all border border-transparent focus:border-gray-400 placeholder:text-gray-500"
-                placeholder="Search articles..."
-                autoFocus
-            />
-        </form>
     );
 }

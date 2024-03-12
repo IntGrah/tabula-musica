@@ -6,16 +6,6 @@ import { useState } from "react";
 import { Location } from "./locations";
 import classNames from "classnames";
 
-const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
-    weekday: "short",
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-    hour: "numeric",
-    hour12: true,
-    minute: "2-digit",
-};
-
 export interface EventCardProps {
     basis: string;
     cutoff: string;
@@ -59,7 +49,7 @@ export default function EventCard({
             style={{ flexBasis: basis }}
         >
             <EventImage cutoff={cutoff} image={image} />
-            <div className="flex flex-col size-full min-w-80 px-4 py-4 z-10">
+            <hgroup className="flex flex-col size-full min-w-80 px-4 py-4 z-10">
                 <EventTime date={date} />
                 <h3 className="py-2 text-2xl font-bold uppercase tracking-wider text-white">
                     {tickets ? (
@@ -86,7 +76,7 @@ export default function EventCard({
                     <EventAdmission tickets={tickets} admission={admission} />
                     <EventLocation location={location} />
                 </div>
-            </div>
+            </hgroup>
         </article>
     );
 }
@@ -117,6 +107,16 @@ function EventImage({
 }
 
 function EventTime({ date }: { date: Date }) {
+    const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
+        weekday: "short",
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "numeric",
+        hour12: true,
+        minute: "2-digit",
+    };
+
     return (
         <time
             className="text-gray-300 font-mono uppercase tracking-wider"

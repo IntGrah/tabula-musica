@@ -3,14 +3,9 @@ import LisztSonataEnd from "/public/liszt-sonata-end.jpg";
 
 export default function LisztPage() {
     return (
-        <article className="font-serif">
-            <header className="sticky top-0 w-full px-8 py-4 bg-amber-100/80 backdrop-blur-sm shadow-lg">
-                <h1 className="py-2 text-4xl uppercase text-violet-900/80">
-                    Lorem Ipsum
-                </h1>
-            </header>
-            <section className="flex p-8 flex-col gap-8 m-auto max-w-5xl sm:text-lg md:text-xl tracking-wide">
-                <h1 className="max-w-xl text-5xl">
+        <article className="p-8 font-serif">
+            <section className="flex flex-col gap-8 m-auto p-8 max-w-5xl sm:text-lg md:text-xl tracking-wide">
+                <h1 className=" text-5xl">
                     Lorem Ipsum dolor sit amet Consectetur
                 </h1>
                 <h2 className="max-w-xl text-3xl">

@@ -1,11 +1,11 @@
 export default function About() {
     return (
-        <section className="py-8 md:py-16 bg-gray-950 text-white">
-            <h3 className="py-4 text-center text-2xl md:text-3xl font-serif bold uppercase tracking-wider">
-                About
-            </h3>
-            <div className="px-4 sm:px-8 md:px-16 lg:px-48 xl:px-96 text-center text-base sm:text-lg md:text-xl font-mono">
-                <p className="py-4">
+        <section className="p-8 text-center bg-gray-950 text-white">
+            <div className="flex flex-col gap-8 m-auto max-w-4xl sm:text-lg md:text-xl">
+                <h3 className="text-2xl md:text-3xl bold uppercase tracking-wider">
+                    About
+                </h3>
+                <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Sed quo quaerat ea quisquam, nesciunt illo. Saepe quasi
                     recusandae reiciendis. Pariatur aut dolorum debitis saepe
@@ -15,11 +15,11 @@ export default function About() {
                     reiciendis. Pariatur aut dolorum debitis saepe natus placeat
                     beatae atque perspiciatis earum.
                 </p>
-                <h3 className="py-4 text-center text-2xl md:text-3xl font-serif bold uppercase tracking-wider">
+                <h3 className="text-2xl md:text-3xl bold uppercase tracking-wider">
                     Also
                 </h3>
-                <p className="py-4">
-                    <q className="italic">
+                <p>
+                    <i>
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Assumenda dolor commodi fugit fugiat corrupti
                         dolorem consequatur dolore obcaecati ad, sed itaque
@@ -29,7 +29,7 @@ export default function About() {
                         dignissimos ipsa ratione reiciendis amet dolorem
                         cupiditate? Iusto, facilis fugit consequuntur quia vero
                         doloremque eos eum ipsa.
-                    </q>
+                    </i>
                 </p>
             </div>
         </section>

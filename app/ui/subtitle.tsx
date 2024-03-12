@@ -17,7 +17,7 @@ export default function Subtitle() {
     }, []);
 
     return (
-        <div className="absolute top-0 size-60 p-8 pt-32 border-l-8 font-serif border-l-violet-900/80">
+        <div className="absolute top-0 size-60 p-8 pt-32 border-l-8 border-l-violet-900/80">
             <div style={{ opacity: 1 - scroll / 120 }}>
                 <h3
                     className="text-lg tracking-widest text-violet-900/90"

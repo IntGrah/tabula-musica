@@ -11,7 +11,7 @@ export default function RootLayout({
             <head>
                 <title>Tabula Musica</title>
             </head>
-            <body className="flex flex-col min-h-screen bg-amber-200/20">
+            <body className="flex flex-col min-h-screen font-serif bg-amber-200/20">
                 {children}
                 <Footer />
             </body>

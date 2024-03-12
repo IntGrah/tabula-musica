@@ -80,7 +80,7 @@ function Logo({ scale }: { scale: number }) {
 
 function SideBar() {
     return (
-        <button className="absolute top-0 right-0 flex p-5 h-[72px] max-lg:hidden">
+        <button className="absolute top-0 right-0 flex p-5 h-[72px] transition-opacity max-lg:opacity-0">
             <SideButton>Subscribe</SideButton>
             <Separator />
             <SideButton>Sign in</SideButton>
@@ -127,7 +127,7 @@ function NavLink({
 
 function Search() {
     return (
-        <form className="h-12 py-1 absolute right-4 max-lg:hidden">
+        <form className="h-12 py-1 absolute right-4 transition-opacity max-lg:opacity-0">
             <input
                 className="h-full px-4 w-48 focus:w-60 text-cyan-800 bg-black/5 outline-none rounded transition-all border border-transparent focus:border-gray-400 placeholder:text-gray-500"
                 placeholder="Search articles..."

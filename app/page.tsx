@@ -1,14 +1,12 @@
 import About from "./ui/about";
 import Articles from "./articles/page";
 import Image from "next/image";
-import Header from "./ui/header";
 import ArtOfFugue from "/public/art-of-fugue.jpg";
 import TabulaMusica from "/public/tabula-musica.jpg";
 
 export default function HomePage() {
     return (
-        <main>
-            <Header />
+        <>
             <figure className="h-80 sm:h-96 md:h-[28rem]">
                 <Image
                     className="size-full object-cover opacity-20"
@@ -16,8 +14,8 @@ export default function HomePage() {
                     alt="Manuscript of The Art of Fugue"
                 />
             </figure>
-            <hgroup className="md:px-16 py-8">
-                <h2 className="text-center text-5xl text-violet-900">
+            <hgroup className="md:px-16">
+                <h2 className="text-center py-8 text-5xl text-violet-900">
                     Latest Issue
                 </h2>
                 <Image
@@ -26,12 +24,12 @@ export default function HomePage() {
                     alt=""
                 />
             </hgroup>
-            <section id="about" className="h-72"></section>
+            <div id="about" className="h-72"></div>
             <About />
             <div className="h-72"></div>
             <Articles />
             <div className="h-96"></div>
-        </main>
+        </>
     );
 }
 //

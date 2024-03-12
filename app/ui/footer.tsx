@@ -55,7 +55,7 @@ function FooterItem({
 }) {
     return (
         <hgroup className="grow">
-            <h2 className="text-lg font-serif uppercase tracking-widest text-cyan-100">
+            <h2 className="text-lg uppercase tracking-widest text-cyan-100">
                 {title}
             </h2>
             <div className="py-4 font-mono text-neutral-200">{children}</div>

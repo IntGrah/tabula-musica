@@ -1,32 +1,25 @@
-"use client";
-
 import Link from "next/link";
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties } from "react";
 
-export default function Header() {
-    const [solid, setSolid] = useState(false);
-    const [opacity, setOpacity] = useState(0);
-
-    useEffect(() => {
-        const onScroll = () => setSolid(scrollY < 240);
-        onScroll();
-        setOpacity(1);
-        addEventListener("scroll", onScroll);
-        return () => removeEventListener("scroll", onScroll);
-    }, []);
-
+export default function Header({
+    solid,
+    overlay,
+}: {
+    solid: boolean;
+    overlay: boolean;
+}) {
     const bgStyle: CSSProperties = {
-        opacity,
-        backgroundColor: `rgba(254, 243, 199, ${solid ? 0 : 0.8})`,
-        backdropFilter: `blur(${solid ? 0 : 4}px)`,
-        boxShadow: `0 ${solid ? 0 : 24}px ${solid ? 0 : 48}px ${
-            solid ? 0 : -12
+        backgroundColor: `rgba(254, 243, 199, ${solid ? 0.8 : 0})`,
+        backdropFilter: `blur(${solid ? 4 : 0}px)`,
+        boxShadow: `0 ${solid ? 24 : 0}px ${solid ? 48 : 0}px ${
+            solid ? -12 : 0
         }px rgba(0, 0, 0, 0.25)`,
+        position: overlay ? "fixed" : "sticky",
     };
 
     return (
         <header
-            className="fixed w-full z-50 font-serif transition-all"
+            className="top-0 w-full z-50 font-serif transition-all"
             style={bgStyle}
         >
             <div className="relative flex md:justify-center">
@@ -46,10 +39,10 @@ export default function Header() {
 
 function Logo() {
     return (
-        <div className="relative h-16 px-8 text-center transition-all">
+        <div className="relative h-16 px-8 text-center">
             <div className="py-4">
                 <a
-                    className="font-medium text-2xl tracking-widest xs:tracking-[0.2em] uppercase text-violet-900 select-none"
+                    className="font-medium text-2xl tracking-[0.2em] uppercase text-violet-900 select-none"
                     href="/"
                 >
                     Tabula&nbsp;Musica
@@ -62,7 +55,7 @@ function Logo() {
 
 function Menu() {
     return (
-        <menu className="absolute top-0 flex justify-end right-4 h-16 py-4 transition-opacity max-sm:opacity-0">
+        <menu className="absolute top-0 flex justify-end right-4 h-16 py-4 max-sm:hidden">
             <MenuButton href="/subscribe">Subscribe</MenuButton>
             <MenuSeparator />
             <MenuButton href="/signin">Sign in</MenuButton>
@@ -95,7 +88,7 @@ function MenuSeparator() {
 
 function NavSearch() {
     return (
-        <search className="absolute right-4 h-full py-1 transition-opacity max-sm:opacity-0">
+        <search className="absolute right-4 h-full py-1 max-sm:hidden">
             <form className="h-full">
                 <input
                     className="h-full px-4 w-36 focus:w-48 text-cyan-800 bg-black/5 outline-none rounded-lg border border-transparent transition-all focus:border-gray-400 focus:bg-black/10 placeholder:text-gray-500 focus:placeholder:text-gray-600"

@@ -1,5 +1,7 @@
+"use client";
+
 import { FormEvent } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -27,12 +29,14 @@ export default function LoginPage() {
     return (
         <form onSubmit={handleSubmit}>
             <input type="email" name="email" placeholder="Email" required />
+            <br />
             <input
                 type="password"
                 name="password"
                 placeholder="Password"
                 required
             />
+            <br />
             <button type="submit">Login</button>
         </form>
     );

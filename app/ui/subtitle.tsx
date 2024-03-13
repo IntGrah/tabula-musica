@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useState } from "react";
 import Image from "next/image";
-import TabulaMusica from "/public/tabula-musica.png";
+import TabulaMusica from "@/public/tabula-musica.png";
 
 const style: CSSProperties = { fontVariant: "small-caps" };
 

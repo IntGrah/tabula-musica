@@ -1,6 +1,6 @@
-import { EventCardProps } from "./event";
-import { TrinityChapel } from "./locations";
-import ChamberMusic from "/public/chamber-music.jpg";
+import { EventCardProps } from "@/app/events/event";
+import { TrinityChapel } from "@/app/events/locations";
+import ChamberMusic from "@/public/chamber-music.jpg";
 
 export const summary: EventCardProps = {
     basis: "30%",

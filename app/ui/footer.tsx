@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import Email from "/static/email.png";
-import InstagramLogo from "/static/instagram.png";
+import Email from "@/static/email.png";
+import InstagramLogo from "@/static/instagram.png";
 
 export default function Footer() {
     return (
@@ -74,7 +74,12 @@ function FooterSocial({
 }) {
     return (
         <p>
-            <Image className="inline" {...image} width={20} />
+            <Image
+                className="inline"
+                src={image.src}
+                alt={image.alt}
+                width={20}
+            />
             &nbsp;
             <Link className="tracking-tighter hover:underline" href={href}>
                 {children}

@@ -1,5 +1,5 @@
-import { EventCardProps } from "./event";
-import Spring from "/public/spring.jpg";
+import { EventCardProps } from "@/app/events/event";
+import Spring from "@/public/spring.jpg";
 
 export default {
     basis: "50%",

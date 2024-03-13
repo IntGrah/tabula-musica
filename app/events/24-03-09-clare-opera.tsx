@@ -1,6 +1,6 @@
-import { EventCardProps } from "./event";
-import { ClareChapel } from "./locations";
-import Figaro from "/public/figaro.jpg";
+import { EventCardProps } from "@/app/events/event";
+import { ClareChapel } from "@/app/events/locations";
+import Figaro from "@/public/figaro.jpg";
 
 export const summary: EventCardProps = {
     basis: "50%",

@@ -1,6 +1,6 @@
-import { EventCardProps } from "./event";
-import { WRCH } from "./locations";
-import Rachmaninoff from "/public/rachmaninoff-steinway.jpg";
+import { EventCardProps } from "@/app/events/event";
+import { WRCH } from "@/app/events/locations";
+import Rachmaninoff from "@/public/rachmaninoff-steinway.jpg";
 
 export const summary: EventCardProps = {
     basis: "50%",

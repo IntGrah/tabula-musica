@@ -1,6 +1,6 @@
-import { EventCardProps } from "./event";
-import { TrinityOCR } from "./locations";
-import LisztSonata from "/public/liszt-sonata-end.jpg";
+import { EventCardProps } from "@/app/events/event";
+import { TrinityOCR } from "@/app/events/locations";
+import LisztSonata from "@/public/liszt-sonata-end.jpg";
 
 export const summary: EventCardProps = {
     basis: "50%",

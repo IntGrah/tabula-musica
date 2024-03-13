@@ -1,6 +1,6 @@
-import { EventCardProps } from "./event";
-import { GirtonHall } from "./locations";
-import GirtonCollege from "/public/girton-college.jpg";
+import { EventCardProps } from "@/app/events/event";
+import { GirtonHall } from "@/app/events/locations";
+import GirtonCollege from "@/public/girton-college.jpg";
 
 export const summary: EventCardProps = {
     basis: "50%",

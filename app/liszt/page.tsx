@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LisztSonataEnd from "/public/liszt-sonata-end.jpg";
+import LisztSonataEnd from "@/public/liszt-sonata-end.jpg";
 
 export default function LisztPage() {
     return (
@@ -71,16 +71,17 @@ export default function LisztPage() {
                     similique maiores mollitia vel fugit alias laudantium autem
                     officia at.
                 </p>
+                <figure className="max-w-80">
+                    <Image
+                        className="float-right"
+                        src={LisztSonataEnd}
+                        alt="Manuscript of Liszt Sonata ending"
+                    />
+                    <figcaption className="italic text-gray-600">
+                        Image caption
+                    </figcaption>
+                </figure>
                 <p>
-                    <figure className="max-sm:mb-8 sm:ml-8 w-full max-w-80 sm:float-right">
-                        <Image
-                            src={LisztSonataEnd}
-                            alt="Manuscript of Liszt Sonata ending"
-                        />
-                        <figcaption className="italic text-gray-600">
-                            Image caption
-                        </figcaption>
-                    </figure>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Suscipit est dicta exercitationem, autem enim tempora
                     perspiciatis. Labore officia laborum soluta, iusto nesciunt

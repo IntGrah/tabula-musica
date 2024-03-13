@@ -1,5 +1,5 @@
-import { ArticleCardProps } from "./article-card";
-import LisztSonataEnding from "/public/liszt-sonata-end.jpg";
+import { ArticleCardProps } from "@/app/articles/article-card";
+import LisztSonataEnding from "@/public/liszt-sonata-end.jpg";
 
 export const summary: ArticleCardProps = {
     href: "/#articles",

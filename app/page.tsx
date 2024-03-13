@@ -1,8 +1,8 @@
-import About from "./ui/about";
-import Articles from "./articles/page";
+import About from "@/app/ui/about";
+import ArticlesPage from "@/app/articles/page";
 import Image from "next/image";
-import ArtOfFugue from "/public/art-of-fugue.jpg";
-import TabulaMusica from "/public/tabula-musica.jpg";
+import ArtOfFugue from "@/public/art-of-fugue.jpg";
+import TabulaMusica from "@/public/tabula-musica.jpg";
 
 export default function HomePage() {
     return (
@@ -27,7 +27,7 @@ export default function HomePage() {
             <div id="about" className="h-72"></div>
             <About />
             <div className="h-72"></div>
-            <Articles />
+            <ArticlesPage />
             <div className="h-96"></div>
         </>
     );

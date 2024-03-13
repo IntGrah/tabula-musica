@@ -4,13 +4,10 @@ import Link from "next/link";
 import { CSSProperties, useEffect, useState } from "react";
 
 export default function Header({ overlay }: { overlay: boolean }) {
-    const [solid, setSolid] = useState(false);
-    // const [opacity, setOpacity] = useState(0);
-
+    const [solid, setSolid] = useState(true);
     useEffect(() => {
-        const onScroll = () => setSolid(scrollY >= 240);
+        const onScroll = () => setSolid(!overlay || scrollY >= 240);
         onScroll();
-        // setOpacity(1);
         addEventListener("scroll", onScroll);
         return () => removeEventListener("scroll", onScroll);
     }, []);
@@ -63,7 +60,7 @@ function Menu() {
         <menu className="absolute top-0 flex justify-end right-4 h-16 py-4 max-sm:hidden">
             <MenuButton href="/subscribe">Subscribe</MenuButton>
             <MenuSeparator />
-            <MenuButton href="/signin">Sign in</MenuButton>
+            <MenuButton href="/login">Log in</MenuButton>
         </menu>
     );
 }

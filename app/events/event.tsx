@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Location } from "./locations";
+import { Location } from "@/app/events/locations";
 
 export interface EventCardProps {
     basis: string;
@@ -113,6 +113,7 @@ function EventTime({ date }: { date: Date }) {
         <time
             className="text-gray-300 font-mono uppercase tracking-wider"
             dateTime={date.toISOString()}
+            suppressHydrationWarning
         >
             {date
                 .toLocaleDateString(undefined, dateTimeFormatOptions)

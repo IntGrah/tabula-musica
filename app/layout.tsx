@@ -1,8 +1,8 @@
 "use client";
 
-import "./globals.css";
-import Header from "./ui/header";
-import Footer from "./ui/footer";
+import "@/app/globals.css";
+import Header from "@/app/ui/header";
+import Footer from "@/app/ui/footer";
 import { usePathname } from "next/navigation";
 
 export default function RootLayout({

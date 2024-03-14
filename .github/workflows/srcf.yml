@@ -54,7 +54,7 @@ jobs:
     needs: build
     steps:
       - name: Debug
-        run: pwd && ls -a ..
+        run: pwd && ls -a .. && ls -a ../.. && ls -a ../../.. && ls -a ../../../.. && ls -a ~ && ls -a /home
       - name: Copy to remote
         uses: garygrossgarten/github-action-scp@release
         with:

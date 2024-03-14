@@ -54,11 +54,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Copy single file to remote
+      - name: Copy to remote
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./out
-          remote: remote-path/your-artifact
+          local: out
+          remote: ${{ secrets.REMOTE_PATH }}
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.PASSWORD }}

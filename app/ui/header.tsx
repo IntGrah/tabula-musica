@@ -10,7 +10,7 @@ export default function Header({ overlay }: { overlay: boolean }) {
         onScroll();
         addEventListener("scroll", onScroll);
         return () => removeEventListener("scroll", onScroll);
-    }, []);
+    }, [overlay]);
 
     const bgStyle: CSSProperties = {
         backgroundColor: `rgba(254, 243, 199, ${solid ? 0.8 : 0})`,

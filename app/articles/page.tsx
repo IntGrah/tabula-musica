@@ -1,6 +1,6 @@
-import * as Liszt from "@/app/articles/24-02-06-liszt";
-import * as LisztSonata from "@/app/articles/24-02-05-liszt-sonata";
-import ArticleCard from "@/app/articles/article-card";
+import ArticleCard from "@/components/article-card";
+import * as Liszt from "@/articles/24-02-06-liszt";
+import * as LisztSonata from "@/articles/24-02-05-liszt-sonata";
 
 export default function ArticlesPage() {
     return (

@@ -1,4 +1,4 @@
-import { ArticleCardProps } from "@/app/articles/article-card";
+import { ArticleCardProps } from "@/components/article-card";
 import LisztSonataStart from "@/public/liszt-sonata-start.jpg";
 
 export const summary: ArticleCardProps = {

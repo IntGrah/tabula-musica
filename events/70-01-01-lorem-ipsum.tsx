@@ -1,4 +1,4 @@
-import { EventCardProps } from "@/app/events/event";
+import { EventCardProps } from "@/components/event-card";
 import RiteOfSpring from "@/public/rite-of-spring.jpg";
 
 export const summary: EventCardProps = {

@@ -1,22 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CSSProperties, useEffect, useState } from "react";
+import Menu from "@/components/menu";
+import { SessionProvider } from "next-auth/react";
 
-export default function Header({ overlay }: { overlay: boolean }) {
+export default function Header() {
+    const root = usePathname() === "/";
     const [solid, setSolid] = useState(true);
+
     useEffect(() => {
-        const onScroll = () => setSolid(!overlay || scrollY >= 240);
+        const onScroll = () => setSolid(!root || scrollY >= 240);
         onScroll();
         addEventListener("scroll", onScroll);
         return () => removeEventListener("scroll", onScroll);
-    }, [overlay]);
+    }, [root]);
 
     const bgStyle: CSSProperties = {
         backgroundColor: `rgba(254, 243, 199, ${solid ? 0.8 : 0})`,
         backdropFilter: solid ? "blur(4px)" : "none",
         boxShadow: solid ? "0 2px 12px rgba(0, 0, 0, 0.2)" : "none",
-        position: overlay ? "fixed" : "sticky",
+        position: root ? "fixed" : "sticky",
     };
 
     return (
@@ -26,13 +31,15 @@ export default function Header({ overlay }: { overlay: boolean }) {
         >
             <div className="relative flex md:justify-center">
                 <Logo />
-                <Menu />
+                <SessionProvider>
+                    <Menu />
+                </SessionProvider>
             </div>
             <nav className="relative flex px-4 md:justify-center">
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/events">Events</NavLink>
                 <NavLink href="/#about">About</NavLink>
-                <NavLink href="/#contact">Contact</NavLink>
+                <NavLink href="/profile">Profile</NavLink>
                 <NavSearch />
             </nav>
         </header>
@@ -53,39 +60,6 @@ function Logo() {
             <hr className="absolute bottom-2 m-auto left-[15%] w-[70%] border-violet-900" />
         </div>
     );
-}
-
-function Menu() {
-    return (
-        <menu className="absolute top-0 flex justify-end right-4 h-16 py-4 max-sm:hidden">
-            <MenuButton href="/subscribe">Subscribe</MenuButton>
-            <MenuSeparator />
-            <MenuButton href="/login">Log in</MenuButton>
-        </menu>
-    );
-}
-
-function MenuButton({
-    href,
-    children,
-}: {
-    href: string;
-    children: React.ReactNode;
-}) {
-    return (
-        <li className="flex">
-            <Link
-                className="flex px-3 items-center rounded-full cursor-pointer transition-colors bg-black/10 hover:bg-violet-900 tracking-wider text-violet-900 hover:text-white group"
-                href={href}
-            >
-                {children}
-            </Link>
-        </li>
-    );
-}
-
-function MenuSeparator() {
-    return <div className="mx-2 h-full border-l border-violet-800" />;
 }
 
 function NavSearch() {

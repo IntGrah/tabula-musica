@@ -1,5 +1,5 @@
-import { EventCardProps } from "@/app/events/event";
-import { GirtonHall } from "@/app/events/locations";
+import { EventCardProps } from "@/components/event-card";
+import { GirtonHall } from "@/events/locations";
 import GirtonCollege from "@/public/girton-college.jpg";
 
 export const summary: EventCardProps = {

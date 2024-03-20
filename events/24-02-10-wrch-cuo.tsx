@@ -1,5 +1,5 @@
-import { EventCardProps } from "@/app/events/event";
-import { WRCH } from "@/app/events/locations";
+import { EventCardProps } from "@/components/event-card";
+import { WRCH } from "@/events/locations";
 import Rachmaninoff from "@/public/rachmaninoff-steinway.jpg";
 
 export const summary: EventCardProps = {

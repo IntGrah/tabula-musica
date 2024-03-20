@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Location } from "@/app/events/locations";
+import { Location } from "@/events/locations";
 
 export interface EventCardProps {
     basis: string;

@@ -1,24 +1,19 @@
-"use client";
-
 import "@/app/globals.css";
-import Header from "@/app/ui/header";
-import Footer from "@/app/ui/footer";
-import { usePathname } from "next/navigation";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const isRoot = usePathname() === "/";
-
     return (
-        <html lang="en-GB" className="scroll-smooth">
+        <html lang="en-GB">
             <head>
                 <title>Tabula Musica</title>
             </head>
-            <body className="relative flex flex-col min-h-screen font-serif bg-amber-200/20">
-                <Header overlay={isRoot} />
+            <body className="relative flex flex-col min-h-screen font-serif bg-amber-200/20 scroll-smooth">
+                <Header />
                 <main className="grow">{children}</main>
                 <Footer />
             </body>

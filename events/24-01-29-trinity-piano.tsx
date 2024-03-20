@@ -1,5 +1,5 @@
-import { EventCardProps } from "@/app/events/event";
-import { TrinityOCR } from "@/app/events/locations";
+import { EventCardProps } from "@/components/event-card";
+import { TrinityOCR } from "@/events/locations";
 import LisztSonata from "@/public/liszt-sonata-end.jpg";
 
 export const summary: EventCardProps = {

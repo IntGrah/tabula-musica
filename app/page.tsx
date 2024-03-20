@@ -1,4 +1,4 @@
-import About from "@/app/ui/about";
+import About from "@/components/about";
 import ArticlesPage from "@/app/articles/page";
 import Image from "next/image";
 import ArtOfFugue from "@/public/art-of-fugue.jpg";

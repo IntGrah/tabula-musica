@@ -1,4 +1,4 @@
-import { EventCardProps } from "@/app/events/event";
+import { EventCardProps } from "@/components/event-card";
 import Spring from "@/public/spring.jpg";
 
 export default {

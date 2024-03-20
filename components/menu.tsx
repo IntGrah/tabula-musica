@@ -1,14 +1,14 @@
-import { useSession } from "next-auth/react";
+import { auth } from "@/auth";
 import Link from "next/link";
 
-export default function Menu() {
-    const {data: session} = useSession();
+export default async function Menu() {
+    const session = await auth();
 
     return (
         <menu className="absolute top-0 flex justify-end right-4 h-16 py-4 max-sm:hidden">
             <MenuButton href="/subscribe">Subscribe</MenuButton>
             <MenuSeparator />
-            {session ? (
+            {session?.user ? (
                 <MenuButton href="/profile">{session.user?.name}</MenuButton>
             ) : (
                 <MenuButton href="/login">Log in</MenuButton>

@@ -1,14 +1,13 @@
-"use client";
-
-import { signIn } from "next-auth/react";
+import { signIn } from "@/auth";
 import { FormEvent } from "react";
 
 export default function LoginPage() {
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
+        "use server";
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
-        signIn("credentials", formData);
+        await signIn("credentials", formData);
     }
 
     return (
@@ -27,7 +26,14 @@ export default function LoginPage() {
             </form>
             <a href="/api/auth/signin">Sign in</a>
             <br />
-            <button onClick={() => signIn("google")}>Direct</button>
+            <button
+                onClick={async () => {
+                    "use server";
+                    await signIn("google");
+                }}
+            >
+                Direct
+            </button>
             <br />
         </div>
     );

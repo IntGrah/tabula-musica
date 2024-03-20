@@ -1,6 +1,9 @@
 import "@/app/globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Logo from "@/components/logo";
+import Menu from "@/components/menu";
+import Navigation from "@/components/navigation";
 
 export default function RootLayout({
     children,
@@ -13,7 +16,13 @@ export default function RootLayout({
                 <title>Tabula Musica</title>
             </head>
             <body className="relative flex flex-col min-h-screen font-serif bg-amber-200/20 scroll-smooth">
-                <Header />
+                <Header>
+                    <div className="relative flex md:justify-center">
+                        <Logo />
+                        <Menu />
+                    </div>
+                    <Navigation />
+                </Header>
                 <main className="grow">{children}</main>
                 <Footer />
             </body>

@@ -5,23 +5,23 @@ export default async function ProfileInfo() {
     const session = await auth();
     if (!session?.user) {
         return (
-            <p className="py-16 text-5xl text-center text-cyan-800">
+            <div className="py-16 text-5xl text-center text-cyan-800">
                 Please sign in:
                 <br />
-                <button
-                    onClick={async () => {
+                <form
+                    action={async () => {
                         "use server";
                         await signIn("google");
                     }}
                 >
-                    Sign in with Google
-                </button>
-            </p>
+                    <button>Sign in with Google</button>
+                </form>
+            </div>
         );
     }
 
     return (
-        <p className="py-16 text-5xl text-center text-cyan-800">
+        <div className="py-16 text-5xl text-center text-cyan-800">
             Hello, {session?.user?.name}!
             <br />
             Logged in as {session?.user?.email}
@@ -33,14 +33,14 @@ export default async function ProfileInfo() {
                 width={100}
                 height={100}
             />
-            <button
-                onClick={async () => {
+            <form
+                action={async () => {
                     "use server";
                     await signOut();
                 }}
             >
-                Sign out
-            </button>
-        </p>
+                <button>Sign out</button>
+            </form>
+        </div>
     );
 }

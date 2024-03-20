@@ -40,7 +40,6 @@ export default function EventCard({
     props: EventCardProps;
 }) {
     const [extra, setExtra] = useState(false);
-    const onClick = () => setExtra(!extra);
 
     return (
         <article
@@ -65,7 +64,7 @@ export default function EventCard({
                 <div className="text-white">{description}</div>
                 <hr className="my-1 border-gray-300/10" />
                 <EventInformation
-                    onClick={onClick}
+                    onClick={() => setExtra(!extra)}
                     extra={extra}
                     programme={programme}
                     performers={performers}

@@ -50,10 +50,10 @@ const config: NextAuthConfig = {
     ],
 
     callbacks: {
-        signIn({ account, profile, credentials }) {
+        async signIn({ account, profile, credentials }) {
             if (account?.provider === "google" && profile) {
                 const emailExists = emailInDatabase(profile.email!);
-                if (false && !emailExists) {
+                if (0 && !emailExists) {
                     console.log("Email not found in database");
                 }
                 return true;
@@ -63,12 +63,12 @@ const config: NextAuthConfig = {
             }
             return true;
         },
-        authorized({ request, auth }) {
+        async authorized({ request, auth }) {
             const { pathname } = request.nextUrl;
             if (pathname === "/hidden") return !!auth;
             return true;
         },
-        jwt({ token, trigger, session }) {
+        async jwt({ token, trigger, session }) {
             if (trigger === "update") token.name = session.user.name;
             return token;
         },

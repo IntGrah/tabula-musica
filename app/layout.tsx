@@ -23,7 +23,7 @@ export default function RootLayout({
                     </div>
                     <Navigation />
                 </Header>
-                <main className="grow">{children}</main>
+                <div className="grow">{children}</div>
                 <Footer />
             </body>
         </html>

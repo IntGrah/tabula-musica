@@ -6,13 +6,15 @@ import * as GirtonStJohn from "@/events/24-03-08-girton-st-john";
 
 export default function EventsPage() {
     return (
-        <div className="relative flex flex-wrap bg-gray-800/95 shadow-2xl">
-            <EventCard props={LoremIpsum.summary} />
-            <EventCard props={GirtonStJohn.summary} />
-            <EventCard props={TrinityTCO.summary} />
-            <EventCard props={LoremIpsum.summary} />
-            <EventCard props={ClareOpera.summary} />
-            <EventCard props={LoremIpsum.summary} />
-        </div>
+        <main>
+            <div className="relative flex flex-wrap bg-gray-800/95 shadow-2xl">
+                <EventCard props={LoremIpsum.summary} />
+                <EventCard props={GirtonStJohn.summary} />
+                <EventCard props={TrinityTCO.summary} />
+                <EventCard props={LoremIpsum.summary} />
+                <EventCard props={ClareOpera.summary} />
+                <EventCard props={LoremIpsum.summary} />
+            </div>
+        </main>
     );
 }

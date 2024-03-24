@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  id       Int       @id @default(autoincrement())
+  userId   Int
+  title    String
+  body     String    @db.Text
+  time     DateTime  @db.DateTime(0)
+  author   User      @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "Article_ibfk_1")
+  comments Comment[]
+
+  @@index([userId], map: "userId")
+}
+
+model CredentialsAccount {
+  id           Int       @id @default(autoincrement())
+  userId       Int       @unique(map: "userId")
+  passwordHash String    @db.Char(60)
+  expires      DateTime?
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "CredentialsAccount_ibfk_1")
+}
+
+model GoogleAccount {
+  id      Int       @id @default(autoincrement())
+  userId  Int       @unique(map: "userId")
+  sub     String    @unique(map: "sub")
+  expires DateTime?
+  user    User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "GoogleAccount_ibfk_1")
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  tokenHash String   @unique(map: "tokenHash") @db.Char(64)
+  recovery  Boolean  @default(false)
+  expires   DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Session_ibfk_1")
+
+  @@index([userId], map: "userId")
+}
+
+model User {
+  id                 Int                 @id @default(autoincrement())
+  email              String              @unique(map: "email")
+  role               Int                 @default(1) @db.TinyInt
+  creationTime       DateTime            @default(now()) @db.Timestamp(0)
+  lastAccessed       DateTime            @default(now()) @db.Timestamp(0)
+  articles           Article[]
+  comments           Comment[]
+  credentialsAccount CredentialsAccount?
+  googleAccount      GoogleAccount?
+  profile            Profile?
+  resetToken         ResetToken?
+  sessions           Session[]
+  verificationCode   VerificationCode?
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  articleId Int
+  userId    Int
+  replyId   Int?
+  body      String    @db.Text
+  time      DateTime
+  article   Article   @relation(fields: [articleId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Comment_ibfk_1")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Comment_ibfk_2")
+  parent    Comment?  @relation("CommentToComment", fields: [replyId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "Comment_ibfk_3")
+  children  Comment[] @relation("CommentToComment")
+
+  @@index([articleId], map: "articleId")
+  @@index([replyId], map: "replyId")
+  @@index([userId], map: "userId")
+}
+
+model ResetToken {
+  userId    Int      @unique(map: "userId")
+  tokenHash String   @db.Char(60)
+  expires   DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "ResetToken_ibfk_1")
+}
+
+model VerificationCode {
+  userId   Int      @unique(map: "userId")
+  codeHash String   @db.Char(60)
+  expires  DateTime
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "VerificationCode_ibfk_1")
+}
+
+model Profile {
+  id          Int     @id @default(autoincrement())
+  userId      Int     @unique(map: "userId")
+  name        String
+  image       String? @db.Text
+  bio         String? @db.Text
+  mailingList Boolean @default(false)
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Profile_ibfk_1")
+}

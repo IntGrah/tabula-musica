@@ -12,14 +12,16 @@
 /build
 
 # misc
+/.vscode/
 .DS_Store
 *.pem
 
 # debug
 npm-debug.log*
 
-# local env files
+# env files
 .env*.local
+.env
 
 # typescript
 *.tsbuildinfo

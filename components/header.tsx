@@ -2,8 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import { CSSProperties, useEffect, useState } from "react";
-import Menu from "@/components/menu";
-import Navigation from "@/components/navigation";
 
 export default function Header({ children }: { children: React.ReactNode }) {
     const root = usePathname() === "/";
@@ -27,7 +25,8 @@ export default function Header({ children }: { children: React.ReactNode }) {
         <header
             className="top-0 w-full z-50 font-serif transition-all duration-500"
             style={bgStyle}
-            children={children}
-        />
+        >
+            {children}
+        </header>
     );
 }

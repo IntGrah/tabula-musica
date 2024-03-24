@@ -1,15 +1,15 @@
-import { auth } from "@/auth";
+import { getSessionUserProfile } from "@/app/lib/session";
 import Link from "next/link";
 
 export default async function Menu() {
-    const session = await auth();
+    const { profile } = await getSessionUserProfile();
 
     return (
         <menu className="absolute top-0 flex justify-end right-4 h-16 py-4 max-sm:hidden">
             <MenuButton href="/subscribe">Subscribe</MenuButton>
             <MenuSeparator />
-            {session?.user ? (
-                <MenuButton href="/profile">{session.user?.name}</MenuButton>
+            {profile ? (
+                <MenuButton href="/profile">{profile.name}</MenuButton>
             ) : (
                 <MenuButton href="/login">Log in</MenuButton>
             )}

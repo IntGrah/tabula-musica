@@ -9,7 +9,7 @@ export default function Logo() {
                     Tabula&nbsp;Musica
                 </a>
             </div>
-            <hr className="absolute bottom-2 m-auto left-[15%] w-[70%] border-violet-900" />
+            <hr className="absolute bottom-2 left-[15%] w-[70%] border-violet-900" />
         </div>
     );
 }

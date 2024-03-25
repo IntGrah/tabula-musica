@@ -3,6 +3,7 @@ import ArticlesPage from "@/app/articles/page";
 import Image from "next/image";
 import ArtOfFugue from "@/public/art-of-fugue.jpg";
 import TabulaMusica from "@/public/tabula-musica.jpg";
+import Restrict from "@/components/util/restrict";
 
 export default function HomePage() {
     return (
@@ -15,11 +16,9 @@ export default function HomePage() {
                 />
             </figure>
             <hgroup className="md:px-16">
-                <Image
-                    className="m-auto w-full max-w-4xl"
-                    src={TabulaMusica}
-                    alt=""
-                />
+                <Restrict>
+                    <Image className="w-full" src={TabulaMusica} alt="" />
+                </Restrict>
             </hgroup>
             <div id="about" className="h-72"></div>
             <About />

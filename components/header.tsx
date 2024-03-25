@@ -2,8 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import { CSSProperties, useEffect, useState } from "react";
+import Restrict from "@/components/util/restrict";
 
-export default function Header({ children }: { children: React.ReactNode }) {
+export default function Header({ children }: React.PropsWithChildren) {
     const root = usePathname() === "/";
     const [solid, setSolid] = useState(true);
 
@@ -26,7 +27,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             className="top-0 w-full z-50 font-serif transition-all duration-500"
             style={bgStyle}
         >
-            {children}
+            <Restrict>{children}</Restrict>
         </header>
     );
 }

@@ -2,11 +2,12 @@ import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import Email from "@/static/email.png";
 import InstagramLogo from "@/static/instagram.png";
+import Restrict from "@/components/util/restrict";
 
 export default function Footer() {
     return (
         <footer id="contact" className="px-8 bg-gray-900">
-            <div className="m-auto w-full max-w-5xl">
+            <Restrict>
                 <div className="flex flex-wrap py-6 gap-8">
                     <FooterItem title="Contact">
                         <FooterSocial
@@ -41,7 +42,7 @@ export default function Footer() {
                 <p className="py-4 text-xs font-mono tracking-wide text-neutral-400">
                     © 2024 Tabula Musica. All rights reserved.
                 </p>
-            </div>
+            </Restrict>
         </footer>
     );
 }

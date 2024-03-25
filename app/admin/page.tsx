@@ -1,7 +1,7 @@
 import { getSessionUserProfile } from "@/app/lib/session";
 import { signOut } from "@/auth";
-import { notFound, redirect } from "next/navigation";
-import prisma from "../lib/database";
+import { notFound } from "next/navigation";
+import prisma from "@/app/lib/database";
 
 export default async function AdminPage() {
     const { session, user, profile } = await getSessionUserProfile();

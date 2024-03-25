@@ -1,9 +1,11 @@
+import Restrict from "@/components/util/restrict";
+
 export default function About() {
     return (
-        <section className="p-8 text-center bg-gray-950 text-white">
-            <div className="flex flex-col gap-8 m-auto max-w-4xl sm:text-lg md:text-xl">
+        <section className="p-8 text-center sm:text-lg md:text-xl bg-gray-950 text-white">
+            <Restrict>
                 <h3 className="text-2xl md:text-3xl bold uppercase tracking-wider">
-                    About
+                    Blah
                 </h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -16,7 +18,7 @@ export default function About() {
                     beatae atque perspiciatis earum.
                 </p>
                 <h3 className="text-2xl md:text-3xl bold uppercase tracking-wider">
-                    Also
+                    Blah
                 </h3>
                 <p>
                     <i>
@@ -31,7 +33,7 @@ export default function About() {
                         doloremque eos eum ipsa.
                     </i>
                 </p>
-            </div>
+            </Restrict>
         </section>
     );
 }

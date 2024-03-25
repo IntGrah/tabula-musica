@@ -5,11 +5,7 @@ import Logo from "@/components/logo";
 import Menu from "@/components/menu";
 import Navigation from "@/components/navigation";
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
     return (
         <html lang="en-GB">
             <head>

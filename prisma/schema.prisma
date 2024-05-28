@@ -8,8 +8,8 @@ datasource db {
 }
 
 model Article {
-  id       Int       @id @default(autoincrement())
-  userId   Int
+  id       String    @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  userId   String    @db.Char(36)
   title    String
   body     String    @db.Text
   time     DateTime  @db.DateTime(0)
@@ -19,54 +19,39 @@ model Article {
   @@index([userId], map: "userId")
 }
 
-model CredentialsAccount {
-  id           Int       @id @default(autoincrement())
-  userId       Int       @unique(map: "userId")
-  passwordHash String    @db.Char(60)
-  expires      DateTime?
-  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "CredentialsAccount_ibfk_1")
-}
-
-model GoogleAccount {
-  id      Int       @id @default(autoincrement())
-  userId  Int       @unique(map: "userId")
-  sub     String    @unique(map: "sub")
-  expires DateTime?
-  user    User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "GoogleAccount_ibfk_1")
-}
-
 model Session {
-  id        Int      @id @default(autoincrement())
-  userId    Int
-  tokenHash String   @unique(map: "tokenHash") @db.Char(64)
+  id        String   @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  userId    String   @db.Char(36)
+  expiresAt DateTime
   recovery  Boolean  @default(false)
-  expires   DateTime
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Session_ibfk_1")
 
   @@index([userId], map: "userId")
 }
 
 model User {
-  id                 Int                 @id @default(autoincrement())
-  email              String              @unique(map: "email")
-  role               Int                 @default(1) @db.TinyInt
-  creationTime       DateTime            @default(now()) @db.Timestamp(0)
-  lastAccessed       DateTime            @default(now()) @db.Timestamp(0)
-  articles           Article[]
-  comments           Comment[]
-  credentialsAccount CredentialsAccount?
-  googleAccount      GoogleAccount?
-  profile            Profile?
-  resetToken         ResetToken?
-  sessions           Session[]
-  verificationCode   VerificationCode?
+  id               String            @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  email            String            @unique(map: "email")
+  role             User_role
+  name             String
+  image            String?
+  bio              String            @default("") @db.VarChar(255)
+  mailingList      Boolean           @default(false)
+  createdAt        DateTime          @default(now()) @db.Timestamp(0)
+  accessedAt       DateTime          @default(now()) @db.Timestamp(0)
+  accounts         Account?
+  articles         Article[]
+  comments         Comment[]
+  resetToken       ResetToken?
+  sessions         Session[]
+  verificationCode VerificationCode?
 }
 
 model Comment {
-  id        Int       @id @default(autoincrement())
-  articleId Int
-  userId    Int
-  replyId   Int?
+  id        String    @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  articleId String    @db.Char(36)
+  userId    String    @db.Char(36)
+  replyId   String?   @db.Char(36)
   body      String    @db.Text
   time      DateTime
   article   Article   @relation(fields: [articleId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Comment_ibfk_1")
@@ -80,25 +65,37 @@ model Comment {
 }
 
 model ResetToken {
-  userId    Int      @unique(map: "userId")
-  tokenHash String   @db.Char(60)
-  expires   DateTime
+  userId    String   @unique(map: "userId") @db.Char(36)
+  token     String   @db.Char(60)
+  expiresAt DateTime
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "ResetToken_ibfk_1")
 }
 
 model VerificationCode {
-  userId   Int      @unique(map: "userId")
-  codeHash String   @db.Char(60)
-  expires  DateTime
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "VerificationCode_ibfk_1")
+  userId    String   @unique(map: "userId") @db.Char(36)
+  code      Int
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "VerificationCode_ibfk_1")
 }
 
-model Profile {
-  id          Int     @id @default(autoincrement())
-  userId      Int     @unique(map: "userId")
-  name        String
-  image       String? @db.Text
-  bio         String? @db.Text
-  mailingList Boolean @default(false)
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Profile_ibfk_1")
+model Account {
+  id           String           @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  provider     Account_provider
+  userId       String           @unique(map: "userId")
+  passwordHash String?          @db.Char(60)
+  isPrimary    Boolean
+  user         User             @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "Account_ibfk_1")
+}
+
+enum Account_provider {
+  credentials
+  google
+}
+
+enum User_role {
+  unverified
+  verified
+  subscriber
+  editor
+  admin
 }

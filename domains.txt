@@ -1,9 +1,0 @@
-domain              annum    notes
-tabulamusica.co.uk  [£5.89]  UK intention
-tabulamusica.org.uk [£10.23] UK intention
-tabulamusica.org    [£10.23] Non-profit
-tabulamusica.com    [£11.01] Commercial
-musica.org.uk       [£7.47]  Short
-tabulamusica.cam    [£7.86]  Domain hack; Camera
-tabula.cam          [£7.86]  Short
-tabm.us             [£6.68]  Domain hack; US

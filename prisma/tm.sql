@@ -1,81 +1,68 @@
 DROP DATABASE tm;
 CREATE DATABASE tm;
 USE tm;
--- role
--- 0 anonymous (unused)
--- 1 unverified (customise profile)
--- 2 verified (commenting)
--- 3 subscriber (all articles)
--- 4 editor (write articles)
--- 5 administrator (manage users)
 CREATE TABLE User (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id CHAR(36) PRIMARY KEY NOT NULL DEFAULT (UUID()),
     email VARCHAR(191) UNIQUE NOT NULL,
-    role TINYINT NOT NULL DEFAULT 1,
-    creationTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    lastAccessed TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-CREATE TABLE Profile (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    userId INTEGER UNIQUE NOT NULL,
+    role ENUM(
+        'unverified',
+        'verified',
+        'subscriber',
+        'editor',
+        'admin'
+    ) NOT NULL,
     name VARCHAR(191) NOT NULL,
-    image TEXT DEFAULT NULL,
-    bio TEXT DEFAULT NULL,
-    mailingList BOOL NOT NULL DEFAULT FALSE,
-    FOREIGN KEY (userId) REFERENCES User (id) ON DELETE CASCADE
+    image VARCHAR(191) DEFAULT NULL,
+    bio VARCHAR(255) NOT NULL DEFAULT '',
+    mailingList BOOLEAN NOT NULL DEFAULT FALSE,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    accessedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE GoogleAccount (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    userId INTEGER UNIQUE NOT NULL,
-    sub VARCHAR(191) UNIQUE NOT NULL,
-    expires DATETIME(3) DEFAULT NULL,
-    FOREIGN KEY (userId) REFERENCES User (id) ON DELETE CASCADE
-);
-CREATE TABLE CredentialsAccount (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    userId INTEGER UNIQUE NOT NULL,
-    passwordHash CHAR(60) NOT NULL,
-    expires DATETIME(3) DEFAULT NULL,
+CREATE TABLE Account (
+    id CHAR(36) PRIMARY KEY NOT NULL DEFAULT (UUID()),
+    provider ENUM('credentials', 'google') NOT NULL,
+    userId VARCHAR(191) UNIQUE NOT NULL,
+    passwordHash CHAR(60),
+    -- NULL for OAuth
+    isPrimary BOOLEAN NOT NULL,
     FOREIGN KEY (userId) REFERENCES User (id) ON DELETE CASCADE
 );
 CREATE TABLE ResetToken (
-    userId INTEGER UNIQUE NOT NULL,
-    -- Magic link
-    tokenHash CHAR(60) NOT NULL,
-    expires DATETIME(3) NOT NULL,
+    userId CHAR(36) UNIQUE NOT NULL,
+    token CHAR(60) NOT NULL,
+    -- reset password
+    expiresAt DATETIME(3) NOT NULL,
     FOREIGN KEY (userId) REFERENCES User (id) ON DELETE CASCADE
 );
 CREATE TABLE VerificationCode (
-    userId INTEGER UNIQUE NOT NULL,
-    -- 6-digit token
-    codeHash CHAR(60) NOT NULL,
-    expires DATETIME(3) NOT NULL,
+    userId CHAR(36) UNIQUE NOT NULL,
+    code INT NOT NULL,
+    -- 6-digit token verify ownership of email
+    expiresAt DATETIME(3) NOT NULL,
     FOREIGN KEY (userId) REFERENCES User (id) ON DELETE CASCADE
 );
 CREATE TABLE Session (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    userId INTEGER NOT NULL,
-    tokenHash CHAR(64) UNIQUE NOT NULL,
-    -- User is forced to reset password
+    id CHAR(36) PRIMARY KEY NOT NULL DEFAULT (UUID()),
+    userId CHAR(36) NOT NULL,
+    expiresAt DATETIME(3) NOT NULL,
     recovery BOOLEAN NOT NULL DEFAULT FALSE,
-    expires DATETIME(3) NOT NULL,
+    -- user is forced to reset password
     FOREIGN KEY (userId) REFERENCES User (id) ON DELETE CASCADE
 );
 CREATE TABLE Article (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    userId INTEGER NOT NULL,
-    -- author
+    id CHAR(36) PRIMARY KEY NOT NULL DEFAULT (UUID()),
+    userId CHAR(36) NOT NULL,
     title VARCHAR(191) NOT NULL,
     body TEXT NOT NULL,
     time DATETIME NOT NULL,
     FOREIGN KEY (userId) REFERENCES User (id)
 );
 CREATE TABLE Comment (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    articleId INTEGER NOT NULL,
-    userId INTEGER NOT NULL,
+    id CHAR(36) PRIMARY KEY NOT NULL DEFAULT (UUID()),
+    articleId CHAR(36) NOT NULL,
+    userId CHAR(36) NOT NULL,
     -- NULL for top-level comments
-    replyId INT,
+    replyId CHAR(36),
     body TEXT NOT NULL,
     time DATETIME(3) NOT NULL,
     -- When article is deleted, comments are deleted
@@ -85,3 +72,26 @@ CREATE TABLE Comment (
     -- When comment is deleted, replies are preserved and 'Deleted User' is set as author
     FOREIGN KEY (replyId) REFERENCES Comment (id)
 );
+INSERT INTO User (name, email, role)
+VALUES (
+        "Deleted User",
+        "deleteduser@example.com",
+        "editor"
+    );
+INSERT INTO User(name, email, role)
+VALUES (
+        "Admin User",
+        "admin@example.com",
+        "admin"
+    );
+INSERT INTO Account (provider, userId, passwordHash, isPrimary)
+VALUES (
+        "credentials",
+        (
+            SELECT id
+            FROM User
+            WHERE email = "admin@example.com"
+        ),
+        "$2a$12$CnWP4QwiBvGxpxL2OeEWzupOtEiVcjrV6c3m..yLxl.kSkmYihsWi",
+        TRUE
+    );

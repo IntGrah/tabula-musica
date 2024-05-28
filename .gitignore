@@ -1,28 +1,12 @@
-# dependencies
-/node_modules
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-/.vscode/
 .DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-
-# env files
-.env*.local
+node_modules
+/build
+/.svelte-kit
+/package
 .env
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+.env.*
+!.env.example
+.vercel
+.output
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

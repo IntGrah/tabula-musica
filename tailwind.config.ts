@@ -1,25 +1,15 @@
-import type { Config } from "tailwindcss";
-import defaultTheme from "tailwindcss/defaultTheme";
+import defaultTheme from 'tailwindcss/defaultTheme';
+import typography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss/types';
 
-const config: Config = {
-    content: [
-        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    ],
-    theme: {
-        screens: {
-            xs: "480px",
-            ...defaultTheme.screens,
-        },
-        extend: {
-            backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic":
-                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-            },
-        },
-    },
-    plugins: [],
-};
-export default config;
+export default {
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		screens: {
+			xs: '560px',
+			...defaultTheme.screens
+		},
+		extend: {}
+	},
+	plugins: [typography]
+} satisfies Config;

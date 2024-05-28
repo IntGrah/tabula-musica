@@ -1,36 +1,43 @@
 {
-    "name": "tabula-musica",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "prisma": "npx prisma db pull && npx prisma generate"
-    },
-    "dependencies": {
-        "@prisma/client": "^5.11.0",
-        "bcryptjs": "^2.4.3",
-        "mysql2": "^3.9.2",
-        "next": "^14.0.4",
-        "react": "^18",
-        "react-dom": "^18",
-        "sharp": "^0.33.2",
-        "uuid": "^9.0.1"
-    },
-    "devDependencies": {
-        "@types/bcryptjs": "^2.4.6",
-        "@types/node": "^20.11.26",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
-        "@types/uuid": "^9.0.8",
-        "autoprefixer": "^10.4.17",
-        "eslint": "^8",
-        "eslint-config-next": "14.0.4",
-        "postcss": "^8.4.33",
-        "prisma": "^5.11.0",
-        "tailwindcss": "^3.4.1",
-        "typescript": "^5"
-    }
+	"name": "tabula-musica",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"prisma": "npx prisma db pull && npx prisma generate"
+	},
+	"devDependencies": {
+		"@fontsource/fira-mono": "^4.5.10",
+		"@prisma/client": "^5.11.0",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@tailwindcss/typography": "^0.5.12",
+		"@types/bcryptjs": "^2.4.6",
+		"@types/eslint": "^8.56.0",
+		"@types/node": "^20.11.30",
+		"@typescript-eslint/eslint-plugin": "^7.0.0",
+		"@typescript-eslint/parser": "^7.0.0",
+		"autoprefixer": "^10.4.19",
+		"bcryptjs": "^2.4.3",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.35.1",
+		"postcss": "^8.4.38",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"prisma": "^5.11.0",
+		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"tailwindcss": "^3.4.1",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^5.0.3"
+	},
+	"type": "module"
 }

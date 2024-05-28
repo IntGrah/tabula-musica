@@ -1,12 +1,38 @@
-# Tabula Musica
+# create-svelte
 
-Cambridge SU Society
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-### Goals
+## Creating a project
 
-Source: [(Manifesto)](https://www.cambridgesu.co.uk/resourcehandler/e4f66a63-9857-4f5f-bbcc-c138e38af0ac/)
+If you're seeing this, you've probably already done this step. Congrats!
 
-Platform for the discussion, performing and writing of music, including opinion articles and ideas.
-Envisioned articles include: concert reviews (with permission), important musical topics, interviews, commentaries from performers et cetera.
-Allow musicians with an interest for writing to develop skills.
-Intended to encompass those studying music as well as those who enjoy music as a hobby.
+```bash
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
+```
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

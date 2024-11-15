@@ -9,7 +9,8 @@
 	const user = data.user;
 	let open = false;
 	import { page } from '$app/stores';
-	let query = $page.url.searchParams.get('q');
+	// let query = $page.url.searchParams.get('q');
+	let query = "foo";
 </script>
 
 <svelte:head>
@@ -42,9 +43,11 @@
 				</form>
 			</search>
 			<nav class="max-sm:hidden flex gap-x-4 md:gap-x-8 text-cyan-800">
-				<a class="nav-link" href="/articles">Articles</a>
-				<a class="nav-link" href="/events">Events</a>
 				<a class="nav-link" href="/about">About</a>
+				<!-- <a class="nav-link" href="/articles">Articles</a> -->
+				<a class="nav-link" href="/issues">Issues</a>
+				<!-- Add Archive, Bibliography, Puzzles -->
+				<a class="nav-link" href="/events">Events</a>
 			</nav>
 			<nav class="flex gap-x-4 py-1">
 				<a class="nav-button" href="/settings/profile">

@@ -1,9 +1,10 @@
 import prisma, { getSession } from '$lib/server/database';
 import { fail } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
+import { defaultUser } from '../../../default_user';
 
 export const load: PageServerLoad = async ({ locals }) => {
-	const user = locals.user!;
+	const user = locals.user ?? defaultUser;
 
 	const credentials = await prisma.account.findUnique({
 		where: { userId: user.id, provider: 'credentials' }

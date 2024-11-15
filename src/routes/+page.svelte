@@ -1,12 +1,16 @@
-<!-- <figure class="fixed top-10 -z-[1] w-full overflow-hidden">
+<script>
+	import ArtOfFugue from '$lib/assets/art-of-fugue.jpg';
+</script>
+
+<figure class="fixed top-10 z-[1] w-full overflow-hidden">
 	<img
 		class="size-full object-cover opacity-20"
-		src="/art-of-fugue.jpg"
+		src={ArtOfFugue}
 		alt="Manuscript of The Art of Fugue"
 	/>
-</figure> -->
+</figure>
 
-<div class="relative h-80 sm:h-96 md:h-[28rem]"></div>
+<div class="relative h-[800px] sm:h-96 md:h-[28rem]"></div>
 <!-- <hgroup class="md:px-16">
 	<div class="mx-auto max-w-6xl">
 		<img class="w-full" src="/tabula-musica.jpg" alt="Treble Clef" />

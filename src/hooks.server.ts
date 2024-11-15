@@ -1,11 +1,15 @@
 import { authenticate } from '$lib/server/auth';
+import { User_role, type User } from '@prisma/client';
 import { error, redirect, type Handle } from '@sveltejs/kit';
+import { defaultUser } from './default_user';
 
 const adminRoutes = ['/admin'];
 const protectedRoutes = ['/profile', '/settings'].concat(adminRoutes);
 
 export const handle: Handle = async ({ event, resolve }) => {
-	const { user } = (event.locals = await authenticate(event));
+	// const { user } = (event.locals = await authenticate(event));
+
+	const user = defaultUser;
 
 	for (const route of protectedRoutes) {
 		if (event.url.pathname.startsWith(route) && !user) {

@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	import { fly, slide } from 'svelte/transition';
 
-	export let open;
+	 export let open: boolean;
 
 	const links = [
-		{ name: 'Articles', href: '/articles' },
+		{ name: 'About', href: '/about' },
+		{ name: 'Issues', href: '/issues' },
+		// { name: 'Articles', href: '/articles' },
 		{ name: 'Events', href: '/events' },
-		{ name: 'About', href: '/about' }
 	];
 </script>
 

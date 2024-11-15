@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Modal from '$lib/components/Modal.svelte';
 	import { isSubscriber } from '$lib/util';
+	import { defaultUser } from '../../../default_user';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	const user = data.user!;
+	const user = data.user ?? defaultUser;
 
 	let addressModal: HTMLDialogElement;
 </script>

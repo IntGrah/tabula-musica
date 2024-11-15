@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+* {
+    font-family: 'Belleza', sans-serif;
+}
 
 .input {
 	@apply block px-4 h-10

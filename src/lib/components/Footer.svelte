@@ -1,7 +1,7 @@
 <footer class="bg-gray-900">
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="grid sm:grid-cols-2 py-6 gap-8">
-			<hgroup class="grow">
+			<!-- <hgroup class="grow">
 				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Subscribe</h4>
 				<p class="mb-4 text-gray-200">From £0/month</p>
 				<div class="flex flex-wrap gap-4">
@@ -13,16 +13,21 @@
 				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Write</h4>
 				<p class="mb-4 text-gray-200">Become an editor maybe</p>
 				<button>Apply</button>
-			</hgroup>
+			</hgroup> -->
 			<hgroup class="grow">
 				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Contact</h4>
-				<p class="mb-4 text-gray-200">Why would you want to contact us</p>
+				<p class="mb-4 text-gray-200">Have any questions, or fancy writing for us?</p>
 				<button>Contact</button>
 			</hgroup>
 			<hgroup class="grow">
 				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Social</h4>
 				<p>
-					<img class="inline mr-1 size-4" src="/icons/instagram.png" alt="Instagram logo" width={20} />
+					<img
+						class="inline mr-1 size-4"
+						src="/icons/instagram.png"
+						alt="Instagram logo"
+						width={20}
+					/>
 					<a
 						class="tracking-wide transition-colors text-gray-200 hover:text-white"
 						href="https://www.instagram.com/tabula_musica"
@@ -40,6 +45,12 @@
 					</a>
 				</p>
 			</hgroup>
+			<hgroup class="grow">
+				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Donate</h4>
+				<p class="mb-4 text-gray-200">Give money</p>
+				<button>Donate</button>
+			</hgroup>
+			<!-- Donate button -->
 		</div>
 		<hr class="mb-4 border-neutral-600" />
 		<ul class="mb-4 flex gap-x-8 text-sm text-gray-400">
@@ -54,9 +65,6 @@
 			</li>
 			<li>
 				<a href="/advertising">Advertising</a>
-			</li>
-			<li>
-				<a href="/user-agreement">Boring legal stuff</a>
 			</li>
 		</ul>
 		<p class="mb-4 text-sm tracking-wide text-gray-400">© 2024. All rights reserved.</p>

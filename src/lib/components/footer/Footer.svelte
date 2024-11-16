@@ -20,11 +20,11 @@
 </footer>
 
 <style lang="postcss">
-	:global(h5) {
+	footer :global(h5) {
 		@apply uppercase text-cyan-100;
 	}
 
-	:global(.button) {
+	footer :global(.button) {
 		@apply inline-flex h-10 px-4 items-center
         text-cyan-800
         transition-colors bg-amber-100 hover:bg-amber-100/80

@@ -6,7 +6,7 @@
 		draggable="false"
 	/>
 	<div class="p-[8vh]">
-		<img src="icons/tabula-musica-treble.png" alt="Logo" class="mx-auto mb-8 size-28" draggable="false" />
+		<img src="/tabula-musica-treble.png" alt="Logo" class="mx-auto mb-8 size-28" draggable="false" />
 		<hr class="mx-auto w-64 border-[1px] border-violet-950/60 rounded-full">
 		<h1 class="font-serif uppercase text-violet-950/75">Tabula Musica</h1>
 		<hr class="mx-auto w-64 border-[1px] border-violet-950/60 rounded-full">

@@ -9,7 +9,7 @@
 	on:click|self={() => dialog.close()}
 >
 	<button class="absolute top-2 right-2 size-8 p-2 text-gray-500" on:click={() => dialog.close()}>
-		<img src="/icons/close.svg" alt="Close" />
+		<img src="icons/close.svg" alt="Close" />
 	</button>
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div class="size-full px-8 py-4 bg-amber-50 text-gray-700" on:click|stopPropagation>

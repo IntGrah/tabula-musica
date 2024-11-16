@@ -10,7 +10,7 @@
 		</a>
 	</p>
 	<p>
-		<img class="inline mr-1 size-4" src="/icons/email.png" alt="Email icon" />
+		<img class="inline mr-1 size-4" src="icons/email.png" alt="Email icon" />
 		<a
 			class="tracking-wide transition-colors text-gray-200 hover:text-white"
 			href="mailto:tabulamusica@cambridgesu.co.uk"

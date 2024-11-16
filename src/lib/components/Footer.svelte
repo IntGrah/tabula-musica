@@ -51,11 +51,11 @@
 		<ul class="flex gap-x-8 text-sm text-gray-400">
 			{#each footerLinks as { href, name }}
 				<li>
-					<a {href}>{name}</a>
+					<a {href} class="tracking-wider">{name}</a>
 				</li>
 			{/each}
 		</ul>
-		<p class="text-sm tracking-wide text-gray-400">&copy; 2024 Tabula Musica</p>
+		<p class="text-sm text-gray-400">&copy; 2024 Tabula Musica</p>
 	</div>
 </footer>
 

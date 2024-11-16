@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/components/navigation/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import type { LayoutData } from './$types';
 	import '../app.css';
 </script>
 

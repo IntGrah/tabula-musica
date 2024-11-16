@@ -9,7 +9,7 @@
 				{text}
 			</span>
 			<hr
-				class="absolute bottom-2 left-1/2 w-0 border-gray-600 transition-all group-hover:left-[20%] group-hover:w-[60%]"
+				class="mb-0 absolute bottom-2 left-1/2 w-0 border-gray-600 transition-all group-hover:left-[20%] group-hover:w-[60%]"
 			/>
 		</a>
 	{/each}

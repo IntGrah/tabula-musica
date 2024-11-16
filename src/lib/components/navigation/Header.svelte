@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Menu from '$lib/components/navigation/Menu.svelte';
+	import MobileMenu from '$lib/components/navigation/MobileMenu.svelte';
 
 	let open = false;
 	import { page } from '$app/stores';
@@ -12,7 +12,7 @@
 		<button class="sm:hidden shrink-0 h-12 py-3" on:click={() => (open = !open)}>
 			<img class="size-6" src="/icons/menu.svg" alt="menu" />
 		</button>
-		<Menu bind:open />
+		<MobileMenu bind:open />
 		<a class="max-md:hidden shrink-0 size-12 p-1" href="/">
 			<img class="mx-auto size-10" src="/icons/tabula-musica-treble.png" alt="Treble clef" />
 		</a>

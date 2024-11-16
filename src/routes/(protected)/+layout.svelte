@@ -1,3 +1,3 @@
-<div class="util-restrict px-8 py-4">
+<div class="util-restrict p-8">
 	<slot />
 </div>

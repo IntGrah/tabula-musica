@@ -122,8 +122,4 @@
 	li {
 		@apply text-gray-500 tracking-wide;
 	}
-
-	li {
-		@apply ml-4 list-disc;
-	}
 </style>

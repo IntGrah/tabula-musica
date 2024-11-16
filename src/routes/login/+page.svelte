@@ -10,7 +10,9 @@
 
 <div class="max-w-4xl p-8">
 	<button on:click={() => signIn('google')}>Sign in with Raven</button>
-	<form method="POST" action="?/login" use:enhance>
+
+	<h3>Log in</h3>
+	<form method="POST" use:enhance>
 		{#if form?.type === 'login'}
 			{#if form?.incomplete}
 				<p class="text-red-500" transition:fade>Please fill in all fields!</p>
@@ -23,7 +25,9 @@
 		<input class="input" type="password" name="password" placeholder="Password" required />
 		<button>Log in</button>
 	</form>
-	<form method="POST" action="?/signup" use:enhance>
+
+	<h3>Sign up</h3>
+	<form method="POST" use:enhance>
 		{#if form?.type === 'signup'}
 			{#if form?.incomplete}
 				<p class="text-red-500" transition:fade>Please fill in all fields!</p>
@@ -37,14 +41,7 @@
 		{/if}
 
 		<input class="input" type="email" name="email" placeholder="Email" required />
-		<input
-			class="input"
-			type="password"
-			name="password"
-			placeholder="Password"
-			value="password"
-			required
-		/>
+		<input class="input" type="password" name="password" placeholder="Password" required />
 		<input
 			class="input"
 			type="password"
@@ -52,9 +49,11 @@
 			placeholder="Confirm password"
 			required
 		/>
-		<input class="input" type="text" name="name" placeholder="Name" value="Jane Doe" required />
-		<p>Would you like to subscribe to our mailing list?</p>
-		<input class="block size-6" type="checkbox" name="mailingList" />
+		<input class="input" type="text" name="name" placeholder="Name" required />
+		<label class="block">
+			<input class="size-4" type="checkbox" name="mailingList" />
+			Subscribe to mailing list
+		</label>
 		<button>Sign up</button>
 	</form>
 </div>

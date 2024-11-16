@@ -1,9 +1,9 @@
 <article class="flex flex-wrap transition-colors bg-amber-100 hover:bg-amber-200 group">
 	<a href="/articles/lorem">
 		<hgroup class="p-4">
-			<h3 class="mb-2 text-2xl font-bold">Lorem Ipsum</h3>
-			<hr class="mb-2 border-gray-500" />
-			<p class="mb-2">
+			<h3 class="font-bold">Lorem Ipsum</h3>
+			<hr class="border-gray-500" />
+			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies
 				aliquam.
 			</p>

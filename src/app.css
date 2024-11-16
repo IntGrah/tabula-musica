@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 * {
-	font-family: 'Belleza', sans-serif;
+	font-family: 'Belleza', serif;
 }
 
 .input {
@@ -62,4 +62,8 @@ p,
 ul,
 hr {
 	@apply mb-4;
+}
+
+li {
+	@apply ml-4 list-disc;
 }

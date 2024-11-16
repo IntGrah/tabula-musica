@@ -1,21 +1,18 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
-	import { isSubscriber } from '$lib/util';
-	import { defaultUser } from '../../../default_user';
-	import type { PageData } from './$types';
 
-	export let data: PageData;
-	const user = data.user ?? defaultUser;
+	const user = $page.data.session?.user;
 
 	let addressModal: HTMLDialogElement;
 </script>
 
-<h3 class="text-3xl mb-4">Subscription</h3>
+<h3>Subscription</h3>
 <div class="max-w-3xl">
 	<section class="mb-8 flex flex-wrap">
 		<hgroup>
 			<h4>Paper edition</h4>
-			{#if isSubscriber(user.role)}
+			{#if user}
 				<p>You are currently a subscriber.</p>
 			{:else}
 				<p>You are not currently subscribed.</p>
@@ -48,14 +45,14 @@
 </div>
 
 <Modal bind:dialog={addressModal}>
-	<h3 class="mb-4 text-2xl">Edit shipping address</h3>
-	<hr class="mb-4" />
+	<h5>Edit shipping address</h5>
+	<hr />
 	<form>
 		<input class="mb-4 w-full input" placeholder="Address line 1" required />
 		<input class="mb-4 w-full input" placeholder="Address line 2" />
 		<input class="mb-4 w-full input" placeholder="Town/City" required />
 		<input class="mb-4 w-full input" placeholder="Postcode" required />
-        <button class="mb-4 settings-button">Save</button>
+		<button class="mb-4 settings-button">Save</button>
 	</form>
 </Modal>
 

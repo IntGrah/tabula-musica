@@ -1,28 +1,28 @@
-import type { Session, User } from '@prisma/client';
-import { getSession, getUser } from '$lib/server/database';
-import type { RequestEvent } from '@sveltejs/kit';
+import { SvelteKitAuth } from '@auth/sveltekit';
+// import { PrismaAdapter } from '@auth/prisma-adapter';
+// import { PrismaClient } from '@prisma/client';
+import Google from '@auth/sveltekit/providers/google';
+import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/static/private';
 
-// const Google = {
-//     id: "google",
-//     name: "Google",
-//     type: "oidc",
-//     issuer: "https://accounts.google.com/",
-//     style: { logo: "/google.svg", bg: "#fff", text: "#000" },
-//     options: {
-//         clientId: AUTH_GOOGLE_ID,
-//         clientSecret: AUTH_GOOGLE_SECRET,
-//     },
-// };
+// const prisma = new PrismaClient();
+// const adapter = PrismaAdapter(prisma);
 
-export async function authenticate(
-	event: RequestEvent
-): Promise<{ session: Session; user: User } | { session: null; user: null }> {
-	const cookies = event.cookies;
-	const sessionId = cookies.get('_TMST');
-	if (!sessionId) return { session: null, user: null };
-	const session = await getSession(sessionId);
-	if (!session) return { session: null, user: null };
-	const user = await getUser(session.userId);
-	if (!user) return { session: null, user: null };
-	return { session, user };
-}
+export const { handle, signIn, signOut } = SvelteKitAuth({
+	// adapter,
+	providers: [
+		Google({
+			clientId: GOOGLE_CLIENT_ID,
+			clientSecret: GOOGLE_CLIENT_SECRET,
+			authorization: 'https://accounts.google.com/o/oauth2/auth?response_type=code&hd=cam.ac.uk'
+		})
+	],
+	callbacks: {
+		signIn: async ({ account, profile }) => {
+			if (account?.provider !== 'google') return false;
+			if (!profile?.email_verified) return false;
+			if (!profile.email?.endsWith('@cam.ac.uk')) return false;
+			return true;
+		}
+	},
+	trustHost: true
+});

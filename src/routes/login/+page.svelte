@@ -2,11 +2,14 @@
 	import { enhance } from '$app/forms';
 	import { fade } from 'svelte/transition';
 	import type { ActionData } from './$types';
+	import { signIn } from '@auth/sveltekit/client';
+	// import { sign } from 'crypto';
 
 	export let form: ActionData;
 </script>
 
 <div class="max-w-4xl p-8">
+	<button on:click={() => signIn('google')}>Sign in with Raven</button>
 	<form method="POST" action="?/login" use:enhance>
 		{#if form?.type === 'login'}
 			{#if form?.incomplete}

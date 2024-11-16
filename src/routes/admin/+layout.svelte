@@ -1,5 +1,5 @@
 <script>
-	import Navigation from '$lib/components/Navigation.svelte';
+	import NavLinks from '$lib/components/NavLinks.svelte';
 
 	const links = [
 		{ href: '/admin', text: 'Dashboard' },
@@ -8,9 +8,9 @@
 	];
 </script>
 
-<div class="mx-auto max-w-6xl px-8">
-	<h2 class="mb-4 mt-4 text-2xl">Admin</h2>
-	<Navigation {links} />
-	<hr class="mb-4" />
+<div class="util-restrict px-8">
+	<h3 class="mt-4">Admin</h3>
+	<NavLinks {links} />
+	<hr />
 	<slot />
 </div>

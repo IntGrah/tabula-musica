@@ -3,9 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-    font-family: 'Belleza', sans-serif;
+	font-family: 'Belleza', sans-serif;
 }
 
 .input {
@@ -25,23 +24,42 @@
     text-cyan-800 tracking-wider;
 }
 
-.nav-button {
-	@apply inline-flex h-10 px-3 min-w-fit
-    items-center rounded-full cursor-pointer
-    transition-colors bg-black/10 hover:bg-violet-900
-    tracking-wider text-violet-900 hover:text-white;
+.util-restrict {
+	@apply mx-auto max-w-6xl;
 }
 
-.nav-link {
-	@apply relative py-3 text-center tracking-wider hover:text-cyan-600;
+h1 {
+	@apply text-5xl;
 }
 
-.nav-link::after {
-	content: '';
-	@apply absolute bottom-1 left-1/2 w-0 h-0.5
-    bg-cyan-600 transition-all;
+h2 {
+	@apply text-4xl;
 }
 
-.nav-link:hover::after {
-	@apply left-0 w-full;
+h3 {
+	@apply text-3xl;
+}
+
+h4 {
+	@apply text-2xl;
+}
+
+h5 {
+	@apply text-xl;
+}
+
+h6 {
+	@apply text-lg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+hr {
+	@apply mb-4;
 }

@@ -1,1 +1,1 @@
-<h3 class="mb-4 text-3xl">Posts</h3>
+<h3>Posts</h3>

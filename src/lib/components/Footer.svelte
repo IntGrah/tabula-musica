@@ -1,26 +1,22 @@
+<script>
+	import { footerLinks } from '$lib/components/navigation/links';
+</script>
+
 <footer class="bg-gray-900">
-	<div class="mx-auto max-w-6xl px-6">
+	<div class="util-restrict px-6">
 		<div class="grid sm:grid-cols-2 py-6 gap-8">
-			<!-- <hgroup class="grow">
-				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Subscribe</h4>
-				<p class="mb-4 text-gray-200">From £0/month</p>
-				<div class="flex flex-wrap gap-4">
-					<button>Mailing list</button>
-					<button>Paper edition</button>
-				</div>
+			<hgroup>
+				<h4>Subscribe</h4>
+				<p class="text-gray-200">Subscribe to the mailing list</p>
+				<a class="button" href="/">Mailing list</a>
 			</hgroup>
-			<hgroup class="grow">
-				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Write</h4>
-				<p class="mb-4 text-gray-200">Become an editor maybe</p>
-				<button>Apply</button>
-			</hgroup> -->
-			<hgroup class="grow">
-				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Contact</h4>
-				<p class="mb-4 text-gray-200">Have any questions, or fancy writing for us?</p>
-				<button>Contact</button>
+			<hgroup>
+				<h4>Contact</h4>
+				<p class="text-gray-200">Have any questions, or fancy writing for us?</p>
+				<a class="button" href="/">Contact</a>
 			</hgroup>
-			<hgroup class="grow">
-				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Social</h4>
+			<hgroup>
+				<h4>Social</h4>
 				<p>
 					<img
 						class="inline mr-1 size-4"
@@ -45,35 +41,31 @@
 					</a>
 				</p>
 			</hgroup>
-			<hgroup class="grow">
-				<h4 class="mb-4 text-lg uppercase tracking-widest text-cyan-100">Donate</h4>
-				<p class="mb-4 text-gray-200">Give money</p>
-				<button>Donate</button>
+			<hgroup>
+				<h4>Donate</h4>
+				<p class="text-gray-200">Give money</p>
+				<a class="button" href="/">Donate</a>
 			</hgroup>
-			<!-- Donate button -->
 		</div>
-		<hr class="mb-4 border-neutral-600" />
-		<ul class="mb-4 flex gap-x-8 text-sm text-gray-400">
-			<li>
-				<a href="/about">About</a>
-			</li>
-			<li>
-				<a href="/privacy-policy">Privacy policy</a>
-			</li>
-			<li>
-				<a href="/cookies">Cookies</a>
-			</li>
-			<li>
-				<a href="/advertising">Advertising</a>
-			</li>
+		<hr class="border-neutral-600" />
+		<ul class="flex gap-x-8 text-sm text-gray-400">
+			{#each footerLinks as { href, name }}
+				<li>
+					<a {href}>{name}</a>
+				</li>
+			{/each}
 		</ul>
-		<p class="mb-4 text-sm tracking-wide text-gray-400">© 2024. All rights reserved.</p>
+		<p class="text-sm tracking-wide text-gray-400">&copy; 2024 Tabula Musica</p>
 	</div>
 </footer>
 
 <style lang="postcss">
-	button {
-		@apply block h-10 px-4 items-center
+	h4 {
+		@apply text-lg uppercase text-cyan-100;
+	}
+
+	.button {
+		@apply inline-flex h-10 px-4 items-center
         text-cyan-800
         transition-colors bg-amber-100 hover:bg-amber-100/80
         rounded-full tracking-wider;

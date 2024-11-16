@@ -1,20 +1,25 @@
 <script lang="ts">
-	import { defaultUser } from '../../default_user';
-	import type { PageServerData } from './$types';
+	import { page } from '$app/stores';
+	import { signOut } from '@auth/sveltekit/client';
 
-	export let data: PageServerData;
-	const user = data.user ?? defaultUser;
+	const user = $page.data.session?.user;
 </script>
 
-<div class="py-16 text-5xl text-center text-cyan-800">
-	Hello, {user.name}!
-	<br />
-	Logged in as {user.email}
-	<br />
-	<form method="POST" action="?/signout">
-		<button>Sign out</button>
-	</form>
-	{#if user.role === 'admin'}
-		<a href="/admin">Go to admin page</a>
-	{/if}
-</div>
+<section>
+	<div>Hello, {user?.name}!</div>
+	<div>
+		Logged in as {user?.email}
+	</div>
+	<div>
+		<button on:click={() => signOut()}>Sign out</button>
+	</div>
+	<div>
+		{#if true}
+			<a href="/admin">Go to admin page</a>
+		{/if}
+	</div>
+	<div>
+		<h3 class="">Settings</h3>
+		<a href="settings">Go</a>
+	</div>
+</section>

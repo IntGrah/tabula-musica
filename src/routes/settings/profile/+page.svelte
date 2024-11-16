@@ -1,21 +1,20 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
-	import { defaultUser } from '../../../default_user';
-	import type { PageData } from './$types';
 
-	export let data: PageData;
-	const user = data.user ?? defaultUser;
+	const user = $page.data.session?.user;
 
-	let bio = user.bio ?? '';
+	let bio = "foo";
+
 	let nameModal: HTMLDialogElement;
 </script>
 
-<h3 class="text-3xl mb-4">Profile</h3>
+<h3>Profile</h3>
 <div class="max-w-3xl">
 	<section class="mb-8 flex flex-wrap">
 		<hgroup>
 			<h4>Name</h4>
-			<p>{user.name}</p>
+			<p>{user?.name}</p>
 		</hgroup>
 		<div class="grow py-2">
 			<button class="float-right settings-button" on:click={() => nameModal.showModal()}
@@ -40,7 +39,7 @@
 			<button class="settings-button">Save</button>
 		</form>
 	</section>
-	{#if 2 + 2 === 5}
+	{#if true}
 		<section class="mb-8">
 			<hgroup class="mb-4">
 				<h4>Avatar</h4>
@@ -56,8 +55,8 @@
 </div>
 
 <Modal bind:dialog={nameModal}>
-	<h3 class="mb-4 text-2xl">Change your name</h3>
-	<hr class="mb-4" />
+	<h5>Change your name</h5>
+	<hr />
 	<form method="POST" action="?/updatename">
 		<input
 			class="mb-4 w-full input"
@@ -65,7 +64,7 @@
 			name="name"
 			placeholder="Name"
             autocomplete="off"
-			value={user.name}
+			value={user?.name}
 		/>
 		<div>
 			<button class="mb-4 settings-button">Save</button>

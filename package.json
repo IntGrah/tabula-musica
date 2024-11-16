@@ -12,11 +12,10 @@
 		"prisma": "npx prisma db pull && npx prisma generate"
 	},
 	"devDependencies": {
+		"@auth/prisma-adapter": "^2.7.3",
 		"@fontsource/fira-mono": "^4.5.10",
 		"@prisma/client": "^5.11.0",
-		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-node": "^5.2.9",
-		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tailwindcss/typography": "^0.5.12",
@@ -41,5 +40,8 @@
 		"typescript": "^5.0.0",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@auth/sveltekit": "^1.7.3"
+	}
 }

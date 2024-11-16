@@ -5,13 +5,13 @@
 	const { users, usersTotal, ms, page, size } = data;
 </script>
 
-<div class="mx-auto max-w-6xl">
-	<h2 class="mb-4 text-3xl">Users</h2>
-	<p class="mb-4">
+<section class="mx-auto max-w-6xl">
+	<h2>Users</h2>
+	<p>
 		Search returned {users.length} records ({ms / 1000} seconds).
 	</p>
 	{#if users.length}
-		<p class="mb-4">
+		<p>
 			Showing rows {size * page + 1} to {Math.min(size * (page + 1), usersTotal)} of {usersTotal}.
 		</p>
 	{/if}
@@ -33,4 +33,4 @@
 			{/each}
 		</table>
 	</div>
-</div>
+</section>

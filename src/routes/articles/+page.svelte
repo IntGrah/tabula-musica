@@ -2,8 +2,8 @@
 	import LoremCard from './LoremCard.svelte';
 </script>
 
-<div class="mx-auto max-w-6xl p-4">
-	<h1 class="mb-4 text-4xl">Articles</h1>
+<div class="util-restrict p-8">
+	<h2>Articles</h2>
 	<div class="flex max-md:flex-col">
 		<LoremCard />
 

@@ -9,8 +9,8 @@
 	let open = false;
 </script>
 
-<header class="sticky z-10 top-0 h-12 px-4 bg-amber-100 shadow-md">
-	<div class="util-restrict flex gap-x-4">
+<header class="sticky z-10 top-0 w-full h-12 px-4 bg-amber-100 shadow-md">
+	<div class="util-restrict flex gap-4">
 		<Hamburger bind:open />
 		<MobileMenu bind:open />
 		<Logo />

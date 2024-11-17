@@ -3,7 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+html {
+	scroll-behavior: smooth;
+	overscroll-behavior: none;
+}
+
+body {
 	font-family: 'Belleza', serif;
 }
 
@@ -13,7 +18,7 @@
     bg-black/5 focus:bg-black/10
     rounded-lg outline-none
     border border-transparent focus:border-gray-400
-    transition-all
+    transition-colors
     placeholder:text-gray-500 focus:placeholder:text-gray-600;
 }
 
@@ -27,6 +32,20 @@
 
 .btn:disabled {
 	@apply bg-gray-500/10 border-gray-300 text-gray-400;
+}
+
+.link {
+	@apply relative;
+}
+
+.link::after {
+	content: '';
+	@apply absolute -bottom-1 left-1/2 w-0 h-[1px]
+	bg-current transition-all;
+}
+
+.group:hover .link::after, .link:hover::after {
+	@apply left-0 w-full;
 }
 
 .util-restrict {

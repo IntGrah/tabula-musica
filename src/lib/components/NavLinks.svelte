@@ -2,15 +2,10 @@
 	export let links: { href: string; text: string }[];
 </script>
 
-<nav class="mb-4 relative flex flex-wrap">
+<nav class="mb-4 flex flex-wrap gap-8">
 	{#each links as { href, text }}
-		<a class="relative px-4 py-3 group" {href}>
-			<span class="tracking-wider group-hover:text-gray-500">
-				{text}
-			</span>
-			<hr
-				class="mb-0 absolute bottom-2 left-1/2 w-0 border-gray-600 transition-all group-hover:left-[20%] group-hover:w-[60%]"
-			/>
+		<a class="link tracking-wider hover:text-gray-500" {href}>
+			{text}
 		</a>
 	{/each}
 </nav>

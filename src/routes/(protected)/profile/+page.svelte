@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { signOut } from '@auth/sveltekit/client';
-	import { $Enums as Enums } from '@prisma/client';
 
 	const user = $page.data.session!.user;
 </script>
@@ -15,7 +14,7 @@
 	<p><button class="btn" on:click={() => signOut()}>Sign out</button></p>
 	<h4 class="">Settings</h4>
 	<p><a class="btn" href="settings">Settings</a></p>
-	{#if user.role === Enums.User_role.admin}
+	{#if user.role === "admin"}
 		<div class="p-4 border-2 border-gray-300 rounded-2xl bg-gray-500/10">
 			<h4>Admin</h4>
 			<p><a class="btn" href="/admin">Go to admin page</a></p>

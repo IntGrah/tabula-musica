@@ -16,11 +16,7 @@
 <div class="relative flex flex-col min-h-screen font-serif text-gray-700 bg-amber-50 scroll-smooth">
 	<Header />
 	{#key data.url.split('/')[1]}
-		<main
-			class="grow"
-			in:fly={{ y: -25, duration: 150, delay: 150 }}
-			out:fly={{ y: 25, duration: 150 }}
-		>
+		<main class="grow" in:fly={{ y: -25, duration: 150, delay: 150 }}>
 			<slot />
 		</main>
 	{/key}

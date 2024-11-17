@@ -3,6 +3,8 @@
 
 	export let data: PageData;
 	const { users, usersTotal, ms, page, size } = data;
+	const lo = size * page + 1;
+	const hi = Math.min(size * (page + 1), usersTotal);
 </script>
 
 <section class="mx-auto max-w-6xl">
@@ -12,7 +14,7 @@
 	</p>
 	{#if users.length}
 		<p>
-			Showing rows {size * page + 1} to {Math.min(size * (page + 1), usersTotal)} of {usersTotal}.
+			Showing rows {lo} to {hi} of {usersTotal}.
 		</p>
 	{/if}
 	<div class="mb-4 overflow-x-scroll">

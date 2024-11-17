@@ -1,15 +1,18 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import { fade } from 'svelte/transition';
 	import type { ActionData } from './$types';
 	import { signIn } from '@auth/sveltekit/client';
-	// import { sign } from 'crypto';
+	import { enhance } from '$app/forms';
+	import { fade } from 'svelte/transition';
 
 	export let form: ActionData;
 </script>
 
 <div class="max-w-4xl p-8">
-	<button on:click={() => signIn('google')}>Sign in with Raven</button>
+	<h3>Raven sign in</h3>
+	<button
+		class="btn mb-4"
+		on:click={() => signIn('google', { callbackUrl: '/profile' })}>Sign in with Raven</button
+	>
 
 	<h3>Log in</h3>
 	<form method="POST" use:enhance>
@@ -23,7 +26,7 @@
 
 		<input class="input" type="email" name="email" placeholder="Email" required />
 		<input class="input" type="password" name="password" placeholder="Password" required />
-		<button>Log in</button>
+		<button class="btn mb-4">Log in</button>
 	</form>
 
 	<h3>Sign up</h3>
@@ -54,20 +57,6 @@
 			<input class="size-4" type="checkbox" name="mailingList" />
 			Subscribe to mailing list
 		</label>
-		<button>Sign up</button>
+		<button class="btn mb-4">Sign up</button>
 	</form>
 </div>
-
-<style lang="postcss">
-	button {
-		@apply h-10 px-4
-        bg-black/5 hover:bg-black/20
-        rounded-lg tracking-wider;
-	}
-
-	input,
-	button,
-	p {
-		@apply mb-4;
-	}
-</style>

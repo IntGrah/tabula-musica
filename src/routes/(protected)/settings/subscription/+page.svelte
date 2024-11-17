@@ -1,8 +1,12 @@
 <script lang="ts">
+	import type { ActionData } from './$types';
 	import { page } from '$app/stores';
-	import Modal from '$lib/components/Modal.svelte';
+	import { User_role } from '@prisma/client';
+	import ChangeAddress from '$lib/components/modal/mod/ChangeAddress.svelte';
+	import { isSubscriber } from '$lib/util';
 
-	const user = $page.data.session?.user;
+	const user = $page.data.session!.user;
+	export let form: ActionData;
 
 	let addressModal: HTMLDialogElement;
 </script>
@@ -11,32 +15,30 @@
 <div class="max-w-3xl">
 	<section class="mb-8 flex flex-wrap">
 		<hgroup>
-			<h4>Paper edition</h4>
-			{#if user}
-				<p>You are currently a subscriber.</p>
+			<h5>Paper edition</h5>
+			{#if isSubscriber(user.role)}
+				<p class="text-gray-500">You are currently a subscriber.</p>
 			{:else}
-				<p>You are not currently subscribed.</p>
+				<p class="text-gray-500">You are not currently subscribed.</p>
 			{/if}
 		</hgroup>
 		<div class="grow">
-			<button class="mt-2 float-right settings-button" on:click={void 0}>
-				Manage subscription
-			</button>
+			<button class="mt-2 float-right btn"> Manage subscription </button>
 		</div>
 	</section>
 	<hr class="mb-8" />
 	<section class="mb-8 flex flex-wrap">
 		<hgroup>
-			<h4>Postal address</h4>
-			<address>
-				<p>10 Downing Street</p>
-				<p>SW1A 2AA</p>
-				<p>London</p>
-				<p>United Kingdom</p>
+			<h5>Postal address</h5>
+			<address class="text-gray-500">
+				10 Downing Street<br />
+				SW1A 2AA<br />
+				London<br />
+				United Kingdom
 			</address>
 		</hgroup>
 		<div class="grow">
-			<button class="mt-2 float-right settings-button" on:click={() => addressModal.showModal()}>
+			<button class="mt-2 float-right btn" on:click={() => addressModal.showModal()}>
 				Edit address
 			</button>
 		</div>
@@ -44,24 +46,4 @@
 	<hr class="mb-8" />
 </div>
 
-<Modal bind:dialog={addressModal}>
-	<h5>Edit shipping address</h5>
-	<hr />
-	<form>
-		<input class="mb-4 w-full input" placeholder="Address line 1" required />
-		<input class="mb-4 w-full input" placeholder="Address line 2" />
-		<input class="mb-4 w-full input" placeholder="Town/City" required />
-		<input class="mb-4 w-full input" placeholder="Postcode" required />
-		<button class="mb-4 settings-button">Save</button>
-	</form>
-</Modal>
-
-<style lang="postcss">
-	hgroup h4 {
-		@apply text-lg tracking-wide;
-	}
-
-	hgroup p {
-		@apply text-gray-500 tracking-wide;
-	}
-</style>
+<ChangeAddress bind:addressModal errors={form?.type === 'updateaddress' ? form?.errors : []} />

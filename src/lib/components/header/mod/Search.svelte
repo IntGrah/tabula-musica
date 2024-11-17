@@ -1,5 +1,5 @@
 <script>
-	import { page } from "$app/stores";
+	import { page } from '$app/stores';
 
 	let query = $page.url.searchParams.get('q');
 </script>
@@ -12,9 +12,8 @@
 			class="w-full max-w-40 xs:max-w-52 sm:max-w-64 input !pl-9"
 			placeholder="Search..."
 			autocomplete="off"
+			value={query}
 			required
-			value={query ?? ''}
-			on:invalid={(e) => e.preventDefault()}
 		/>
 	</form>
 </search>

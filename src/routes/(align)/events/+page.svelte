@@ -1,1 +1,1 @@
-<h2>Things</h2>
+<h2>Events</h2>

@@ -17,11 +17,16 @@
     placeholder:text-gray-500 focus:placeholder:text-gray-600;
 }
 
-.settings-button {
-	@apply block px-4 h-10
-    items-center rounded-full
-    border border-cyan-600 hover:bg-cyan-50/50
-    text-cyan-800 tracking-wider;
+.btn {
+	@apply inline-flex px-4 h-10
+	items-center rounded-full
+	transition-colors
+	border border-cyan-600 hover:bg-cyan-50/50
+	text-cyan-800 tracking-wider;
+}
+
+.btn:disabled {
+	@apply bg-gray-500/10 border-gray-300 text-gray-400;
 }
 
 .util-restrict {
@@ -60,6 +65,7 @@ h5,
 h6,
 p,
 ul,
+input,
 hr {
 	@apply mb-4;
 }

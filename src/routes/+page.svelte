@@ -14,7 +14,7 @@
 </header>
 
 <section class="h-[128vw] p-[5vw]">
-	<div class="util-restrict p-8 shadow-2xl h-full bg-amber-100">
-		<h2>Coming soon...</h2>
+	<div class="util-restrict p-8 shadow-2xl h-full rounded-lg bg-amber-100">
+		<h2 class="text-center text-cyan-900">Coming soon...</h2>
 	</div>
 </section>

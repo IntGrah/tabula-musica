@@ -3,6 +3,7 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ parent, url }) => {
 	await parent();
+
 	const pageQuery = url.searchParams.get('page');
 	let page = 0;
 

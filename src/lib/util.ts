@@ -1,5 +1,5 @@
-import { User_role } from '@prisma/client';
+import { $Enums } from '@prisma/client';
 
 export function isSubscriber(role: User_role) {
-	return role === User_role.subscriber || role === User_role.editor || role === User_role.admin;
+	return role === $Enums.User_role.subscriber || role === $Enums.User_role.editor || role === $Enums.User_role.admin;
 }

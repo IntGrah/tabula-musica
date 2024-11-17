@@ -39,7 +39,7 @@
 		/>
 		{#each errors ?? [] as error}
 			<p class="text-red-600" transition:slide>{error.message}</p>
-		{/each}>
+		{/each}
 		<button class="mb-4 btn" disabled={confirmation !== DELETE_CONFIRM}>
 			Delete account
 		</button>

@@ -4,7 +4,6 @@ import Google from '@auth/sveltekit/providers/google';
 import { adapter } from '$lib/server/prisma';
 import type { User_role } from '@prisma/client';
 
-
 declare module '@auth/sveltekit' {
 	interface Session {
 		user: {
@@ -22,14 +21,15 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
 			clientId: GOOGLE_CLIENT_ID,
 			clientSecret: GOOGLE_CLIENT_SECRET,
 			authorization: 'https://accounts.google.com/o/oauth2/auth?response_type=code&hd=cam.ac.uk'
-		}),
+		})
 	],
 	callbacks: {
 		signIn: async ({ account, profile }) => {
-			if (account?.provider !== 'google') return false;
-			if (!profile?.email_verified) return false;
-			if (!profile.email?.endsWith('@cam.ac.uk')) return false;
-			return true;
+			const unauthorised =
+				account?.provider !== 'google' ||
+				!profile?.email_verified ||
+				!profile.email?.endsWith('@cam.ac.uk');
+			return !unauthorised;
 		},
 		session({ session }) {
 			// session.user.id = user.id;

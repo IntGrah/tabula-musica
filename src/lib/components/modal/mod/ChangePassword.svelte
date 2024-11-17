@@ -45,6 +45,9 @@
 			placeholder="Confirm new password"
 			bind:value={confirm_password}
 		/>
+		{#each errors ?? [] as error}
+			<p class="text-red-600" transition:slide>{error.message}</p>
+		{/each}
 		{#if new_password !== confirm_password && confirm_password}
 			<p class="text-red-600" transition:slide>Passwords do not match</p>
 		{/if}

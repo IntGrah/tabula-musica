@@ -16,8 +16,7 @@
 	<hr />
 	<h6 class="text-red-600">Warning: this is a destructive action!</h6>
 	<p class="text-gray-500">
-		All data associated with this account will be deleted, including any active subscriptions,
-		comments, articles, and profile information.
+		All data associated with this account will be deleted, including any subscriptions.
 	</p>
 	<hr />
 	<form
@@ -40,8 +39,6 @@
 		{#each errors ?? [] as error}
 			<p class="text-red-600" transition:slide>{error.message}</p>
 		{/each}
-		<button class="mb-4 btn" disabled={confirmation !== DELETE_CONFIRM}>
-			Delete account
-		</button>
+		<button class="mb-4 btn" disabled={confirmation !== DELETE_CONFIRM}> Delete account </button>
 	</form>
 </Modal>

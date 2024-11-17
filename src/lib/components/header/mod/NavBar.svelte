@@ -26,7 +26,7 @@
 			</span>
 		</button>
 		{#if issuesOpen}
-			<menu class="absolute top-12 -left-4 bg-amber-100/80 shadow-md" transition:slide>
+			<menu class="absolute top-12 -left-4 rounded-b-md bg-amber-100/80 shadow-md" transition:slide>
 				<a class="block p-4 group" href="/archive">
 					<span class="link nav-link">Archive</span>
 				</a>

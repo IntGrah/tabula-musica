@@ -26,7 +26,7 @@
 		<a class="block p-4 group" on:click={closeMenu} href="/about">
 			<span class="link nav-link">About</span>
 		</a>
-		<button class="block p-4 group" on:click={toggleIssues}>
+		<button class="block w-full text-left p-4 group" on:click={toggleIssues}>
 			<span class="nav-link">
 				Issues <Chevron up={issuesOpen} />
 			</span>

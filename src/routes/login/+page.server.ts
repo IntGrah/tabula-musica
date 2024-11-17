@@ -1,9 +1,3 @@
-// import prisma, {
-// 	createSession,
-// 	deleteAllSessions,
-// 	getCredentials,
-// 	getUserFromEmail
-// } from '$lib/server/database';
 // import { fail, redirect } from '@sveltejs/kit';
 // import bcrypt from 'bcryptjs';
 import type { Actions } from './$types';

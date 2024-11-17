@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { ActionData } from './$types';
 	import { page } from '$app/stores';
-	import { User_role } from '@prisma/client';
 	import ChangeAddress from '$lib/components/modal/mod/ChangeAddress.svelte';
 	import { isSubscriber } from '$lib/util';
 

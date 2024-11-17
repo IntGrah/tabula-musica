@@ -1,6 +1,5 @@
-import { prisma } from '$lib/server/auth';
+import prisma from '$lib/server/prisma';
 import type { PageServerLoad } from './$types';
-import type { User } from '@prisma/client';
 
 export const load: PageServerLoad = async ({ parent, url }) => {
 	await parent();

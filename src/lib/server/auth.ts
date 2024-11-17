@@ -1,11 +1,9 @@
 import { SvelteKitAuth, type DefaultSession } from '@auth/sveltekit';
-import { PrismaAdapter } from '@auth/prisma-adapter';
-import { PrismaClient, User_role } from '@prisma/client';
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/static/private';
 import Google from '@auth/sveltekit/providers/google';
+import { adapter } from '$lib/server/prisma';
+import type { User_role } from '@prisma/client';
 
-export const prisma = new PrismaClient();
-const adapter = PrismaAdapter(prisma);
 
 declare module '@auth/sveltekit' {
 	interface Session {

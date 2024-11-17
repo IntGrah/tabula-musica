@@ -1,28 +1,24 @@
 <script lang="ts">
-	import Header from '$lib/components/header/Header.svelte';
-	import Footer from '$lib/components/footer/Footer.svelte';
+    import Header from '$lib/components/header/Header.svelte';
+    import Footer from '$lib/components/footer/Footer.svelte';
 
-	import '../app.css';
-	import { fly, fade } from 'svelte/transition';
+    import '../app.css';
+    import { fly, fade } from 'svelte/transition';
 
-	export let data;
+    export let data;
 </script>
 
 <svelte:head>
-	<title>Tabula Musica</title>
-	<meta name="description" content="Tabula Musica" />
+    <title>Tabula Musica</title>
+    <meta name="description" content="Tabula Musica" />
 </svelte:head>
 
 <div class="relative flex flex-col min-h-screen font-serif text-gray-700 bg-amber-50 scroll-smooth">
-	<Header />
-	{#key data.url.split('/')[1]}
-		<main
-			class="grow"
-			in:fade={{ duration: 300, delay: 200 }}
-			out:fade={{ duration: 200 }}
-		>
-			<slot />
-		</main>
-	{/key}
-	<Footer />
+    <Header />
+    {#key data.url.split('/')[1]}
+        <main class="grow" in:fade={{ duration: 300, delay: 200 }} out:fade={{ duration: 200 }}>
+            <slot />
+        </main>
+    {/key}
+    <Footer />
 </div>

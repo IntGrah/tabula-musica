@@ -3,13 +3,13 @@ import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss/types';
 
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-	theme: {
-		screens: {
-			xs: '384px',
-			...defaultTheme.screens
-		},
-		extend: {}
-	},
-	plugins: [typography]
+    content: ['./src/**/*.{html,js,svelte,ts}'],
+    theme: {
+        screens: {
+            xs: '384px',
+            ...defaultTheme.screens
+        },
+        extend: {}
+    },
+    plugins: [typography]
 } satisfies Config;

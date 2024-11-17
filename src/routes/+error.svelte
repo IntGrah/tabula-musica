@@ -1,14 +1,14 @@
 <script>
-	import { page } from '$app/stores';
+    import { page } from '$app/stores';
 </script>
 
 <section class="text-center font-serif">
-	<h1 class="py-12 text-9xl tracking-wide text-cyan-900">{$page.status}</h1>
-	<h2 class="mb-12 italic text-cyan-700">
-		{#if $page.status === 404}
-			The requested resource was not found on the server.
-		{:else}
-			{$page.error?.message}
-		{/if}
-	</h2>
+    <h1 class="py-12 text-9xl tracking-wide text-cyan-900">{$page.status}</h1>
+    <h2 class="mb-12 italic text-cyan-700">
+        {#if $page.status === 404}
+            The requested resource was not found on the server.
+        {:else}
+            {$page.error?.message}
+        {/if}
+    </h2>
 </section>

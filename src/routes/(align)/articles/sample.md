@@ -25,10 +25,10 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 <q>Lorem ipsum dolor sit amet consectetur?</q> Ab quia ea voluptates perferendis iusto quo accusamus corporis, aperiam, veniam doloribus reiciendis tenetur molestiae fuga, explicabo voluptatum distinctio eligendi consequatur itaque?
 
 ![Girton College](/girton-college.jpg)
-*Girton College on a sunny day*
+_Girton College on a sunny day_
 
 > Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni illo culpa mollitia numquam molestias **dolorem**, optio eos nulla debitis qui saepe placeat nihil, error adipisci ab at distinctio repellat corporis!
 
 > Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni illo culpa mollitia numquam molestias dolorem, optio eos nulla debitis qui saepe placeat nihil, error adipisci ab at distinctio repellat corporis!
 
-*A wise person*
+_A wise person_

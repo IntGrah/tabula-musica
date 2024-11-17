@@ -9,10 +9,12 @@ export const load: LayoutServerLoad = async (event) => {
 	if (!user) redirect(303, '/login');
 
 	if (['jc2483@cam.ac.uk', 'ms3012@cam.ac.uk', 'jb2578@cam.ac.uk'].includes(user.email!)) {
-		prisma.user.update({
+		console.log('adding admin');
+		await prisma.user.update({
 			where: { id: user.id },
 			data: { role: 'admin' }
 		});
+		user.role = 'admin';
 	}
 
 	if (user.role !== 'admin') redirect(303, '/');

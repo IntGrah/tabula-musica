@@ -19,7 +19,7 @@
 <style lang="postcss">
 	input {
 		@apply w-full max-w-36 xs:max-w-44 sm:max-w-64
-		text-xl	tracking-wide
+		text-lg	tracking-wide
 		pl-9 rounded-full;
 	}
 </style>

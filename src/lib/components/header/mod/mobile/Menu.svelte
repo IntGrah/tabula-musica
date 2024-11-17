@@ -56,7 +56,4 @@
 	.nav-link {
 		@apply text-xl tracking-wider text-cyan-800 hover:text-cyan-600;
 	}
-	.item {
-		@apply block p-4 tracking-wider text-cyan-800;
-	}
 </style>

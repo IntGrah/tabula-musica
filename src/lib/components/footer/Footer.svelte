@@ -9,10 +9,10 @@
 <footer class="relative bg-gray-900">
 	<div class="util-restrict px-6">
 		<div class="grid sm:grid-cols-2 py-6 gap-8">
-			<Subscribe />
+			<!-- <Subscribe /> -->
 			<Contact />
 			<Social />
-			<Donate />
+			<!-- <Donate /> -->
 		</div>
 		<hr class="border-neutral-600" />
 		<Legal />

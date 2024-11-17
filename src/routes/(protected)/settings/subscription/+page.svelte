@@ -42,7 +42,6 @@
 			</button>
 		</div>
 	</section>
-	<hr class="mb-8" />
 </div>
 
 <ChangeAddress bind:addressModal errors={form?.type === 'updateaddress' ? form?.errors : []} />

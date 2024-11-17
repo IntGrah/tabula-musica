@@ -1,5 +1,5 @@
 <hgroup>
-    <h5>Social</h5>
+    <h5 class="uppercase text-cyan-100">Social</h5>
     <p>
         <img class="inline mr-1 size-4" src="/instagram.png" alt="Instagram logo" width={20} />
         <a

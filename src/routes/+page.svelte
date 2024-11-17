@@ -1,4 +1,4 @@
-<header class="relative h-[70vh] bg-amber-100 text-center overflow-hidden">
+<section class="relative h-[75vh] bg-amber-100 text-center overflow-hidden">
     <img
         src="/art-of-fugue.jpg"
         alt="Art of Fugue"
@@ -16,7 +16,7 @@
         <h1 class="font-serif uppercase text-violet-950/75">Tabula Musica</h1>
         <hr class="mx-auto w-64 border-[1px] border-violet-950/60 rounded-full" />
     </div>
-</header>
+</section>
 
 <section class="h-[128vw] p-[5vw]">
     <div class="util-restrict p-8 shadow-2xl h-full rounded-lg bg-amber-100">

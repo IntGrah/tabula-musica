@@ -6,8 +6,8 @@
 </script>
 
 <nav class="max-md:hidden flex gap-4 md:gap-8">
-    <a class="group" href="/about">
-        <span class="block link my-3 nav-link">About</span>
+    <a class="py-3 group" href="/about">
+        <span class="link nav-link">About</span>
     </a>
     <div
         class="relative"
@@ -20,8 +20,8 @@
             issuesOpen = false;
         }}
     >
-        <button class="group">
-            <span class="block my-3 nav-link">
+        <button class="py-3 group">
+            <span class="nav-link">
                 Issues <Chevron up={issuesOpen} />
             </span>
         </button>
@@ -39,13 +39,13 @@
             </menu>
         {/if}
     </div>
-    <a class="group" href="/events">
-        <span class="block link my-3 nav-link">Events</span>
+    <a class="py-3 group" href="/events">
+        <span class="link nav-link">Events</span>
     </a>
 </nav>
 
 <style lang="postcss">
     .nav-link {
-        @apply tracking-wider text-cyan-800 hover:text-cyan-600;
+        @apply tracking-wider text-cyan-800 group-hover:text-cyan-600;
     }
 </style>

@@ -1,11 +1,13 @@
 <script lang="ts">
-    export let links: { href: string; text: string }[];
+	export let links: { href: string; text: string }[];
 </script>
 
-<nav class="mb-4 flex flex-wrap gap-8">
-    {#each links as { href, text }}
-        <a class="link tracking-wider hover:text-gray-500" {href}>
-            {text}
-        </a>
-    {/each}
+<nav class="flex flex-wrap gap-8">
+	{#each links as { href, text }}
+		<a class="py-3 group" {href}>
+			<span class="link tracking-wider group-hover:text-gray-500">
+				{text}
+			</span>
+		</a>
+	{/each}
 </nav>

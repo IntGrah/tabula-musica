@@ -7,7 +7,7 @@
     const links = [
         { href: '/admin', text: 'Dashboard' },
         { href: '/admin/users', text: 'Users' },
-        { href: '/admin/posts', text: 'Posts' }
+        { href: '/admin/articles', text: 'Articles' }
     ];
 </script>
 

@@ -1,10 +1,8 @@
 import prisma from '$lib/server/prisma';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ parent, url }) => {
-	await parent();
-
-	const pageQuery = url.searchParams.get('page');
+export const load: PageServerLoad = async (event) => {
+	const pageQuery = event.url.searchParams.get('page');
 	let page = 0;
 
 	if (pageQuery) {
@@ -14,7 +12,7 @@ export const load: PageServerLoad = async ({ parent, url }) => {
 		}
 	}
 
-	const sizeQuery = url.searchParams.get('size');
+	const sizeQuery = event.url.searchParams.get('size');
 	let size = 10;
 
 	if (sizeQuery) {

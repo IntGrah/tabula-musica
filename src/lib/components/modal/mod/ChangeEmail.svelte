@@ -17,7 +17,7 @@
         <input
             class="w-full input"
             name="email"
-            type="email"
+            type="text"
             placeholder="New email"
             bind:value={email}
         />

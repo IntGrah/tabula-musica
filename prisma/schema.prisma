@@ -8,50 +8,57 @@ generator client {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  username      String?   @unique
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  mailingList   Boolean   @default(true)
-  role          User_role @default(member)
-  accounts      Account[]
-  sessions      Session[]
+  id    String @id @default(cuid())
+  name  String
+  email String @unique
+
+  subscriber Boolean @default(false)
+  editor     Boolean @default(false)
+  admin      Boolean @default(false)
+
+  raven       Raven?
+  credentials Credentials?
+  sessions    Session[]
+  articles    Article[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  Article   Article?
 }
 
-model Account {
-  id                       String  @id @default(cuid())
-  userId                   String  @unique
-  type                     String
-  provider                 String
-  providerAccountId        String
-  refresh_token            String? @db.Text
-  access_token             String? @db.Text
-  expires_at               Int?
-  token_type               String?
-  scope                    String?
-  id_token                 String? @db.Text
-  session_state            String?
-  refresh_token_expires_in Int?
-  user                     User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Raven {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  email             String @unique
+  providerAccountId String @unique
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Credentials {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  email         String    @unique
+  emailVerified DateTime?
+  passwordHash  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
   @@index([userId])
 }
 
 model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique
-  userId       String
   expires      DateTime
+  userId       String
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
@@ -69,18 +76,13 @@ model VerificationToken {
 }
 
 model Article {
-  id        String   @id @default(cuid())
-  userId    String   @unique // author
-  slug      String   @db.Text
-  title     String   @db.Text
-  body      String   @db.LongText
-  createdAt DateTime @default(now())
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
+  id     String @id @default(cuid())
+  userId String // author
+  slug   String @db.Text
+  title  String @db.Text
+  body   String @db.LongText
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-enum User_role {
-  member
-  subscriber
-  editor
-  admin
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	const { slug, title, body, createdAt, user } = data;
+	const { title, body, createdAt, user } = data;
 </script>
 
 <article class="mx-auto max-w-3xl p-6">

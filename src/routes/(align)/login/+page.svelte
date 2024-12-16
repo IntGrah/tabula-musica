@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { signIn } from '@auth/sveltekit/client';
+	// import { signIn } from '@auth/sveltekit/client';
 	import { enhance } from '$app/forms';
 </script>
 
@@ -7,8 +7,8 @@
 
 <section class="flex max-sm:flex-col gap-4">
 	<div class="grow">
-		<form method="POST" use:enhance>
-			<input class="input" type="email" name="email" placeholder="Email" required />
+		<form method="POST" action="?/signin" use:enhance>
+			<input class="input" type="text" name="email" placeholder="Email" required />
 			<input class="input" type="password" name="password" placeholder="Password" required />
 			<button class="btn mb-4">Log in</button>
 		</form>
@@ -16,15 +16,16 @@
 
 	<div class="grow">
 		<h5>University sign in</h5>
-		<button class="btn mb-4" on:click={() => signIn('google', { callbackUrl: '/profile' })}>
-			Sign in with Raven
-		</button>
+
+		<form action="/auth/google">
+			<button class="btn mb-4"> Sign in with Raven </button>
+		</form>
 	</div>
 </section>
 
 <h3>Sign up</h3>
-<form method="POST" use:enhance>
-	<input class="input" type="email" name="email" placeholder="Email" required />
+<form method="POST" action="/auth/credentials/signup" use:enhance>
+	<input class="input" type="text" name="email" placeholder="Email" required />
 	<input class="input" type="password" name="password" placeholder="Password" required />
 	<input
 		class="input"

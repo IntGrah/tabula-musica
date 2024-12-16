@@ -1,9 +1,7 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load: LayoutServerLoad = async (event) => {
-    const session = await event.locals.auth();
+export const load: LayoutServerLoad = (event) => {
+	const user = event.locals.user;
 
-    return { session };
+	return { user, url: event.request.url };
 };
-
-export const ssr = false;

@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 
-	const user = $page.data.session?.user;
+	const user = $page.data.user;
+
+	export let data;
 </script>
 
 <h2>Contact</h2>
@@ -19,11 +21,11 @@
 	/>
 	<input
 		class="input"
-		type="email"
+		type="text"
 		name="email"
 		placeholder="Email"
 		required
-		value={user?.email ?? ''}
+		value={data.emailAutoFill}
 	/>
 	<input class="input" type="tel" name="phone" placeholder="Phone number (optional)" />
 

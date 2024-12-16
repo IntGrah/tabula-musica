@@ -47,6 +47,7 @@ export const GET: RequestHandler = async (event) => {
 				admin: false,
 				editor: false,
 				subscriber: false,
+				email,
 				raven: {
 					create: {
 						email,

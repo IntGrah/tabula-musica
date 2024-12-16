@@ -31,7 +31,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 };
 
 const guard = (user: User | null, routeId: string | null) => {
-	console.log('ROUTEID', routeId);
 	if (!routeId) return;
 	if (routeId.startsWith('/(protected)')) {
 		if (!user) redirect(303, '/login');

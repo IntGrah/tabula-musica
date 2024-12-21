@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { page } from "$app/stores";
 
     const user = $page.data.user!;
 </script>

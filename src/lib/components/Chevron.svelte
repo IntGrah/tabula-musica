@@ -1,5 +1,9 @@
 <script lang="ts">
-    export let up: boolean;
+    interface Props {
+        up: boolean;
+    }
+
+    let { up }: Props = $props();
 </script>
 
 <i class="chevron" class:up></i>

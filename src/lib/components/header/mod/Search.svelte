@@ -1,7 +1,7 @@
 <script>
-    import { page } from '$app/stores';
+    import { page } from "$app/stores";
 
-    let query = $page.url.searchParams.get('q');
+    let query = $page.url.searchParams.get("q");
 </script>
 
 <search class="grow h-12">
@@ -12,7 +12,14 @@
             alt="Search"
             draggable="false"
         />
-        <input name="q" class="input" placeholder="Search…" autocomplete="off" value={query} required />
+        <input
+            name="q"
+            class="input"
+            placeholder="Search…"
+            autocomplete="off"
+            value={query}
+            required
+        />
     </form>
 </search>
 

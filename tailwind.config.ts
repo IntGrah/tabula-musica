@@ -1,15 +1,15 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import typography from '@tailwindcss/typography';
-import type { Config } from 'tailwindcss/types';
+import defaultTheme from "tailwindcss/defaultTheme";
+import typography from "@tailwindcss/typography";
+import type { Config } from "tailwindcss/types";
 
 export default {
-    content: ['./src/**/*.{html,js,svelte,ts}'],
+    content: ["./src/**/*.{html,js,svelte,ts}"],
     theme: {
         screens: {
-            xs: '384px',
-            ...defaultTheme.screens
+            xs: "384px",
+            ...defaultTheme.screens,
         },
-        extend: {}
+        extend: {},
     },
-    plugins: [typography]
+    plugins: [typography],
 } satisfies Config;

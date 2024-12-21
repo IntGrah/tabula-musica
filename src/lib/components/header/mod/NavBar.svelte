@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { slide } from 'svelte/transition';
-    import Chevron from '$lib/components//Chevron.svelte';
+    import { slide } from "svelte/transition";
+    import Chevron from "$lib/components//Chevron.svelte";
 
-    let issuesOpen = false;
+    let issuesOpen = $state(false);
 </script>
 
 <nav class="max-md:hidden flex gap-4 md:gap-8">
@@ -13,10 +13,10 @@
         class="relative"
         role="menu"
         tabindex="0"
-        on:mouseenter={() => {
+        onmouseenter={() => {
             issuesOpen = true;
         }}
-        on:mouseleave={() => {
+        onmouseleave={() => {
             issuesOpen = false;
         }}
     >
@@ -26,7 +26,10 @@
             </span>
         </button>
         {#if issuesOpen}
-            <menu class="absolute top-12 -left-4 rounded-b-md bg-amber-100/80 shadow-md" transition:slide>
+            <menu
+                class="absolute top-12 -left-4 rounded-b-md bg-amber-100/80 shadow-md"
+                transition:slide
+            >
                 <a class="block p-4 group" href="/archive">
                     <span class="link nav-link">Archive</span>
                 </a>

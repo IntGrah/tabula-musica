@@ -1,5 +1,16 @@
-<article>
-	<slot name="title" />
+<script lang="ts">
+    import type { Snippet } from "svelte";
 
-	<slot />
+    interface Props {
+        title: Snippet;
+        children: Snippet;
+    }
+
+    let { title, children }: Props = $props();
+</script>
+
+<article>
+    {@render title()}
+
+    {@render children()}
 </article>

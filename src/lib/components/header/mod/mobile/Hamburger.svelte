@@ -1,11 +1,15 @@
 <script lang="ts">
-    export let open: boolean;
+    interface Props {
+        open: boolean;
+    }
+
+    let { open = $bindable() }: Props = $props();
 
     function toggleMenu() {
         open = !open;
     }
 </script>
 
-<button on:click={toggleMenu} class="md:hidden shrink-0 h-12 py-3">
+<button onclick={toggleMenu} class="md:hidden shrink-0 h-12 py-3">
     <img class="size-6" src="/menu.svg" alt="menu" />
 </button>

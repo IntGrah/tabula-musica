@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Belleza&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-	font-family: 'Belleza', serif;
+    font-family: "Belleza", serif;
 }
 
 .input {
-	@apply block px-4 h-10
+    @apply block px-4 h-10
     focus:text-gray-800
     bg-black/5 focus:bg-black/10
     rounded-lg outline-none
@@ -22,7 +22,7 @@ body {
 }
 
 .btn {
-	@apply inline-flex px-4 h-10
+    @apply inline-flex px-4 h-10
     items-center rounded-full
     transition-colors
     border border-cyan-600 hover:bg-cyan-50/50
@@ -30,60 +30,60 @@ body {
 }
 
 .btn:disabled {
-	@apply bg-gray-500/10 border-gray-300 text-gray-400;
+    @apply bg-gray-500/10 border-gray-300 text-gray-400;
 }
 
 .link {
-	@apply relative;
+    @apply relative;
 }
 
 .link::after {
-	content: '';
-	@apply absolute -bottom-1 left-1/2 w-0 h-[1px]
+    content: "";
+    @apply absolute -bottom-1 left-1/2 w-0 h-[1px]
     bg-current transition-all;
 }
 
 .group:hover .link::after,
 .link:hover::after {
-	@apply left-0 w-full;
+    @apply left-0 w-full;
 }
 
 .hyperlink {
-	@apply relative;
+    @apply relative;
 }
 
 .hyperlink:hover::after {
-	content: '';
-	@apply absolute -bottom-0 left-0 w-full h-[1px]
+    content: "";
+    @apply absolute -bottom-0 left-0 w-full h-[1px]
     bg-current transition-all;
 }
 
 .util-restrict {
-	@apply mx-auto max-w-6xl;
+    @apply mx-auto max-w-6xl;
 }
 
 h1 {
-	@apply text-5xl;
+    @apply text-5xl;
 }
 
 h2 {
-	@apply text-4xl;
+    @apply text-4xl;
 }
 
 h3 {
-	@apply text-3xl;
+    @apply text-3xl;
 }
 
 h4 {
-	@apply text-2xl;
+    @apply text-2xl;
 }
 
 h5 {
-	@apply text-xl;
+    @apply text-xl;
 }
 
 h6 {
-	@apply text-lg;
+    @apply text-lg;
 }
 
 h1,
@@ -96,9 +96,9 @@ p,
 ul,
 input,
 hr {
-	@apply mb-4;
+    @apply mb-4;
 }
 
 li {
-	@apply ml-4 list-disc;
+    @apply ml-4 list-disc;
 }

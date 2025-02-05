@@ -1,7 +1,7 @@
 <script>
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
-    let query = $page.url.searchParams.get("q");
+    let query = page.url.searchParams.get("q");
 </script>
 
 <search class="grow h-12">

@@ -13,13 +13,13 @@
             draggable="false"
         />
         <hr class="mx-auto w-64 border-[1px] border-violet-950/60 rounded-full" />
-        <h1 class="font-serif uppercase text-violet-950/75">Tabula Musica</h1>
+        <h1 class="uppercase text-violet-950/75">Tabula Musica</h1>
         <hr class="mx-auto w-64 border-[1px] border-violet-950/60 rounded-full" />
     </div>
 </section>
 
 <section class="h-[128vw] p-[5vw]">
     <div class="util-restrict p-8 shadow-2xl h-full rounded-lg bg-amber-100">
-        <h2 class="text-center text-cyan-900">Coming soon...</h2>
+        <h2 class="text-center text-cyan-900">TBD</h2>
     </div>
 </section>

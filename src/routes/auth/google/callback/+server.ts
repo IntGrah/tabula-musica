@@ -27,33 +27,23 @@ export const GET: RequestHandler = async (event) => {
         error(400);
     }
 
-    const claims = decodeIdToken(tokens.idToken()) as any;
-    const googleUserId = claims.sub as string;
-    const username = claims.name as string;
-    const email = claims.email as string;
+    const claims = decodeIdToken(tokens.idToken()) as {
+        sub: string;
+        email: string;
+    };
 
-    let user = await prisma.user.findFirst({
-        where: {
-            raven: {
-                providerAccountId: googleUserId,
-            },
-        },
-    });
+    try {
+        await prisma.admin.findUniqueOrThrow({ where: { email: claims.email } });
+    } catch {
+        error(403);
+    }
 
+    let user = await prisma.user.findFirst({ where: { providerAccountId: claims.sub } });
     if (!user) {
         user = await prisma.user.create({
             data: {
-                name: username,
-                admin: false,
-                editor: false,
-                subscriber: false,
-                email,
-                raven: {
-                    create: {
-                        email,
-                        providerAccountId: googleUserId,
-                    },
-                },
+                providerAccountId: claims.sub,
+                crsid: claims.email.split("@")[0],
             },
         });
     }
@@ -61,5 +51,5 @@ export const GET: RequestHandler = async (event) => {
     const sessionToken = generateSessionToken();
     const session = await createSession(sessionToken, user.id);
     setSessionTokenCookie(event, sessionToken, session.expires);
-    redirect(302, "/profile");
+    redirect(302, "/admin");
 };

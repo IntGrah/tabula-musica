@@ -8,34 +8,19 @@ generator client {
 }
 
 model User {
-  id    String @id @default(cuid())
-  name  String
-  email String @unique
+  id                String @id @default(cuid())
+  crsid             String @unique
+  providerAccountId String @unique
 
-  subscriber Boolean @default(false)
-  editor     Boolean @default(false)
-  admin      Boolean @default(false)
-
-  raven    Raven?
   sessions Session[]
-  articles Article[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model Raven {
-  id     String @id @default(cuid())
-  userId String @unique
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  email             String @unique
-  providerAccountId String @unique
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([userId])
+model Admin {
+  id    String @id @default(cuid())
+  email String @unique
 }
 
 model Session {
@@ -49,16 +34,4 @@ model Session {
   updatedAt DateTime @updatedAt
 
   @@index([userId])
-}
-
-model Article {
-  id     String @id @default(cuid())
-  userId String // author
-  slug   String @db.Text
-  title  String @db.Text
-  body   String @db.LongText
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }

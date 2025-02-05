@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
-    const user = $page.data.user;
+    const user = page.data.user;
 </script>
 
 <div class="py-1">
@@ -11,8 +11,7 @@
             href="/profile"
             draggable="false"
         >
-            <span class="max-xs:hidden">{user.name}</span>
-            <img class="xs:hidden" src="/account.svg" alt="Account" draggable="false" />
+            {user?.name}
         </a>
     {:else}
         <form action="/auth/google">

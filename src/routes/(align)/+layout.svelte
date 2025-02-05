@@ -1,17 +1,12 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import type { Snippet } from "svelte";
+    import { page } from "$app/state";
     import { fade } from "svelte/transition";
 
-    interface Props {
-        children: Snippet;
-    }
-
-    let { children }: Props = $props();
+    let { children } = $props();
 </script>
 
 <div class="util-restrict p-8">
-    {#key $page.data.url}
+    {#key page.url.pathname}
         <div in:fade={{ duration: 300 }}>
             {@render children()}
         </div>

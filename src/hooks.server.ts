@@ -32,13 +32,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 const guard = (user: User | null, routeId: string | null) => {
     if (!routeId) return;
-    if (routeId.startsWith("/(protected)")) {
+    if (routeId.startsWith("/(align)/(admin)")) {
         if (!user) error(403);
-        if (routeId.startsWith("/(protected)/(editor)")) {
-            if (!user.editor) error(403);
-        }
-        if (routeId.startsWith("/(protected)/(admin)")) {
-            if (!user.admin) error(403);
-        }
     }
 };

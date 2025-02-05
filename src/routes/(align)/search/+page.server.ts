@@ -1,37 +1,38 @@
 import { redirect } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
-import prisma from "$lib/server/prisma";
+import { read } from "$app/server";
 
 export const load: PageServerLoad = async ({ url }) => {
     const query = url.searchParams.get("q")?.trim();
     if (!query) redirect(303, "/");
 
-    const keywords = query.split(/\s+/);
+    const keywords = query.split(/\s+/).map((s) => s.toLowerCase());
 
-    const keywordConditions = keywords.map((keyword) => ({
-        OR: [
-            { slug: { contains: keyword } },
-            { title: { contains: keyword } },
-            { body: { contains: keyword } },
-        ],
-    }));
-
-    const start = Date.now();
-    const articles = await prisma.article.findMany({
-        where: { OR: keywordConditions },
-        select: {
-            slug: true,
-            title: true,
-            body: true,
-            createdAt: true,
-            user: {
-                select: {
-                    name: true,
-                },
-            },
-        },
+    const articlesFiles: Record<string, string> = import.meta.glob("/articles/*.md", {
+        query: "?url",
+        import: "default",
+        eager: true,
     });
-    const ms = Date.now() - start;
+    const assets = Object.values(articlesFiles);
 
-    return { query, articles, ms };
+    const articles = assets.map((a) => read(a).text());
+    const res = await Promise.all(articles);
+
+    const zip = <A, B>(a: A[], b: B[]): [A, B][] => a.map((k, i) => [k, b[i]]);
+
+    const results = zip(assets, res);
+
+    const filtered = results.filter(
+        ([title, body]) =>
+            body
+                .split(/\s+/g)
+                .map((s) => s.toLowerCase())
+                .find((kw) => keywords.some((k) => kw.includes(k))) ||
+            title
+                .split(/\s+/g)
+                .map((s) => s.toLowerCase())
+                .find((kw) => keywords.some((k) => kw.includes(k))),
+    );
+
+    return { query, articles: filtered };
 };

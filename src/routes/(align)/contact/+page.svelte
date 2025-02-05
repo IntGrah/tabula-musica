@@ -1,10 +1,5 @@
 <script lang="ts">
     import { enhance } from "$app/forms";
-    import { page } from "$app/stores";
-
-    const user = $page.data.user;
-
-    let { data } = $props();
 </script>
 
 <h2>Contact</h2>
@@ -17,7 +12,6 @@
         name="name"
         placeholder="Name"
         required
-        value={user?.name ?? ""}
     />
     <input
         class="input"
@@ -25,7 +19,6 @@
         name="email"
         placeholder="Email"
         required
-        value={data.emailAutoFill}
     />
     <input class="input" type="tel" name="phone" placeholder="Phone number (optional)" />
 

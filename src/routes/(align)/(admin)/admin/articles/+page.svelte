@@ -16,21 +16,24 @@ https://svelte.dev/e/node_invalid_placement -->
 {/if}
 <div class="mb-4 overflow-x-scroll">
     <table class="w-full border-collapse font-mono text-xs">
-        <tr class="h-10 bg-gray-300">
-            <th class="text-left px-4">URL</th>
-            <th class="text-left px-4">Title</th>
-            <th class="text-left px-4">Author</th>
-            <th class="text-left px-4">Published</th>
-        </tr>
-        {#each data.articles as { slug, title, user, createdAt }}
-            <tr class="h-10 even:bg-gray-200 odd:bg-gray-300">
-                <td class="min-w-48 px-4"
-                    ><a class="text-violet-900 underline" href={`/articles/${slug}`}>{slug}</a></td
-                >
-                <td class="min-w-64 px-4">{title}</td>
-                <td class="min-w-36 px-4">{user?.name}</td>
-                <td class="min-w-60 px-4">{createdAt.toLocaleString()}</td>
+        <tbody>
+            <tr class="h-10 bg-gray-300">
+                <th class="text-left px-4">URL</th>
+                <th class="text-left px-4">Title</th>
+                <th class="text-left px-4">Author</th>
+                <th class="text-left px-4">Published</th>
             </tr>
-        {/each}
+            {#each data.articles as { slug, title, user, createdAt }}
+                <tr class="h-10 even:bg-gray-200 odd:bg-gray-300">
+                    <td class="min-w-48 px-4"
+                        ><a class="text-violet-900 underline" href={`/articles/${slug}`}>{slug}</a
+                        ></td
+                    >
+                    <td class="min-w-64 px-4">{title}</td>
+                    <td class="min-w-36 px-4">{user?.name}</td>
+                    <td class="min-w-60 px-4">{createdAt.toLocaleString()}</td>
+                </tr>
+            {/each}
+        </tbody>
     </table>
 </div>

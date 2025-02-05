@@ -1,13 +1,8 @@
 <script lang="ts">
     import { enhance } from "$app/forms";
     import { slide } from "svelte/transition";
-    import type { ActionData } from "./$types";
 
-    interface Props {
-        form: ActionData;
-    }
-
-    let { form }: Props = $props();
+    let { form } = $props();
 </script>
 
 <h4>Upload Article</h4>

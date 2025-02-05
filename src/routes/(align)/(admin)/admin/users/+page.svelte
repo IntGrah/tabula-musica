@@ -16,21 +16,23 @@ https://svelte.dev/e/node_invalid_placement -->
 {/if}
 <div class="mb-4 overflow-x-scroll">
     <table class="w-full border-collapse font-mono text-xs">
-        <tr class="h-10 bg-gray-300">
-            <th class="text-left px-4">Email</th>
-            <th class="text-left px-4">Name</th>
-            <th class="text-left px-4">Editor</th>
-            <th class="text-left px-4">Admin</th>
-            <th class="text-left px-4">Created at</th>
-        </tr>
-        {#each data.users as { name, editor, admin, createdAt }}
-            <tr class="h-10 even:bg-gray-200 odd:bg-gray-300">
-                <td class="min-w-64 max-w-64 px-4 overflow-hidden text-ellipsis">{"foo"}</td>
-                <td class="min-w-48 max-w-48 px-4 overflow-hidden text-ellipsis">{name}</td>
-                <td class="min-w-20 px-4 capitalize">{editor}</td>
-                <td class="min-w-20 px-4 capitalize">{admin}</td>
-                <td class="min-w-48 px-4">{createdAt.toLocaleString()}</td>
+        <tbody>
+            <tr class="h-10 bg-gray-300">
+                <th class="text-left px-4">Email</th>
+                <th class="text-left px-4">Name</th>
+                <th class="text-left px-4">Editor</th>
+                <th class="text-left px-4">Admin</th>
+                <th class="text-left px-4">Created at</th>
             </tr>
-        {/each}
+            {#each data.users as { name, editor, admin, createdAt }}
+                <tr class="h-10 even:bg-gray-200 odd:bg-gray-300">
+                    <td class="min-w-64 max-w-64 px-4 overflow-hidden text-ellipsis">{"foo"}</td>
+                    <td class="min-w-48 max-w-48 px-4 overflow-hidden text-ellipsis">{name}</td>
+                    <td class="min-w-20 px-4 capitalize">{editor}</td>
+                    <td class="min-w-20 px-4 capitalize">{admin}</td>
+                    <td class="min-w-48 px-4">{createdAt.toLocaleString()}</td>
+                </tr>
+            {/each}
+        </tbody>
     </table>
 </div>

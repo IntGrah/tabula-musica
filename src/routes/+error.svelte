@@ -1,14 +1,12 @@
 <script>
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
+
+    const { status, error } = page;
 </script>
 
-<section class="text-center font-serif">
-    <h1 class="py-12 text-9xl tracking-wide text-cyan-900">{$page.status}</h1>
+<section class="text-center">
+    <h1 class="py-12 text-9xl tracking-wide text-cyan-900">{status}</h1>
     <h2 class="mb-12 italic text-cyan-700">
-        {#if $page.status === 404}
-            The requested resource was not found on the server.
-        {:else}
-            {$page.error?.message}
-        {/if}
+        {error?.message}
     </h2>
 </section>
